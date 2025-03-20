@@ -81,7 +81,7 @@ The plot below shows the variation of range with launch angle:
 ## **6. Conclusion**
 
 The experiment successfully confirmed that the optimal launch angle for maximum range is **45°**.
-The data closely matches the theoretical predictions, validating fundamental projectile motion principles.s
+The data closely matches the theoretical predictions, validating fundamental projectile motion principles
 
 
 
