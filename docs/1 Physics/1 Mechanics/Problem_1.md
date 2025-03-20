@@ -96,49 +96,5 @@ The plot below shows the variation of range with launch angle:
 The experiment successfully confirmed that the optimal launch angle for maximum range is **45°**.
 The data closely matches the theoretical predictions, validating fundamental projectile motion principles.
 
----
 
-## **7. Python Code for Calculations**
-
-The following Python script was used to compute the projectile range for different angles:
-
-[Colab Link](https://colab.research.google.com/drive/1CnU8XKAxE1OWb8sAe9p_urOHJ_Qsxtui#scrollTo=WxcdxzlqH388)
-
-
-
-![range_vs_angle.png](ErenLion0/solutions_repo/docs/_pics/range_vs_angle.png)
-
-
-
-
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Constants
-g = 9.81  # Gravity (m/s^2)
-v0 = 10   # Initial velocity (m/s)
-angles = np.array([15, 30, 45, 60, 75])  # Launch angles
-
-# Calculate range using R = (v0^2 * sin(2θ)) / g
-ranges = (v0**2 * np.sin(np.radians(2 * angles))) / g
-
-# Create dataframe
-df = pd.DataFrame({"Launch Angle (°)": angles, "Range (m)": np.round(ranges, 2)})
-print(df)
-
-# Plot the data
-plt.figure(figsize=(8, 5))
-plt.plot(angles, ranges, marker='o', linestyle='-', label="Range (m)")
-plt.xlabel("Launch Angle (°)")
-plt.ylabel("Range (m)")
-plt.title("Range vs. Launch Angle")
-plt.grid(True)
-plt.legend()
-plt.savefig("range_vs_angle.png")  # Save figure for GitHub
-plt.show()
-
-```
 
