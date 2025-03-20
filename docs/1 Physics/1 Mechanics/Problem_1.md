@@ -51,14 +51,13 @@ The range was calculated using the formula and compared with the theoretical pre
 
 The following table shows the measured ranges for different launch angles:
 
-
 | Launch Angle (°) | Calculated Range (m) |
-| ------------------- | ---------------------- |
-| 15°              | 5.02                 |
-| 30°              | 8.84                 |
-| 45°              | 10.19                |
-| 60°              | 8.84                 |
-| 75°              | 5.02                 |
+|------------------|----------------------|
+| 15°             | 5.02                 |
+| 30°             | 8.84                 |
+| 45°             | 10.19                |
+| 60°             | 8.84                 |
+| 75°             | 5.02                 |
 
 🔍 **Observation:** The range is **maximum at 45°**, confirming our theoretical expectation.
 
@@ -73,15 +72,15 @@ The plot below shows the variation of range with launch angle:
 ## **5. Discussion**
 
 1. **Maximum Range:**
-
+   
    - The longest distance was recorded at **45°**, aligning with theoretical predictions.
 2. **Symmetry in Data:**
-
+   
    - Angles **30° and 60°** yielded the same range.
    - Similarly, **15° and 75°** had equal ranges.
    - This symmetry is due to the **\( \sin 2\theta \)** function in the range equation.
 3. **Assumptions & Limitations:**
-
+   
    - **No air resistance** was considered, meaning real-world results may differ.
    - A **higher initial velocity** could have led to more precise results.
 
@@ -105,7 +104,13 @@ The following Python script was used to compute the projectile range for differe
 
 [Colab Link](https://colab.research.google.com/drive/1CnU8XKAxE1OWb8sAe9p_urOHJ_Qsxtui#scrollTo=WxcdxzlqH388)
 
+
+
 ![range_vs_angle.png](ErenLion0/solutions_repo/docs/_pics/range_vs_angle.png)
+
+
+
+
 
 ```python
 import numpy as np
@@ -136,3 +141,4 @@ plt.savefig("range_vs_angle.png")  # Save figure for GitHub
 plt.show()
 
 ```
+
