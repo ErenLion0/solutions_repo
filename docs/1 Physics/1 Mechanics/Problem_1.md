@@ -1,13 +1,12 @@
-
 # 📌 **Investigating the Range as a Function of the Angle of Projection**
 
-## **1. Problem Statement**
+## **Problem Statement**
 
 The goal of this experiment is to analyze the relationship between the **launch angle ($\theta$)** and the **horizontal range ($R$)** of a projectile.
 
 ---
 
-## **2. Theoretical Background**
+## **Theoretical Background**
 
 When a projectile is launched with an **initial velocity** $v_0$ at an angle $\theta$, its motion can be broken down into:
 
@@ -18,6 +17,7 @@ The total **horizontal range ($R$)** of the projectile can be derived using the 
 
 $$
 R = \frac{v_0^2 \sin 2\theta}{g}
+
 $$
 
 where:
@@ -30,7 +30,7 @@ From this equation, the **maximum range occurs at $\theta = 45^\circ$** because 
 
 ---
 
-## **3. Experiment Setup**
+## **Experiment Setup**
 
 To simulate the projectile motion experiment, we assumed:
 
@@ -43,17 +43,18 @@ The range was calculated using the formula and compared with the theoretical pre
 
 ---
 
-## **4. Experimental Data & Results**
+## **Experimental Data & Results**
 
 The following table shows the measured ranges for different launch angles:
 
+
 | Launch Angle (°) | Calculated Range (m) |
-|------------------|----------------------|
-| 15°             | 5.02                 |
-| 30°             | 8.84                 |
-| 45°             | 10.19                |
-| 60°             | 8.84                 |
-| 75°             | 5.02                 |
+| ------------------- | ---------------------- |
+| 15°              | 5.02                 |
+| 30°              | 8.84                 |
+| 45°              | 10.19                |
+| 60°              | 8.84                 |
+| 75°              | 5.02                 |
 
 🔍 **Observation:** The range is **maximum at 45°**, confirming our theoretical expectation.
 
@@ -67,21 +68,17 @@ The plot below shows the variation of range with launch angle:
 
 ---
 
-## **5. Discussion**
+## **Discussion**
 
 1. **Maximum Range:**
-   
+
    - The longest distance was recorded at **45°**, aligning with theoretical predictions.
 2. **Symmetry in Data:**
-   
+
    - Angles **30° and 60°** yielded the same range.
    - Similarly, **15° and 75°** had equal ranges.
-  
 
-## **6. Conclusion**
+## **Conclusion**
 
 The experiment successfully confirmed that the optimal launch angle for maximum range is **45°**.
 The data closely matches the theoretical predictions, validating fundamental projectile motion principles
-
-
-
