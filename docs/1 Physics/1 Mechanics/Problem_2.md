@@ -1,137 +1,130 @@
 # Problem 2
 
-# Forced Damped Pendulum
+---
 
+title: "Forced Damped Pendulum"
+-------------------------------
 
-## Objective 
+# 🌀 Investigating the Dynamics of a Forced Damped Pendulum
 
-Study the behavior of a forced damped pendulum through theoretical analysis and numerical simulation. Examine its resonance, periodicity, and chaotic dynamics. Produce visualizations such as phase portraits, Poincaré sections, and bifurcation diagrams.
+This webpage explores the motion of a special kind of pendulum: one that is affected by both **friction** and a **repeated pushing force**. This type of pendulum is called a **forced damped pendulum**.
+
+You will learn:
+
+- What the motion looks like,
+- How to describe it with a mathematical equation,
+- What happens when we change different parameters (like friction or the push),
+- And how to simulate it using Python.
 
 ---
 
-## Governing Equation
+## 📚 What Is a Forced Damped Pendulum?
 
-The forced damped pendulum is governed by the following nonlinear second-order differential equation:
+A normal pendulum swings back and forth because of gravity. But if you:
 
-d2θdt2+bdθdt+gLsin⁡θ=Acos⁡(ωt)\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L}\sin\theta = A\cos(\omega t)
-Where:
+- **Add friction** (like air resistance),
+- And **push it periodically** (like tapping it every second),
 
-* $\theta(t)$ is the angular displacement
-* $b$ is the damping coefficient
-* $g$ is gravitational acceleration
-* $L$ is the length of the pendulum
-* $A$ is the driving amplitude
-* $\omega$ is the driving angular frequency
+...then its motion becomes more interesting — and sometimes unpredictable. This system is called a **forced damped pendulum**.
 
-### Small-Angle Approximation
-
-For small angles ($\theta \ll 1$), we can approximate:
-
-sin⁡θ≈θ\sin\theta \approx \theta
-The equation simplifies to:
-
-d2θdt2+bdθdt+gLθ=Acos⁡(ωt)\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L}\theta = A\cos(\omega t)
-This describes a linear damped driven oscillator.
+To study it, we use a mathematical equation. The equation describes how the pendulum moves over time.
 
 ---
 
-## Natural Frequency and Resonance
+## 🧮 The Equation of Motion
 
-The system's natural frequency under the small-angle approximation is:
+The movement of the pendulum is described using this differential equation:
 
-ω0=gL\omega_0 = \sqrt{\frac{g}{L}}
-Resonance occurs when $\omega \approx \omega_0$. At resonance, the pendulum oscillates with maximum amplitude. Damping reduces and broadens the resonance peak.
+\[
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L}\sin(\theta) = A\cos(\omega t
+\]
 
----
+Let’s break it down:
 
-## Conversion to First-Order System
-
-To solve the nonlinear equation numerically, we convert it into two first-order equations.
-
-Define:
-
-* $\theta_1 = \theta$
-* $\theta_2 = \frac{d\theta}{dt}$
-
-Then:
-
-dθ1dt=θ2\frac{d\theta_1}{dt} = \theta_2
-dθ2dt=−bθ2−gLsin⁡θ1+Acos⁡(ωt)\frac{d\theta_2}{dt} = -b\theta_2 - \frac{g}{L}\sin\theta_1 + A\cos(\omega t)
-These equations are suitable for numerical integration.
+- \( \theta \) (theta) is the **angle** of the pendulum from the vertical (in radians).
+- \( \frac{d^2\theta}{dt^2} \) is the **acceleration** (how fast the angle changes).
+- \( \frac{d\theta}{dt} \) is the **angular velocity** (how fast it’s swinging).
+- \( b \) is the **damping coefficient** – it controls how strong the friction is.
+- \( g \) is the **gravitational acceleration** (about 9.81 m/s² on Earth).
+- \( L \) is the **length of the pendulum**.
+- \( A \) is the **amplitude of the external force** – how hard we are pushing it.
+- \( \omega \) (omega) is the **frequency of the force** – how often we push it.
+- \( \cos(\omega t) \) is the periodic push (a cosine wave).
 
 ---
 
-## Parameter Effects
+## 🧠 Why Is This System Interesting?
 
-* **Damping ($b$)** : Controls energy loss. Larger $b$ leads to faster decay of oscillations.
-* **Driving amplitude ($A$)** : Increases the system's energy. High $A$ may lead to chaos.
-* **Driving frequency ($\omega$)** : Determines interaction with natural frequency.
+This system behaves in **many different ways**, depending on the values of the parameters. Some key behaviors:
+
+- If friction is strong, the pendulum slows down and stops.
+- If you push it at the right frequency, it can swing **higher and higher** — this is called **resonance**.
+- If the force is strong and damping is low, the motion can become **chaotic** — completely unpredictable and never repeating.
+
+This is why scientists love this system: it’s simple to define, but the motion can become incredibly complex.
 
 ---
 
+## 🧪 Simplifying the Equation
 
-### Poincaré Section
+When the angle is **very small**, we can use this approximation:
 
-Sample the system at every period $T = \frac{2\pi}{\omega}$ and plot $\theta$ vs $\dot\theta$. Useful for identifying chaotic regimes.
+\[
+\sin(\theta) \approx \theta
+\]
+
+This turns the equation into a simpler, **linear** one:
+
+\[
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L}\theta = A\cos(\omega t)
+\]
+
+This version is easier to solve and helps us understand basic behaviors like resonance and damping.
+
+---
+
+## 💻 Simulating the Pendulum with Python
+
+We can use a simple Python script to simulate how the pendulum moves. The code uses **Euler’s method**, a numerical technique to approximate the motion.
+
+Below is the full code. It computes how the angle of the pendulum changes over time and saves the result as a plot.
 
 ```python
-T_drive = 2 * np.pi / omega
-poincare_t = np.arange(t_span[0], t_span[1], T_drive)
-poincare_theta = np.interp(poincare_t, t, theta)
-poincare_omega = np.interp(poincare_t, t, omega_vals)
+# Forced Damped Pendulum Simulation using Euler Method
+import numpy as np
+import matplotlib.pyplot as plt
 
-plt.figure(figsize=(6, 6))
-plt.scatter(poincare_theta, poincare_omega, s=1, color='red')
-plt.title('Poincaré Section')
-plt.xlabel('θ (rad)')
-plt.ylabel('ω (rad/s)')
+# PARAMETERS
+b = 0.5         # Damping (friction)
+g = 9.81        # Gravity
+L = 1.0         # Pendulum length
+A = 1.2         # Driving force amplitude
+omega = 2.0     # Driving force frequency
+
+# INITIAL CONDITIONS
+theta = 0.2     # Starting angle (radians)
+v = 0.0         # Starting angular velocity
+dt = 0.01       # Time step
+T = 50          # Total simulation time
+N = int(T/dt)   # Number of steps
+
+# ARRAYS TO STORE DATA
+t = np.linspace(0, T, N)
+theta_list = []
+
+# EULER METHOD LOOP
+for i in range(N):
+    a = -b*v - (g/L)*np.sin(theta) + A*np.cos(omega*t[i])  # Acceleration
+    v += a*dt
+    theta += v*dt
+    theta_list.append(theta)
+
+# PLOT THE RESULT
+plt.plot(t, theta_list)
+plt.xlabel("Time (s)")
+plt.ylabel("Angle (radians)")
+plt.title("Forced Damped Pendulum - Angle vs Time")
 plt.grid()
+plt.savefig("plots/theta_plot.png")
 plt.show()
 ```
-
-### Bifurcation Diagram
-
-Vary a parameter (e.g., $A$) and plot long-term values of $\theta$ at each period to observe transitions from periodic to chaotic motion.
-
-```python
-A_vals = np.linspace(0.5, 1.5, 200)
-theta_ss = []
-
-for A in A_vals:
-    def pendulum_bif(t, y):
-        theta, omega_dot = y
-        dtheta_dt = omega_dot
-        domega_dt = -b * omega_dot - (g / L) * np.sin(theta) + A * np.cos(omega * t)
-        return [dtheta_dt, domega_dt]
-
-    sol = solve_ivp(pendulum_bif, (0, 500), y0, t_eval=np.linspace(400, 500, 500), method='RK45')
-    ss_theta = sol.y[0][::int(omega / (2 * np.pi) * 10)]
-    for value in ss_theta:
-        theta_ss.append((A, value))
-
-A_plot, theta_plot = zip(*theta_ss)
-
-plt.figure(figsize=(10, 6))
-plt.plot(A_plot, theta_plot, ',', alpha=0.6)
-plt.title('Bifurcation Diagram')
-plt.xlabel('Driving Amplitude A')
-plt.ylabel('θ (rad)')
-plt.grid()
-plt.show()
-```
-
-
-## Limitations
-
-* Small-angle approximation only valid when $\theta \ll 1$
-* Assumes rigid rod and point mass
-* Ignores air resistance or external non-periodic disturbances
-
----
-
-## Conclusion 
-
-The forced damped pendulum demonstrates a rich set of behaviors, from simple oscillations to complex chaos. This code implements all required visualizations to explore those dynamics in line with theoretical expectations.
-
----
-
