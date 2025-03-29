@@ -21,7 +21,7 @@ When a projectile is launched with an **initial velocity** \\( v_0 \\) at an ang
 The total **horizontal range (\\( R \\))** of the projectile can be derived using the following formula:
 
 $$
-R = \\frac{v_0^2 \\sin 2\\theta}{g}
+R = \frac{v_0^2 \sin 2\theta}{g}
 $$
 
 where:
