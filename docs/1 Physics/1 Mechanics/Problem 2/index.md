@@ -1,7 +1,3 @@
----
-title: Problem 2
-layout: default
----
 
 # Problem 2
 
