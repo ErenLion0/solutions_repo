@@ -25,9 +25,9 @@ $$
 
 where:
 
-- ($ v_0$) = initial velocity (m/s)
-- (theta) = launch angle (°)
-- $g$ = acceleration due to gravity (9.81 m/s²)
+- \\( v_0 \\) = initial velocity (m/s)
+- \\(theta \\) = launch angle (°)
+- \\( g \\) = acceleration due to gravity (9.81 m/s²)
 
 From this equation, the **maximum range occurs at \\( \\theta = 45^\\circ \\)** because \\( \\sin 90^\\circ = 1 \\), which is its highest possible value.
 
