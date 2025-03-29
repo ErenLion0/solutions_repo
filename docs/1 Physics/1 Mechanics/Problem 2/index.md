@@ -1,3 +1,8 @@
+---
+title: Problem 2
+layout: default
+---
+
 # Problem 2
 
 ---
@@ -128,3 +133,4 @@ plt.grid()
 plt.savefig("plots/theta_plot.png")
 plt.show()
 ```
+
