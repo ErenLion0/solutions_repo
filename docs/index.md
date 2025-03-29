@@ -8,7 +8,6 @@ layout: default
 Welcome!
 Please select a problem to view its solution:
 
-- [Problem 1](./problem1/)
-- [Problem 2](./problem2/)
-  
+- [Problem 1](./problem_1/)
+- [Problem 2](./problem_2/)
 
