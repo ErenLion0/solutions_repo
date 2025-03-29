@@ -17,7 +17,6 @@ The total **horizontal range ($R$)** of the projectile can be derived using the 
 
 $$
 R = \frac{v_0^2 \sin 2\theta}{g}
-
 $$
 
 where:
@@ -47,7 +46,6 @@ The range was calculated using the formula and compared with the theoretical pre
 
 The following table shows the measured ranges for different launch angles:
 
-
 | Launch Angle (°) | Calculated Range (m) |
 | ------------------- | ---------------------- |
 | 15°              | 5.02                 |
@@ -71,10 +69,10 @@ The plot below shows the variation of range with launch angle:
 ## **Discussion**
 
 1. **Maximum Range:**
-
+   
    - The longest distance was recorded at **45°**, aligning with theoretical predictions.
 2. **Symmetry in Data:**
-
+   
    - Angles **30° and 60°** yielded the same range.
    - Similarly, **15° and 75°** had equal ranges.
 
