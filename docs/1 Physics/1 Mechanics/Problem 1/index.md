@@ -69,12 +69,10 @@ The plot below shows the variation of range with launch angle:
 ## **Discussion**
 
 1. **Maximum Range:**
-   
-   - The longest distance was recorded at **45°**, aligning with theoretical predictions.
+   The longest distance was recorded at **45°**, aligning with theoretical predictions.
 2. **Symmetry in Data:**
-   
-   - Angles **30° and 60°** yielded the same range.
-   - Similarly, **15° and 75°** had equal ranges.
+   Angles **30° and 60°** yielded the same range.
+   Similarly, **15° and 75°** had equal ranges.
 
 ## **Conclusion**
 
