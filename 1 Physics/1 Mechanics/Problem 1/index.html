@@ -58,11 +58,15 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#experimental-data-results">Experimental Data &amp; Results</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#discussion">Discussion</a>
+<li class="toctree-l4"><a class="reference internal" href="#analysis-of-the-range">Analysis of the Range</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#practical-applications">Practical Applications</a>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a>
 </li>
 </ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Problem%201%20test/">📌 Investigating the Range as a Function of the Angle of Projection</a>
 </li>
 </ul>
 </li>
@@ -192,40 +196,82 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection">📌 <strong>Investigating the Range as a Function of the Angle of Projection</strong></h1>
-<h2 id="problem-statement"><strong>Problem Statement</strong></h2>
-<p>The goal of this experiment is to analyze the relationship between the <strong>launch angle (\( \theta \))</strong> and the <strong>horizontal range (\( R \))</strong> of a projectile.</p>
+<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection">📌 Investigating the Range as a Function of the Angle of Projection</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>The goal of this experiment is to analyze the relationship between the <strong>launch angle (<span class="arithmatex">\(\theta\)</span>)</strong> and the <strong>horizontal range ($R $)</strong> of a projectile. By combining theoretical derivation with simulated data, we aim to verify the mathematical model and understand its implications in real-world contexts.</p>
 <hr/>
-<h2 id="theoretical-background"><strong>Theoretical Background</strong></h2>
-<p>When a projectile is launched with an <strong>initial velocity</strong> \( v_0 \) at an angle \( \theta \), its motion can be broken down into:</p>
-<ul>
-<li><strong>Horizontal motion</strong> (constant velocity)</li>
-<li><strong>Vertical motion</strong> (accelerated motion due to gravity)</li>
-</ul>
-<p>The total <strong>horizontal range (\( R \))</strong> of the projectile can be derived using the following formula:</p>
+<h2 id="theoretical-background">Theoretical Background</h2>
+<h3 id="newtons-second-law">Newton's Second Law</h3>
+<p>To analyze projectile motion, we begin with Newton’s Second Law of Motion:</p>
+<div class="arithmatex">\[
+F = m \cdot a
+\]</div>
+<p>This law states that the net force acting on an object is equal to its mass multiplied by its acceleration. In projectile motion (without air resistance), gravity is the only force acting on the vertical direction.</p>
+<hr/>
+<h3 id="1-vertical-motion">1. Vertical Motion</h3>
+<p>The vertical force due to gravity:</p>
+<div class="arithmatex">\[
+F_y = -mg
+\]</div>
+<p>From Newton's Second Law:</p>
+<div class="arithmatex">\[
+ma_y = -mg \Rightarrow a_y = -g
+\]</div>
+<p>This gives:</p>
+<div class="arithmatex">\[
+\frac{d^2 y}{dt^2} = -g
+\]</div>
+<p>Integrating:</p>
+<div class="arithmatex">\[
+\frac{dy}{dt} = v_y(t) = v_0 \sin \theta - g t
+\]</div>
+<p>And again:</p>
+<div class="arithmatex">\[
+y(t) = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2
+\]</div>
+<hr/>
+<h3 id="2-horizontal-motion">2. Horizontal Motion</h3>
+<p>No horizontal force implies constant velocity:</p>
+<div class="arithmatex">\[
+F_x = 0 \Rightarrow a_x = 0
+\]</div>
+<p>So:</p>
+<div class="arithmatex">\[
+\frac{dx}{dt} = v_0 \cos \theta \Rightarrow x(t) = v_0 \cos \theta \cdot t
+\]</div>
+<hr/>
+<h3 id="3-time-of-flight">3. Time of Flight</h3>
+<p>Setting vertical displacement to zero at landing:</p>
+<div class="arithmatex">\[
+0 = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2
+\]</div>
+<p>Solving:</p>
+<div class="arithmatex">\[
+t = 0 \quad \text{or} \quad t = \frac{2 v_0 \sin \theta}{g}
+\]</div>
+<hr/>
+<h3 id="4-range-derivation">4. Range Derivation</h3>
+<p>Using total flight time in horizontal equation:</p>
+<div class="arithmatex">\[
+R = v_0 \cos \theta \cdot \frac{2 v_0 \sin \theta}{g}
+\]</div>
+<p>Apply identity:</p>
 <div class="arithmatex">\[
 R = \frac{v_0^2 \sin 2\theta}{g}
 \]</div>
-<p>where:</p>
-<ul>
-<li>\( v_0 \) = initial velocity (m/s)</li>
-<li>\( \theta \) = launch angle (°)</li>
-<li>\( g \) = acceleration due to gravity (9.81 m/s²)</li>
-</ul>
-<p>From this equation, the <strong>maximum range occurs at \( \theta = 45^\circ \)</strong> because \( \sin 90^\circ = 1 \), which is its highest possible value.</p>
+<p>This formula predicts how the angle of projection influences the range.</p>
 <hr/>
-<h2 id="experiment-setup"><strong>Experiment Setup</strong></h2>
+<h2 id="experiment-setup">Experiment Setup</h2>
 <p>To simulate the projectile motion experiment, we assumed:</p>
 <ul>
-<li><strong>Fixed initial velocity</strong>: \( v_0 = 10 \) m/s</li>
+<li><strong>Fixed initial velocity</strong>: ($ v_0 = 10 $) m/s</li>
 <li><strong>Measured angles</strong>: 15°, 30°, 45°, 60°, 75°</li>
-<li><strong>Gravity value</strong>: \( g = 9.81 \) m/s²</li>
+<li><strong>Gravity</strong>: <span class="arithmatex">\( g = 9.81 \)</span> m/s²</li>
 <li><strong>Air resistance ignored</strong></li>
 </ul>
-<p>The range was calculated using the formula and compared with the theoretical prediction.</p>
+<p>Range values were calculated using the derived formula and compared across angles.</p>
 <hr/>
-<h2 id="experimental-data-results"><strong>Experimental Data &amp; Results</strong></h2>
-<p>The following table shows the measured ranges for different launch angles:</p>
+<h2 id="experimental-data-results">Experimental Data &amp; Results</h2>
 <table>
 <thead>
 <tr>
@@ -256,28 +302,44 @@ R = \frac{v_0^2 \sin 2\theta}{g}
 </tr>
 </tbody>
 </table>
-<p>🔍 <strong>Observation:</strong> The range is <strong>maximum at 45°</strong>, confirming our theoretical expectation.</p>
-<h3 id="graph"><strong>Graph:</strong></h3>
-<p>The plot below shows the variation of range with launch angle:</p>
-<p><a href="https://colab.research.google.com/drive/1CnU8XKAxE1OWb8sAe9p_urOHJ_Qsxtui#scrollTo=WxcdxzlqH388">Colab Link</a></p>
 <p><img alt="Range vs Angle" src="range_vs_angle.png"/></p>
 <hr/>
-<h2 id="discussion"><strong>Discussion</strong></h2>
-<ol>
-<li><strong>Maximum Range:</strong>
-   The longest distance was recorded at <strong>45°</strong>, aligning with theoretical predictions.</li>
-<li><strong>Symmetry in Data:</strong>
-   Angles <strong>30° and 60°</strong> yielded the same range.
-   Similarly, <strong>15° and 75°</strong> had equal ranges.</li>
-</ol>
-<h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>The experiment successfully confirmed that the optimal launch angle for maximum range is <strong>45°</strong>.
-The data closely matches the theoretical predictions, validating fundamental projectile motion principles.</p>
+<h2 id="analysis-of-the-range">Analysis of the Range</h2>
+<p>The graph plotting horizontal range against launch angle forms a <strong>symmetrical curve</strong>, peaking at <strong>45°</strong>, which matches the theoretical prediction:</p>
+<div class="arithmatex">\[
+R = \frac{v_0^2 \sin 2\theta}{g}
+\]</div>
+<h3 id="key-observations">Key Observations:</h3>
+<ul>
+<li><strong>Maximum range</strong> at 45°, where ($ \sin 2\theta = 1 $)</li>
+<li><strong>Symmetrical behavior</strong>: 30° and 60°, as well as 15° and 75°, yield equal ranges</li>
+<li>The symmetry comes from the identity: ($ \sin 2\theta = \sin(180^\circ - 2\theta$)</li>
+</ul>
+<p>The graph has a <strong>parabolic shape</strong>, clearly demonstrating that the range does <strong>not increase linearly</strong> with angle. These results confirm that our theoretical derivation holds true in practice.</p>
+<hr/>
+<h2 id="practical-applications">Practical Applications</h2>
+<p>Understanding how range depends on launch angle has numerous real-world applications:</p>
+<ul>
+<li><strong>Sports:</strong> Enhancing performance in basketball, golf, soccer, and other projectile-based sports.</li>
+<li><strong>Military:</strong> Calculating precise trajectories for artillery and missile systems.</li>
+<li><strong>Engineering:</strong> Designing equipment or machines that follow parabolic paths (e.g., robotic arms, excavators).</li>
+<li><strong>Aerospace:</strong> Launching and landing spacecraft with optimal paths.</li>
+<li><strong>Gaming/Simulation:</strong> Creating realistic physics in digital environments.</li>
+</ul>
+<hr/>
+<h2 id="conclusion">Conclusion</h2>
+<p>The experiment successfully validated the theoretical model of projectile motion. By starting with Newton’s Second Law and deriving the range formula, we were able to predict and confirm that:</p>
+<ul>
+<li>The range depends on both launch speed and angle.</li>
+<li>The <strong>maximum range occurs at 45°</strong>.</li>
+<li>There is a <strong>symmetry</strong> in projectile behavior around this angle.</li>
+</ul>
+<p>The strong alignment between theory and results reinforces the practical value of mathematical modeling in physics.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../../.." title="Solutions Homepage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../Problem%202/" title="Problem 2">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="Problem%201%20test/" title="📌 Investigating the Range as a Function of the Angle of Projection">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
@@ -293,7 +355,7 @@ The data closely matches the theoretical predictions, validating fundamental pro
 <div aria-label="Versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
 <span><a href="../../.." style="color: #fcfcfc">« Previous</a></span>
-<span><a href="../Problem%202/" style="color: #fcfcfc">Next »</a></span>
+<span><a href="Problem%201%20test/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="../../../js/jquery-3.6.0.min.js"></script>
