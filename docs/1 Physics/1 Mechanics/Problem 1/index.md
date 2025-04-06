@@ -127,6 +127,8 @@ Range values were calculated using the derived formula and compared across angle
 | 60°              | 8.84                 |
 | 75°              | 5.02                 |
 
+- [Colab Link](https://colab.research.google.com/drive/1CnU8XKAxE1OWb8sAe9p_urOHJ_Qsxtui#scrollTo=WxcdxzlqH388)
+
 ![Range vs Angle](range_vs_angle.png)
 
 ---
