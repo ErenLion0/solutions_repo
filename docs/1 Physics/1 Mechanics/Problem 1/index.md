@@ -108,7 +108,7 @@ This formula predicts how the angle of projection influences the range.
 
 To simulate the projectile motion experiment, we assumed:
 
-- **Fixed initial velocity**: ($ v_0 = 10 $) m/s
+- **Fixed initial velocity**: ($v_0 = 10 $) m/s
 - **Measured angles**: 15°, 30°, 45°, 60°, 75°
 - **Gravity**: \( g = 9.81 \) m/s²
 - **Air resistance ignored**
