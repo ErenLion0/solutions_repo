@@ -2,7 +2,7 @@
 
 ## Problem Statement
 
-The goal of this experiment is to analyze the relationship between the **launch angle ($\theta$)** and the **horizontal range ($R $)** of a projectile. By combining theoretical derivation with simulated data, we aim to verify the mathematical model and understand its implications in real-world contexts.
+The goal of this experiment is to analyze the relationship between the **launch angle ($\theta$)** and the **horizontal range ($R$)** of a projectile. By combining theoretical derivation with simulated data, we aim to verify the mathematical model and understand its implications in real-world contexts.
 
 ---
 
@@ -141,9 +141,9 @@ $$
 
 ### Key Observations:
 
-- **Maximum range** at 45°, where ($ \sin 2\theta = 1 $)
+- **Maximum range** at 45°, where ($\sin 2\theta = 1$)
 - **Symmetrical behavior**: 30° and 60°, as well as 15° and 75°, yield equal ranges
-- The symmetry comes from the identity: ($ \sin 2\theta = \sin(180^\circ - 2\theta$)
+- The symmetry comes from the identity: ($\sin 2\theta = \sin(180^\circ - 2\theta$)
 
 The graph has a **parabolic shape**, clearly demonstrating that the range does **not increase linearly** with angle. These results confirm that our theoretical derivation holds true in practice.
 
@@ -158,7 +158,6 @@ Understanding how range depends on launch angle has numerous real-world applicat
 - **Engineering:** Designing equipment or machines that follow parabolic paths (e.g., robotic arms, excavators).
 - **Aerospace:** Launching and landing spacecraft with optimal paths.
 - **Gaming/Simulation:** Creating realistic physics in digital environments.
-
 
 ---
 
