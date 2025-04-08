@@ -1,132 +1,81 @@
+# **Investigating the Dynamics of a Forced Damped Pendulum**
 
-# Problem 2
+## Motivation
 
----
 
-title: "Forced Damped Pendulum"
--------------------------------
+The forced damped pendulum is a captivating example of a physical system with intricate behavior resulting from the interplay of damping, restoring forces, and external driving forces. By introducing both damping and external periodic forcing, the system demonstrates a transition from simple harmonic motion to a rich spectrum of dynamics, including resonance, chaos, and quasiperiodic behavior. These phenomena serve as a foundation for understanding complex real-world systems, such as driven oscillators, climate systems, and mechanical structures under periodic stress.
 
-# 🌀 Investigating the Dynamics of a Forced Damped Pendulum
+Adding forcing introduces new parameters, such as the amplitude and frequency of the external force, which significantly affect the pendulum's behavior. By systematically varying these parameters, a diverse class of solutions can be observed, including synchronized oscillations, chaotic motion, and resonance phenomena. These behaviors not only highlight fundamental physics principles but also provide insights into engineering applications such as energy harvesting, vibration isolation, and mechanical resonance.
 
-This webpage explores the motion of a special kind of pendulum: one that is affected by both **friction** and a **repeated pushing force**. This type of pendulum is called a **forced damped pendulum**.
 
-You will learn:
+## Theoretical Foundation
 
-- What the motion looks like,
-- How to describe it with a mathematical equation,
-- What happens when we change different parameters (like friction or the push),
-- And how to simulate it using Python.
+### Governing Equation
 
----
+The motion of a **forced damped pendulum** is governed by the following second-order nonlinear differential equation:
 
-## 📚 What Is a Forced Damped Pendulum?
+$$
+\frac{d^2\\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+$$
 
-A normal pendulum swings back and forth because of gravity. But if you:
 
-- **Add friction** (like air resistance),
-- And **push it periodically** (like tapping it every second),
 
-...then its motion becomes more interesting — and sometimes unpredictable. This system is called a **forced damped pendulum**.
+**Variables:**
 
-To study it, we use a mathematical equation. The equation describes how the pendulum moves over time.
+- $(\theta(t))$: Angular displacement
+- $(b)$: Damping coefficient
+- $(g)$: Gravitational acceleration
+- $(L)$: Length of the pendulum
+- $(A)$: Amplitude of driving force
+- $(\omega)$: Driving frequency
 
----
+### Small-Angle Approximation
 
-## 🧮 The Equation of Motion
+For ($\theta$ $\ll$ 1), we approximate ($\sin$ $\theta$ $\approx$  $\theta$), simplifying the equation:
 
-The movement of the pendulum is described using this differential equation:
+$$
+[
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)]
+$$
 
-\[
-\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L}\sin(\theta) = A\cos(\omega t
-\]
+### Resonance and Energy
 
-Let’s break it down:
+When ($\omega$ $\approx$ $omega_0$ = $\sqrt{\frac{g}{L}}$), the system can resonate:
 
-- \( \theta \) (theta) is the **angle** of the pendulum from the vertical (in radians).
-- \( \frac{d^2\theta}{dt^2} \) is the **acceleration** (how fast the angle changes).
-- \( \frac{d\theta}{dt} \) is the **angular velocity** (how fast it’s swinging).
-- \( b \) is the **damping coefficient** – it controls how strong the friction is.
-- \( g \) is the **gravitational acceleration** (about 9.81 m/s² on Earth).
-- \( L \) is the **length of the pendulum**.
-- \( A \) is the **amplitude of the external force** – how hard we are pushing it.
-- \( \omega \) (omega) is the **frequency of the force** – how often we push it.
-- \( \cos(\omega t) \) is the periodic push (a cosine wave).
+- Amplitude increases significantly
+- Energy transfer is most efficient
+- Damping limits energy growth
 
 ---
 
-## 🧠 Why Is This System Interesting?
+## 2. Analysis of Dynamics
 
-This system behaves in **many different ways**, depending on the values of the parameters. Some key behaviors:
+### Parameter Effects
 
-- If friction is strong, the pendulum slows down and stops.
-- If you push it at the right frequency, it can swing **higher and higher** — this is called **resonance**.
-- If the force is strong and damping is low, the motion can become **chaotic** — completely unpredictable and never repeating.
+- **Damping $(b)$**: Reduces amplitude, slows oscillations
+- **Driving Amplitude $(A)$**: Controls input energy, affects transition to chaos
+- **Driving Frequency $(\omega)$**: Determines resonance conditions
 
-This is why scientists love this system: it’s simple to define, but the motion can become incredibly complex.
+### Regular vs. Chaotic Motion
 
----
+Regular motion: Predictable, periodic oscillations
+Chaotic motion: Sensitive to initial conditions, non-repeating
 
-## 🧪 Simplifying the Equation
-
-When the angle is **very small**, we can use this approximation:
-
-\[
-\sin(\theta) \approx \theta
-\]
-
-This turns the equation into a simpler, **linear** one:
-
-\[
-\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L}\theta = A\cos(\omega t)
-\]
-
-This version is easier to solve and helps us understand basic behaviors like resonance and damping.
+Transition observed by increasing $(A)$ or tuning $(\omega)$.
 
 ---
 
-## 💻 Simulating the Pendulum with Python
+## 3. Practical Applications
 
-We can use a simple Python script to simulate how the pendulum moves. The code uses **Euler’s method**, a numerical technique to approximate the motion.
+Forced damped pendulum models are used in:
 
-Below is the full code. It computes how the angle of the pendulum changes over time and saves the result as a plot.
+- **Energy harvesting devices** (vibration-based power generation)
+- **Suspension bridges** (modeling wind or traffic-induced oscillations)
+- **Oscillating electrical circuits** (LC circuits with resistance)
 
-```python
-# Forced Damped Pendulum Simulation using Euler Method
-import numpy as np
-import matplotlib.pyplot as plt
+These systems require careful tuning to avoid resonance-related failures.
 
-# PARAMETERS
-b = 0.5         # Damping (friction)
-g = 9.81        # Gravity
-L = 1.0         # Pendulum length
-A = 1.2         # Driving force amplitude
-omega = 2.0     # Driving force frequency
 
-# INITIAL CONDITIONS
-theta = 0.2     # Starting angle (radians)
-v = 0.0         # Starting angular velocity
-dt = 0.01       # Time step
-T = 50          # Total simulation time
-N = int(T/dt)   # Number of steps
 
-# ARRAYS TO STORE DATA
-t = np.linspace(0, T, N)
-theta_list = []
 
-# EULER METHOD LOOP
-for i in range(N):
-    a = -b*v - (g/L)*np.sin(theta) + A*np.cos(omega*t[i])  # Acceleration
-    v += a*dt
-    theta += v*dt
-    theta_list.append(theta)
-
-# PLOT THE RESULT
-plt.plot(t, theta_list)
-plt.xlabel("Time (s)")
-plt.ylabel("Angle (radians)")
-plt.title("Forced Damped Pendulum - Angle vs Time")
-plt.grid()
-plt.savefig("plots/theta_plot.png")
-plt.show()
-```
 
