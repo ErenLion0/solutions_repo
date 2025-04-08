@@ -131,7 +131,23 @@ Range values were calculated using the derived formula and compared across angle
 
 ![Range vs Angle](range_vs_angle.png)
 
----
+## Projectile Range for Different Initial Velocities
+
+- [Colab Link](https://colab.research.google.com/drive/12-jsBUeBtzpeSfntokg0ucoLL7QPmxex#scrollTo=hbXQ_yaXQCn6)
+
+![Projectile Range for Different initial Velocities](Projectile_Range_for_Different_Initial_Velocities.png)
+
+## Projectile Range on Different Planets
+
+- [Colab Link](https://colab.research.google.com/drive/1y8PsGKajsEHiUF8dsRJ8fldjcglqdO5i#scrollTo=mdP0wktjMyqf)
+
+![Projectile Range on Different Planets](Projectile_Range_on_Different_Planets.png)
+
+## Projectile Trajectories at Different Launch Angles
+
+- [Colab Link](https://colab.research.google.com/drive/11syzXOgARZU58lqrBHc6rOv47D3IUZaQ)
+
+![Projectile Trajectories at Different Launch Angles ](Projectile_Trajectories_at_Different_Launch_Angles.png)
 
 ## Analysis of the Range
 
