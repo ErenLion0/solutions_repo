@@ -106,7 +106,7 @@ The forced damped pendulum model finds application in a wide range of real-world
 
 ## Implementation
 
-## Pure Pendulum $(A = 0, B = 0)$
+### Pure Pendulum $(A = 0, b = 0)$
 
 In this case, we simulate the **ideal pendulum** with no damping and no external force:
 
@@ -137,19 +137,168 @@ Such ideal behavior, while not common in real systems due to friction and resist
 
 ---
 
-
-
 Below is the phase diagram for the pure pendulum. The plot shows angular velocity $(\omega)$ versus angular displacement $(\theta)$
-
-```
-
-```
 
 ![Pure Pendulum](Pure_Pendulum.png)
 
+- [Colab Link](https://colab.research.google.com/drive/1gRnU8OoT6FUzsA9s4K0Uj52lFTi9Y7qn)
 
 *Figure: Closed orbits in phase space indicating ideal periodic motion for an undamped, unforced pendulum.*
 
+### Damped Pendulum $(A = 0, b > 0)$
 
+In this case, we simulate a pendulum with **no external force** but with **nonzero damping**:
+
+- **Damping coefficient (b):** 0.5
+- **Driving force amplitude (A):** 0
+
+The governing equation becomes:
+
+$$
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = 0
+$$
+
+Here, the system loses energy over time due to damping. This causes the oscillations to gradually reduce in amplitude and eventually die out, bringing the pendulum to rest.
+
+**Phase diagram characteristics:**
+
+- Trajectories spiral inward toward the origin
+- This spiral represents energy dissipation
+- The center point (0, 0) is a **stable equilibrium**
+
+This model better reflects real-world systems where friction or air resistance causes energy loss.
+
+- [Colab Link](https://colab.research.google.com/drive/1u_-aSwWZV1zS7uCtGvPQadCO1eTDEL1L)
+
+![Damped Pendulum](Damped_Pendulum.png)
+
+*Figure: Spiral-shaped phase space diagram for a damped pendulum with no external force.*
+
+### Driven Undamped Pendulum $(A > 0, b = 0)$
+
+In this case, the pendulum is subject to a **periodic external force** but **no damping**:
+
+- **Damping coefficient (b):** 0
+- **Driving force amplitude (A):** 1.2
+
+The governing equation is:
+
+$$
+\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+$$
+
+Because there is **no energy loss**, the external force continuously pumps energy into the system. Over time, the pendulum's motion grows in complexity and amplitude.
+
+**Phase diagram characteristics:**
+
+- Trajectories expand outward
+- System may become unstable for long simulation times
+- Sensitive to initial conditions and parameter values
+
+This represents a theoretical but useful case for exploring how **external periodic forcing** alone influences dynamics.
+
+- [Colab Link](https://colab.research.google.com/drive/168KN-tigUUp4HHz3XbP5SsgQn7nZ-BxE)
+
+![Driven Undamped Pendulum](Driven_Undamped_Pendulum.png)
+
+*Figure: Phase diagram for a pendulum with external forcing and no damping. Motion amplitude increases as energy is added to the system continuously.*
+
+### Forced Damped Pendulum $(A > 0, b > 0)$
+
+This is the most general and realistic scenario. The pendulum experiences both:
+
+- **Damping**: $b = 0.5$
+- **External periodic driving force**: $A = 1.2$
+
+The full nonlinear equation becomes:
+
+$$
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+$$
+
+This system can display a rich variety of behaviors depending on the parameters:
+
+- For some values, the motion is **periodic**
+- For others, it becomes **quasi-periodic** or even **chaotic**
+
+**Phase diagram characteristics:**
+
+- May show complex attractors
+- No closed loops or simple spirals
+- Trajectories depend strongly on initial conditions
+
+This model is frequently used to study **nonlinear and chaotic dynamics** in driven oscillating systems.
+
+- [Colab Link](https://colab.research.google.com/drive/1oaGxO3yZRqKaseOTKVRGlC06MX00iko6)
+
+![Forced Damped Pendulum](Forced_Damped_Pendulum.png)
+
+### Poincaré Section – Forced Damped Pendulum
+
+To better analyze the long-term behavior of the nonlinear pendulum, we generate a **Poincaré section** — a method commonly used in chaos theory.
+
+### ⚙️ Parameters
+
+- **Damping coefficient (b):** 0.5
+- **Driving force amplitude (A):** 1.2
+- **Driving frequency (ω):** 2.0
+- **Driving period:** $T = \frac{2\pi}{\omega}$
+
+### What is a Poincaré Section?
+
+Instead of plotting continuous motion, we "sample" the system once every driving period (i.e., stroboscopically), at times:
+
+$$
+t_n = nT = \frac{2\pi n}{\omega}
+$$
+
+By plotting $(\theta(t_n), \dot{\theta}(t_n))$
+
+we obtain a **snapshot of the system** in phase space at discrete times. This allows us to:
+
+- Detect periodic vs. chaotic behavior
+- Observe fixed points, limit cycles, or strange attractors
+
+### 📈 Poincaré Plot
+
+- [Colab Link](https://colab.research.google.com/drive/1F2DUQPau3nQL1HJoJ3V84fIIuMb9cEfn)
+
+![Poincaré Section - Forced Damped Pendulum](Poincaré_Section_Forced_Damped_Pendulum.png)
+
+*Figure: Poincaré section for the forced damped pendulum. The clustering of points may indicate periodic or quasi-periodic motion depending on the parameters.*
+
+*Figure: Phase space diagram for a forced damped pendulum. The external force injects energy while damping dissipates it, creating a balance that may lead to periodic or chaotic behavior.*
+
+## Bifurcation Diagram – Varying Driving Frequency ω
+
+In this diagram, we explore how the long-term behavior of the pendulum changes as the **driving frequency (ω)** increases.
+
+### ⚙️ Parameters
+
+- **Damping coefficient (b):** 0.5
+- **Driving amplitude (A):** 1.2
+- **Initial conditions:** $\theta_0 = 0.5, \quad \dot{\theta}_0 = 0.0$
+
+For each value of $\omega$
+
+the system is simulated over a long time. After discarding transients, the last 100 values of $\theta(t)$
+
+ are plotted for each frequency.
+
+### 🔍 What It Reveals
+
+- At some frequencies, the system exhibits **stable periodic motion**
+- As $\omega$
+  
+  increases, **period doubling bifurcations** appear
+- In certain regions, the system transitions into **chaotic motion**
+
+This diagram illustrates how driving frequency affects the onset of chaos in nonlinear systems.
+
+- [Colab Link](https://colab.research.google.com/drive/1jCMLsBe0h-Kiv6s0dj5rxc9h_gIU3j2W)
+
+![Bifurcation Diagram - Driving Frequency](Bifurcation_Diagram_(varying_omega).png)
+
+*Figure: Bifurcation diagram of the forced damped pendulum as the driving frequency ω is varied. The system displays period doubling and chaotic transitions across different frequency ranges.*
 
 

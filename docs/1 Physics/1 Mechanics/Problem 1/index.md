@@ -10,7 +10,7 @@ What makes this topic particularly compelling is the number of free parameters i
 
 ## Problem Statement
 
-The goal of this experiment is to analyze the relationship between the **launch angle ($\theta$)** and the **horizontal range ($\R$)** of a projectile. By combining theoretical derivation with simulated data, we aim to verify the mathematical model and understand its implications in real-world contexts.
+The goal of this experiment is to analyze the relationship between the **launch angle ($\theta$)** and the **horizontal range ($R$)** of a projectile. By combining theoretical derivation with simulated data, we aim to verify the mathematical model and understand its implications in real-world contexts.
 
 ---
 
