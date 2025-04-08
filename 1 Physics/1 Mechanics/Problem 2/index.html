@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 2 - Physics and Mathematics</title>
+<title>Investigating the Dynamics of a Forced Damped Pendulum - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 2";
+        var mkdocs_page_name = "Investigating the Dynamics of a Forced Damped Pendulum";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem 2/index.md";
         var mkdocs_page_url = null;
       </script>
@@ -54,9 +54,15 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current">Problem 2</a>
 <ul class="current">
-<li class="toctree-l3 current"><a class="reference internal current" href="#">Problem 2</a>
+<li class="toctree-l3 current"><a class="reference internal current" href="#">Investigating the Dynamics of a Forced Damped Pendulum</a>
 <ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="#title-forced-damped-pendulum">title: "Forced Damped Pendulum"</a>
+<li class="toctree-l4"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#theoretical-foundation">Theoretical Foundation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-analysis-of-dynamics">2. Analysis of Dynamics</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-practical-applications">3. Practical Applications</a>
 </li>
 </ul>
 </li>
@@ -174,7 +180,7 @@
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
 <li class="breadcrumb-item">Problem 2</li>
-<li class="breadcrumb-item active">Problem 2</li>
+<li class="breadcrumb-item active">Investigating the Dynamics of a Forced Damped Pendulum</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -182,107 +188,59 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-2">Problem 2</h1>
-<hr/>
-<h2 id="title-forced-damped-pendulum">title: "Forced Damped Pendulum"</h2>
-<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">🌀 Investigating the Dynamics of a Forced Damped Pendulum</h1>
-<p>This webpage explores the motion of a special kind of pendulum: one that is affected by both <strong>friction</strong> and a <strong>repeated pushing force</strong>. This type of pendulum is called a <strong>forced damped pendulum</strong>.</p>
-<p>You will learn:</p>
-<ul>
-<li>What the motion looks like,</li>
-<li>How to describe it with a mathematical equation,</li>
-<li>What happens when we change different parameters (like friction or the push),</li>
-<li>And how to simulate it using Python.</li>
-</ul>
-<hr/>
-<h2 id="what-is-a-forced-damped-pendulum">📚 What Is a Forced Damped Pendulum?</h2>
-<p>A normal pendulum swings back and forth because of gravity. But if you:</p>
-<ul>
-<li><strong>Add friction</strong> (like air resistance),</li>
-<li>And <strong>push it periodically</strong> (like tapping it every second),</li>
-</ul>
-<p>...then its motion becomes more interesting — and sometimes unpredictable. This system is called a <strong>forced damped pendulum</strong>.</p>
-<p>To study it, we use a mathematical equation. The equation describes how the pendulum moves over time.</p>
-<hr/>
-<h2 id="the-equation-of-motion">🧮 The Equation of Motion</h2>
-<p>The movement of the pendulum is described using this differential equation:</p>
+<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum"><strong>Investigating the Dynamics of a Forced Damped Pendulum</strong></h1>
+<h2 id="motivation">Motivation</h2>
+<p>The forced damped pendulum is a captivating example of a physical system with intricate behavior resulting from the interplay of damping, restoring forces, and external driving forces. By introducing both damping and external periodic forcing, the system demonstrates a transition from simple harmonic motion to a rich spectrum of dynamics, including resonance, chaos, and quasiperiodic behavior. These phenomena serve as a foundation for understanding complex real-world systems, such as driven oscillators, climate systems, and mechanical structures under periodic stress.</p>
+<p>Adding forcing introduces new parameters, such as the amplitude and frequency of the external force, which significantly affect the pendulum's behavior. By systematically varying these parameters, a diverse class of solutions can be observed, including synchronized oscillations, chaotic motion, and resonance phenomena. These behaviors not only highlight fundamental physics principles but also provide insights into engineering applications such as energy harvesting, vibration isolation, and mechanical resonance.</p>
+<h2 id="theoretical-foundation">Theoretical Foundation</h2>
+<h3 id="governing-equation">Governing Equation</h3>
+<p>The motion of a <strong>forced damped pendulum</strong> is governed by the following second-order nonlinear differential equation:</p>
 <div class="arithmatex">\[
-\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L}\sin(\theta) = A\cos(\omega t
+\frac{d^2\\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
 \]</div>
-<p>Let’s break it down:</p>
+<p><strong>Variables:</strong></p>
 <ul>
-<li><span class="arithmatex">\( \theta \)</span> (theta) is the <strong>angle</strong> of the pendulum from the vertical (in radians).</li>
-<li><span class="arithmatex">\( \frac{d^2\theta}{dt^2} \)</span> is the <strong>acceleration</strong> (how fast the angle changes).</li>
-<li><span class="arithmatex">\( \frac{d\theta}{dt} \)</span> is the <strong>angular velocity</strong> (how fast it’s swinging).</li>
-<li><span class="arithmatex">\( b \)</span> is the <strong>damping coefficient</strong> – it controls how strong the friction is.</li>
-<li><span class="arithmatex">\( g \)</span> is the <strong>gravitational acceleration</strong> (about 9.81 m/s² on Earth).</li>
-<li><span class="arithmatex">\( L \)</span> is the <strong>length of the pendulum</strong>.</li>
-<li><span class="arithmatex">\( A \)</span> is the <strong>amplitude of the external force</strong> – how hard we are pushing it.</li>
-<li><span class="arithmatex">\( \omega \)</span> (omega) is the <strong>frequency of the force</strong> – how often we push it.</li>
-<li><span class="arithmatex">\( \cos(\omega t) \)</span> is the periodic push (a cosine wave).</li>
+<li><span class="arithmatex">\((\theta(t))\)</span>: Angular displacement</li>
+<li><span class="arithmatex">\((b)\)</span>: Damping coefficient</li>
+<li><span class="arithmatex">\((g)\)</span>: Gravitational acceleration</li>
+<li><span class="arithmatex">\((L)\)</span>: Length of the pendulum</li>
+<li><span class="arithmatex">\((A)\)</span>: Amplitude of driving force</li>
+<li><span class="arithmatex">\((\omega)\)</span>: Driving frequency</li>
+</ul>
+<h3 id="small-angle-approximation">Small-Angle Approximation</h3>
+<p>For (<span class="arithmatex">\(\theta\)</span> <span class="arithmatex">\(\ll\)</span> 1), we approximate (<span class="arithmatex">\(\sin\)</span> <span class="arithmatex">\(\theta\)</span> <span class="arithmatex">\(\approx\)</span> <span class="arithmatex">\(\theta\)</span>), simplifying the equation:</p>
+<div class="arithmatex">\[
+[
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)]
+\]</div>
+<h3 id="resonance-and-energy">Resonance and Energy</h3>
+<p>When (<span class="arithmatex">\(\omega\)</span> <span class="arithmatex">\(\approx\)</span> <span class="arithmatex">\(omega_0\)</span> = <span class="arithmatex">\(\sqrt{\frac{g}{L}}\)</span>), the system can resonate:</p>
+<ul>
+<li>Amplitude increases significantly</li>
+<li>Energy transfer is most efficient</li>
+<li>Damping limits energy growth</li>
 </ul>
 <hr/>
-<h2 id="why-is-this-system-interesting">🧠 Why Is This System Interesting?</h2>
-<p>This system behaves in <strong>many different ways</strong>, depending on the values of the parameters. Some key behaviors:</p>
+<h2 id="2-analysis-of-dynamics">2. Analysis of Dynamics</h2>
+<h3 id="parameter-effects">Parameter Effects</h3>
 <ul>
-<li>If friction is strong, the pendulum slows down and stops.</li>
-<li>If you push it at the right frequency, it can swing <strong>higher and higher</strong> — this is called <strong>resonance</strong>.</li>
-<li>If the force is strong and damping is low, the motion can become <strong>chaotic</strong> — completely unpredictable and never repeating.</li>
+<li><strong>Damping <span class="arithmatex">\((b)\)</span></strong>: Reduces amplitude, slows oscillations</li>
+<li><strong>Driving Amplitude <span class="arithmatex">\((A)\)</span></strong>: Controls input energy, affects transition to chaos</li>
+<li><strong>Driving Frequency <span class="arithmatex">\((\omega)\)</span></strong>: Determines resonance conditions</li>
 </ul>
-<p>This is why scientists love this system: it’s simple to define, but the motion can become incredibly complex.</p>
+<h3 id="regular-vs-chaotic-motion">Regular vs. Chaotic Motion</h3>
+<p>Regular motion: Predictable, periodic oscillations
+Chaotic motion: Sensitive to initial conditions, non-repeating</p>
+<p>Transition observed by increasing <span class="arithmatex">\((A)\)</span> or tuning <span class="arithmatex">\((\omega)\)</span>.</p>
 <hr/>
-<h2 id="simplifying-the-equation">🧪 Simplifying the Equation</h2>
-<p>When the angle is <strong>very small</strong>, we can use this approximation:</p>
-<div class="arithmatex">\[
-\sin(\theta) \approx \theta
-\]</div>
-<p>This turns the equation into a simpler, <strong>linear</strong> one:</p>
-<div class="arithmatex">\[
-\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L}\theta = A\cos(\omega t)
-\]</div>
-<p>This version is easier to solve and helps us understand basic behaviors like resonance and damping.</p>
-<hr/>
-<h2 id="simulating-the-pendulum-with-python">💻 Simulating the Pendulum with Python</h2>
-<p>We can use a simple Python script to simulate how the pendulum moves. The code uses <strong>Euler’s method</strong>, a numerical technique to approximate the motion.</p>
-<p>Below is the full code. It computes how the angle of the pendulum changes over time and saves the result as a plot.</p>
-<pre><code class="language-python"># Forced Damped Pendulum Simulation using Euler Method
-import numpy as np
-import matplotlib.pyplot as plt
-
-# PARAMETERS
-b = 0.5         # Damping (friction)
-g = 9.81        # Gravity
-L = 1.0         # Pendulum length
-A = 1.2         # Driving force amplitude
-omega = 2.0     # Driving force frequency
-
-# INITIAL CONDITIONS
-theta = 0.2     # Starting angle (radians)
-v = 0.0         # Starting angular velocity
-dt = 0.01       # Time step
-T = 50          # Total simulation time
-N = int(T/dt)   # Number of steps
-
-# ARRAYS TO STORE DATA
-t = np.linspace(0, T, N)
-theta_list = []
-
-# EULER METHOD LOOP
-for i in range(N):
-    a = -b*v - (g/L)*np.sin(theta) + A*np.cos(omega*t[i])  # Acceleration
-    v += a*dt
-    theta += v*dt
-    theta_list.append(theta)
-
-# PLOT THE RESULT
-plt.plot(t, theta_list)
-plt.xlabel("Time (s)")
-plt.ylabel("Angle (radians)")
-plt.title("Forced Damped Pendulum - Angle vs Time")
-plt.grid()
-plt.savefig("plots/theta_plot.png")
-plt.show()
-</code></pre>
+<h2 id="3-practical-applications">3. Practical Applications</h2>
+<p>Forced damped pendulum models are used in:</p>
+<ul>
+<li><strong>Energy harvesting devices</strong> (vibration-based power generation)</li>
+<li><strong>Suspension bridges</strong> (modeling wind or traffic-induced oscillations)</li>
+<li><strong>Oscillating electrical circuits</strong> (LC circuits with resistance)</li>
+</ul>
+<p>These systems require careful tuning to avoid resonance-related failures.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
