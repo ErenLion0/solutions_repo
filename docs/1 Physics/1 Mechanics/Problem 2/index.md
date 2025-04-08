@@ -120,7 +120,7 @@ $$
 $$
 
 There is **no energy loss** (since)
-$B = 0$
+$b = 0$
 
 and **no energy input** (since)
 $A = 0$
@@ -300,5 +300,17 @@ This diagram illustrates how driving frequency affects the onset of chaos in non
 ![Bifurcation Diagram - Driving Frequency](Bifurcation_Diagram_(varying_omega).png)
 
 *Figure: Bifurcation diagram of the forced damped pendulum as the driving frequency ω is varied. The system displays period doubling and chaotic transitions across different frequency ranges.*
+
+## Conclusion
+
+Through this project, we have explored the rich and complex behavior of the forced damped pendulum system. By simulating different scenarios — including undamped, damped, driven, and the fully forced damped cases — we gained a deep understanding of how each parameter (damping, driving force, frequency) influences the system's dynamics.
+
+Key takeaways include:
+
+- The system exhibits a wide range of behaviors: periodic, quasi-periodic, and chaotic.
+- Phase diagrams and Poincaré sections help visualize the system’s qualitative nature.
+- Bifurcation diagrams reveal transitions to chaos as system parameters vary.
+- The same physical model appears in various real-world systems, from circuits to biomechanics.
+
 
 
