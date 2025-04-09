@@ -1,4 +1,4 @@
-# ** 📌Investigating the Dynamics of a Forced Damped Pendulum**
+# 📌Investigating the Dynamics of a Forced Damped Pendulum
 
 ## Motivation
 
@@ -64,7 +64,7 @@ When ($\omega$ $\approx$ $omega_0$ = $\sqrt{\frac{g}{L}}$), the system can reson
 
 ---
 
-## 2. Analysis of Dynamics
+## Analysis of Dynamics
 
 ### Parameter Effects
 
@@ -81,7 +81,7 @@ Transition observed by increasing $(A)$ or tuning $(\omega)$.
 
 ---
 
-## 3. Practical Applications
+# Practical Applications
 
 The forced damped pendulum model finds application in a wide range of real-world systems. A few notable examples include:
 
@@ -105,6 +105,22 @@ The forced damped pendulum model finds application in a wide range of real-world
 *Figure: A schematic diagram of a series RLC circuit, which is mathematically analogous to a forced damped pendulum. The resistor (R) represents damping, the inductor (L) is analogous to mass, and the capacitor (C) represents the restoring force. Source: [Wikipedia](https://en.wikipedia.org/wiki/RLC_circuit)*
 
 ## Implementation
+
+### Time Evolution of Simple Pendulum
+
+The plot below shows the time evolution of angular displacement and angular velocity in a simple, undamped pendulum:
+
+-$\theta(t)$ remains perfectly sinusoidal
+
+$\omega(t)$ is 90° out of phase with $\theta(t)$
+
+The amplitudes remain constant — a signature of conservative motion
+
+This confirms the theoretical expectation for ideal harmonic motion.
+
+[Colab Link](https://colab.research.google.com/drive/1isDODVRLVlAx0PcGsagnJl6Pwi729VYB)
+
+![Simple Pendulum Motion (Undamped).png](Simple_Pendulum_Motion_(Undamped).png)
 
 ### Pure Pendulum $(A = 0, b = 0)$
 
@@ -283,7 +299,7 @@ For each value of $\omega$
 
 the system is simulated over a long time. After discarding transients, the last 100 values of $\theta(t)$
 
- are plotted for each frequency.
+are plotted for each frequency.
 
 ### 🔍 What It Reveals
 
@@ -303,14 +319,17 @@ This diagram illustrates how driving frequency affects the onset of chaos in non
 
 ## Conclusion
 
-Through this project, we have explored the rich and complex behavior of the forced damped pendulum system. By simulating different scenarios — including undamped, damped, driven, and the fully forced damped cases — we gained a deep understanding of how each parameter (damping, driving force, frequency) influences the system's dynamics.
+Through this project, we have explored the rich and complex behavior of the forced damped pendulum system. We began by analyzing the **simple pendulum** as a baseline case, demonstrating ideal periodic motion in the absence of damping and external forcing.
+
+By simulating different scenarios — including undamped, damped, driven, and the fully forced damped cases — we gained a deep understanding of how each parameter (damping, driving force, frequency) influences the system's dynamics.
 
 Key takeaways include:
 
-- The system exhibits a wide range of behaviors: periodic, quasi-periodic, and chaotic.
-- Phase diagrams and Poincaré sections help visualize the system’s qualitative nature.
-- Bifurcation diagrams reveal transitions to chaos as system parameters vary.
-- The same physical model appears in various real-world systems, from circuits to biomechanics.
+- The system exhibits a wide range of behaviors: **periodic**, **quasi-periodic**, and **chaotic**
+- **Phase diagrams** and **Poincaré sections** help visualize the system’s qualitative nature
+- **Bifurcation diagrams** reveal transitions to chaos as system parameters vary
+- The same physical model appears in various real-world systems, from **electrical circuits** to **biomechanics**
 
+This study not only deepens our understanding of nonlinear systems but also highlights the universal nature of mathematical modeling across disciplines.
 
 
