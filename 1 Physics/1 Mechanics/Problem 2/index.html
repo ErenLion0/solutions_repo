@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>📌Investigating the Dynamics of a Forced Damped Pendulum - Physics and Mathematics</title>
+<title>** 📌Investigating the Dynamics of a Forced Damped Pendulum** - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "\ud83d\udcccInvestigating the Dynamics of a Forced Damped Pendulum";
+        var mkdocs_page_name = "** \ud83d\udcccInvestigating the Dynamics of a Forced Damped Pendulum**";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem 2/index.md";
         var mkdocs_page_url = null;
       </script>
@@ -54,15 +54,15 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current">Problem 2</a>
 <ul class="current">
-<li class="toctree-l3 current"><a class="reference internal current" href="#">📌Investigating the Dynamics of a Forced Damped Pendulum</a>
+<li class="toctree-l3 current"><a class="reference internal current" href="#">** 📌Investigating the Dynamics of a Forced Damped Pendulum**</a>
 <ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="#motivation">Motivation</a>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#theoretical-foundation">Theoretical Foundation</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#analysis-of-dynamics">Analysis of Dynamics</a>
+<li class="toctree-l4"><a class="reference internal" href="#2-analysis-of-dynamics">2. Analysis of Dynamics</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#practical-applications">Practical Applications</a>
+<li class="toctree-l4"><a class="reference internal" href="#3-practical-applications">3. Practical Applications</a>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#implementation">Implementation</a>
 </li>
@@ -186,7 +186,7 @@
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
 <li class="breadcrumb-item">Problem 2</li>
-<li class="breadcrumb-item active">📌Investigating the Dynamics of a Forced Damped Pendulum</li>
+<li class="breadcrumb-item active">** 📌Investigating the Dynamics of a Forced Damped Pendulum**</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -194,14 +194,16 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">📌Investigating the Dynamics of a Forced Damped Pendulum</h1>
+<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">** 📌Investigating the Dynamics of a Forced Damped Pendulum**</h1>
 <h2 id="motivation">Motivation</h2>
 <p>The forced damped pendulum is a captivating example of a physical system with intricate behavior resulting from the interplay of damping, restoring forces, and external driving forces. By introducing both damping and external periodic forcing, the system demonstrates a transition from simple harmonic motion to a rich spectrum of dynamics, including resonance, chaos, and quasiperiodic behavior. These phenomena serve as a foundation for understanding complex real-world systems, such as driven oscillators, climate systems, and mechanical structures under periodic stress.</p>
 <p>Adding forcing introduces new parameters, such as the amplitude and frequency of the external force, which significantly affect the pendulum's behavior. By systematically varying these parameters, a diverse class of solutions can be observed, including synchronized oscillations, chaotic motion, and resonance phenomena. These behaviors not only highlight fundamental physics principles but also provide insights into engineering applications such as energy harvesting, vibration isolation, and mechanical resonance.</p>
 <h2 id="theoretical-foundation">Theoretical Foundation</h2>
 <h3 id="governing-equation">Governing Equation</h3>
 <p>The motion of a <strong>forced damped pendulum</strong> is governed by the following second-order nonlinear differential equation:</p>
-<p><span class="arithmatex">\(\frac{d^2\\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)\)</span></p>
+<div class="arithmatex">\[
+\frac{d^2\\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+\]</div>
 <p><strong>Variables:</strong></p>
 <ul>
 <li><span class="arithmatex">\((\theta(t))\)</span>: Angular displacement</li>
@@ -214,13 +216,21 @@
 </ul>
 <h3 id="small-angle-approximation">Small-Angle Approximation</h3>
 <p>In pendulum motion, the restoring torque is proportional to <span class="arithmatex">\(\sin\theta\)</span>. However, when the angle <span class="arithmatex">\(\theta\)</span> is small — typically less than about 10 degrees or 0.174 radians — we can use the mathematical approximation:</p>
-<p><span class="arithmatex">\(\sin\theta \approx \theta\)</span></p>
+<div class="arithmatex">\[
+\sin\theta \approx \theta
+\]</div>
 <p>This is known as the <strong>small-angle approximation</strong>, and it comes from the Taylor series expansion of <span class="arithmatex">\(\sin\theta\)</span> around <span class="arithmatex">\(\theta = 0\)</span>:</p>
-<p><span class="arithmatex">\(\sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} -\cdots\)</span></p>
+<div class="arithmatex">\[
+\sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots
+\]</div>
 <p>For small values of <span class="arithmatex">\(\theta\)</span>, the higher-order terms become negligible, so:</p>
-<p><span class="arithmatex">\(\sin\theta \approx \theta\)</span></p>
+<div class="arithmatex">\[
+\sin\theta \approx \theta
+\]</div>
 <p>Substituting this into the original nonlinear equation simplifies the system:</p>
-<p><span class="arithmatex">\(\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \theta = A ,\cos(\omega t)\)</span></p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)
+\]</div>
 <p>This resulting equation is <strong>linear</strong>, which means it can be solved analytically using methods for second-order linear ODEs. Although this simplification loses some of the system's richer behavior (like chaos), it's very useful for understanding <strong>resonance</strong>, <strong>energy transfer</strong>, and small oscillation dynamics.</p>
 <h3 id="resonance-and-energy">Resonance and Energy</h3>
 <p>When (<span class="arithmatex">\(\omega\)</span> <span class="arithmatex">\(\approx\)</span> <span class="arithmatex">\(omega_0\)</span> = <span class="arithmatex">\(\sqrt{\frac{g}{L}}\)</span>), the system can resonate:</p>
@@ -230,7 +240,7 @@
 <li>Damping limits energy growth</li>
 </ul>
 <hr/>
-<h2 id="analysis-of-dynamics">Analysis of Dynamics</h2>
+<h2 id="2-analysis-of-dynamics">2. Analysis of Dynamics</h2>
 <h3 id="parameter-effects">Parameter Effects</h3>
 <ul>
 <li><strong>Damping <span class="arithmatex">\((b)\)</span></strong>: Reduces amplitude, slows oscillations</li>
@@ -242,7 +252,7 @@
 Chaotic motion: Sensitive to initial conditions, non-repeating</p>
 <p>Transition observed by increasing <span class="arithmatex">\((A)\)</span> or tuning <span class="arithmatex">\((\omega)\)</span>.</p>
 <hr/>
-<h2 id="practical-applications">Practical Applications</h2>
+<h2 id="3-practical-applications">3. Practical Applications</h2>
 <p>The forced damped pendulum model finds application in a wide range of real-world systems. A few notable examples include:</p>
 <ul>
 <li><strong>Energy Harvesting Devices</strong>
@@ -262,16 +272,6 @@ Chaotic motion: Sensitive to initial conditions, non-repeating</p>
 <p><img alt="Series RLC Circuit Diagram" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/RLC_series_circuit_v1.svg/800px-RLC_series_circuit_v1.svg.png"/></p>
 <p><em>Figure: A schematic diagram of a series RLC circuit, which is mathematically analogous to a forced damped pendulum. The resistor (R) represents damping, the inductor (L) is analogous to mass, and the capacitor (C) represents the restoring force. Source: <a href="https://en.wikipedia.org/wiki/RLC_circuit">Wikipedia</a></em></p>
 <h2 id="implementation">Implementation</h2>
-<h3 id="time-evolution-of-the-simple-pendulum">Time Evolution of the Simple Pendulum</h3>
-<p>The following plot shows the angular displacement <span class="arithmatex">\(\theta(t)\)</span> and angular velocity <span class="arithmatex">\(\omega(t)\)</span> of a simple undamped pendulum over time:</p>
-<ul>
-<li>The motion is purely sinusoidal with constant amplitude.</li>
-<li>Angular velocity <span class="arithmatex">\(\omega(t)\)</span> is phase-shifted relative to <span class="arithmatex">\(\theta(t)\)</span>.</li>
-<li>The amplitude remains constant, indicating energy conservation in the system.</li>
-</ul>
-<p>This perfectly illustrates the nature of ideal harmonic oscillators.</p>
-<p><img alt="Simple Pendulum Time Series" src="Simple_Pendulum_Motion_%28Undamped%29.png"/></p>
-<p><em>Figure: Time evolution of angular displacement and angular velocity in a simple undamped pendulum.</em></p>
 <h3 id="pure-pendulum-a-0-b-0">Pure Pendulum <span class="arithmatex">\((A = 0, b = 0)\)</span></h3>
 <p>In this case, we simulate the <strong>ideal pendulum</strong> with no damping and no external force:</p>
 <ul>
@@ -279,7 +279,9 @@ Chaotic motion: Sensitive to initial conditions, non-repeating</p>
 <li><strong>Driving force amplitude (A):</strong> 0</li>
 </ul>
 <p>This simplifies the equation of motion to:</p>
-<p><span class="arithmatex">\(\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = 0\)</span></p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = 0
+\]</div>
 <p>There is <strong>no energy loss</strong> (since)
 <span class="arithmatex">\(b = 0\)</span></p>
 <p>and <strong>no energy input</strong> (since)
@@ -306,7 +308,9 @@ Chaotic motion: Sensitive to initial conditions, non-repeating</p>
 <li><strong>Driving force amplitude (A):</strong> 0</li>
 </ul>
 <p>The governing equation becomes:</p>
-<p><span class="arithmatex">\(\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = 0\)</span></p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = 0
+\]</div>
 <p>Here, the system loses energy over time due to damping. This causes the oscillations to gradually reduce in amplitude and eventually die out, bringing the pendulum to rest.</p>
 <p><strong>Phase diagram characteristics:</strong></p>
 <ul>
@@ -320,6 +324,16 @@ Chaotic motion: Sensitive to initial conditions, non-repeating</p>
 </ul>
 <p><img alt="Damped Pendulum" src="Damped_Pendulum.png"/></p>
 <p><em>Figure: Spiral-shaped phase space diagram for a damped pendulum with no external force.</em></p>
+<h3 id="time-evolution-of-the-damped-pendulum">Time Evolution of the Damped Pendulum</h3>
+<p>The plot below shows the angular displacement <span class="arithmatex">\(\theta(t)\)</span> and angular velocity <span class="arithmatex">\(\omega(t)\)</span> of a pendulum subject to damping but without any external forcing:</p>
+<ul>
+<li>The oscillation amplitude gradually decreases due to energy dissipation.</li>
+<li>Both <span class="arithmatex">\(\theta(t)\)</span> and <span class="arithmatex">\(\omega(t)\)</span> decay toward zero.</li>
+<li>The motion eventually settles at the stable equilibrium point (<span class="arithmatex">\(\theta = 0\)</span>, <span class="arithmatex">\(\omega = 0\)</span>).</li>
+</ul>
+<p>This illustrates how damping affects long-term behavior, turning periodic motion into an overdamped or underdamped decay depending on system parameters.</p>
+<p><img alt="Damped Pendulum Time Series" src="sandbox:/mnt/data/damped_pendulum_timeseries.png"/></p>
+<p><em>Figure: Time evolution of a damped pendulum (no external force). Energy is continuously lost due to damping, leading to eventual rest.</em></p>
 <h3 id="driven-undamped-pendulum-a-0-b-0">Driven Undamped Pendulum <span class="arithmatex">\((A &gt; 0, b = 0)\)</span></h3>
 <p>In this case, the pendulum is subject to a <strong>periodic external force</strong> but <strong>no damping</strong>:</p>
 <ul>
@@ -327,7 +341,9 @@ Chaotic motion: Sensitive to initial conditions, non-repeating</p>
 <li><strong>Driving force amplitude (A):</strong> 1.2</li>
 </ul>
 <p>The governing equation is:</p>
-<p><span class="arithmatex">\(\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = A \cos(\omega t)\)</span></p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+\]</div>
 <p>Because there is <strong>no energy loss</strong>, the external force continuously pumps energy into the system. Over time, the pendulum's motion grows in complexity and amplitude.</p>
 <p><strong>Phase diagram characteristics:</strong></p>
 <ul>
@@ -348,7 +364,9 @@ Chaotic motion: Sensitive to initial conditions, non-repeating</p>
 <li><strong>External periodic driving force</strong>: <span class="arithmatex">\(A = 1.2\)</span></li>
 </ul>
 <p>The full nonlinear equation becomes:</p>
-<p><span class="arithmatex">\(\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)\)</span></p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+\]</div>
 <p>This system can display a rich variety of behaviors depending on the parameters:</p>
 <ul>
 <li>For some values, the motion is <strong>periodic</strong></li>
@@ -376,7 +394,9 @@ Chaotic motion: Sensitive to initial conditions, non-repeating</p>
 </ul>
 <h3 id="what-is-a-poincare-section">What is a Poincaré Section?</h3>
 <p>Instead of plotting continuous motion, we "sample" the system once every driving period (i.e., stroboscopically), at times:</p>
-<p><span class="arithmatex">\(t_n = nT = \frac{2\pi n}{\omega}\)</span></p>
+<div class="arithmatex">\[
+t_n = nT = \frac{2\pi n}{\omega}
+\]</div>
 <p>By plotting <span class="arithmatex">\((\theta(t_n), \dot{\theta}(t_n))\)</span></p>
 <p>we obtain a <strong>snapshot of the system</strong> in phase space at discrete times. This allows us to:</p>
 <ul>
