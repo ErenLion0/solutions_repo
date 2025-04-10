@@ -1,4 +1,4 @@
-# ** 📌Investigating the Dynamics of a Forced Damped Pendulum**
+# 📌Investigating the Dynamics of a Forced Damped Pendulum
 
 ## Motivation
 
@@ -69,7 +69,7 @@ When ($\omega$ $\approx$ $omega_0$ = $\sqrt{\frac{g}{L}}$), the system can reson
 
 ---
 
-## Analysis of Dynamics
+## 2. Analysis of Dynamics
 
 ### Parameter Effects
 
@@ -86,7 +86,7 @@ Transition observed by increasing $(A)$ or tuning $(\omega)$.
 
 ---
 
-## Practical Applications
+## 3. Practical Applications
 
 The forced damped pendulum model finds application in a wide range of real-world systems. A few notable examples include:
 
@@ -246,7 +246,7 @@ This model is frequently used to study **nonlinear and chaotic dynamics** in dri
 
 To better analyze the long-term behavior of the nonlinear pendulum, we generate a **Poincaré section** — a method commonly used in chaos theory.
 
-### Parameters
+### ⚙️ Parameters
 
 - **Damping coefficient (b):** 0.5
 - **Driving force amplitude (A):** 1.2
@@ -269,7 +269,7 @@ we obtain a **snapshot of the system** in phase space at discrete times. This al
 - Detect periodic vs. chaotic behavior
 - Observe fixed points, limit cycles, or strange attractors
 
-### Poincaré Plot
+### 📈 Poincaré Plot
 
 - [Colab Link](https://colab.research.google.com/drive/1F2DUQPau3nQL1HJoJ3V84fIIuMb9cEfn)
 
@@ -283,7 +283,7 @@ we obtain a **snapshot of the system** in phase space at discrete times. This al
 
 In this diagram, we explore how the long-term behavior of the pendulum changes as the **driving frequency (ω)** increases.
 
-### Parameters
+### ⚙️ Parameters
 
 - **Damping coefficient (b):** 0.5
 - **Driving amplitude (A):** 1.2
@@ -295,7 +295,7 @@ the system is simulated over a long time. After discarding transients, the last 
 
 are plotted for each frequency.
 
-### What It Reveals
+### 🔍 What It Reveals
 
 - At some frequencies, the system exhibits **stable periodic motion**
 - As $\omega$
