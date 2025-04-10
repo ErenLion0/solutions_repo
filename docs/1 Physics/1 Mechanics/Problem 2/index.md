@@ -1,4 +1,4 @@
-# 📌Investigating the Dynamics of a Forced Damped Pendulum
+# ** 📌Investigating the Dynamics of a Forced Damped Pendulum**
 
 ## Motivation
 
@@ -14,6 +14,7 @@ The motion of a **forced damped pendulum** is governed by the following second-o
 
 $$
 \frac{d^2\\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+
 $$
 
 **Variables:**
@@ -32,24 +33,28 @@ In pendulum motion, the restoring torque is proportional to $\sin\theta$. Howeve
 
 $$
 \sin\theta \approx \theta
+
 $$
 
 This is known as the **small-angle approximation**, and it comes from the Taylor series expansion of $\sin\theta$ around $\theta = 0$:
 
 $$
 \sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots
+
 $$
 
 For small values of $\theta$, the higher-order terms become negligible, so:
 
 $$
 \sin\theta \approx \theta
+
 $$
 
 Substituting this into the original nonlinear equation simplifies the system:
 
 $$
 \frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)
+
 $$
 
 This resulting equation is **linear**, which means it can be solved analytically using methods for second-order linear ODEs. Although this simplification loses some of the system's richer behavior (like chaos), it's very useful for understanding **resonance**, **energy transfer**, and small oscillation dynamics.
@@ -81,7 +86,7 @@ Transition observed by increasing $(A)$ or tuning $(\omega)$.
 
 ---
 
-# Practical Applications
+## Practical Applications
 
 The forced damped pendulum model finds application in a wide range of real-world systems. A few notable examples include:
 
@@ -97,7 +102,7 @@ The forced damped pendulum model finds application in a wide range of real-world
   In large-scale power systems, the rotors of generators can undergo mechanical oscillations. These are modeled using damped-driven pendulum analogs to design stabilizers and prevent outages.
 - **Biomechanics (Human Gait Analysis)**
   During human walking, the motion of legs and joints often mimics the oscillatory behavior of pendulum-like systems. Modeling the swing phase of the leg as a forced damped pendulum helps in analyzing balance, energy efficiency, and rehabilitation strategies in biomechanics.
-  
+
   ### Example Visualization
 
 ![Series RLC Circuit Diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/RLC_series_circuit_v1.svg/800px-RLC_series_circuit_v1.svg.png)
@@ -105,22 +110,6 @@ The forced damped pendulum model finds application in a wide range of real-world
 *Figure: A schematic diagram of a series RLC circuit, which is mathematically analogous to a forced damped pendulum. The resistor (R) represents damping, the inductor (L) is analogous to mass, and the capacitor (C) represents the restoring force. Source: [Wikipedia](https://en.wikipedia.org/wiki/RLC_circuit)*
 
 ## Implementation
-
-### Time Evolution of Simple Pendulum
-
-The plot below shows the time evolution of angular displacement and angular velocity in a simple, undamped pendulum:
-
--$\theta(t)$ remains perfectly sinusoidal
-
-$\omega(t)$ is 90° out of phase with $\theta(t)$
-
-The amplitudes remain constant — a signature of conservative motion
-
-This confirms the theoretical expectation for ideal harmonic motion.
-
-[Colab Link](https://colab.research.google.com/drive/1isDODVRLVlAx0PcGsagnJl6Pwi729VYB)
-
-![Simple Pendulum Motion (Undamped).png](Simple_Pendulum_Motion_(Undamped).png)
 
 ### Pure Pendulum $(A = 0, b = 0)$
 
@@ -133,6 +122,7 @@ This simplifies the equation of motion to:
 
 $$
 \frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = 0
+
 $$
 
 There is **no energy loss** (since)
@@ -172,6 +162,7 @@ The governing equation becomes:
 
 $$
 \frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = 0
+
 $$
 
 Here, the system loses energy over time due to damping. This causes the oscillations to gradually reduce in amplitude and eventually die out, bringing the pendulum to rest.
@@ -201,6 +192,7 @@ The governing equation is:
 
 $$
 \frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+
 $$
 
 Because there is **no energy loss**, the external force continuously pumps energy into the system. Over time, the pendulum's motion grows in complexity and amplitude.
@@ -230,6 +222,7 @@ The full nonlinear equation becomes:
 
 $$
 \frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+
 $$
 
 This system can display a rich variety of behaviors depending on the parameters:
@@ -253,7 +246,7 @@ This model is frequently used to study **nonlinear and chaotic dynamics** in dri
 
 To better analyze the long-term behavior of the nonlinear pendulum, we generate a **Poincaré section** — a method commonly used in chaos theory.
 
-### ⚙️ Parameters
+### Parameters
 
 - **Damping coefficient (b):** 0.5
 - **Driving force amplitude (A):** 1.2
@@ -266,6 +259,7 @@ Instead of plotting continuous motion, we "sample" the system once every driving
 
 $$
 t_n = nT = \frac{2\pi n}{\omega}
+
 $$
 
 By plotting $(\theta(t_n), \dot{\theta}(t_n))$
@@ -275,7 +269,7 @@ we obtain a **snapshot of the system** in phase space at discrete times. This al
 - Detect periodic vs. chaotic behavior
 - Observe fixed points, limit cycles, or strange attractors
 
-### 📈 Poincaré Plot
+### Poincaré Plot
 
 - [Colab Link](https://colab.research.google.com/drive/1F2DUQPau3nQL1HJoJ3V84fIIuMb9cEfn)
 
@@ -289,7 +283,7 @@ we obtain a **snapshot of the system** in phase space at discrete times. This al
 
 In this diagram, we explore how the long-term behavior of the pendulum changes as the **driving frequency (ω)** increases.
 
-### ⚙️ Parameters
+### Parameters
 
 - **Damping coefficient (b):** 0.5
 - **Driving amplitude (A):** 1.2
@@ -301,11 +295,11 @@ the system is simulated over a long time. After discarding transients, the last 
 
 are plotted for each frequency.
 
-### 🔍 What It Reveals
+### What It Reveals
 
 - At some frequencies, the system exhibits **stable periodic motion**
 - As $\omega$
-  
+
   increases, **period doubling bifurcations** appear
 - In certain regions, the system transitions into **chaotic motion**
 
@@ -319,17 +313,11 @@ This diagram illustrates how driving frequency affects the onset of chaos in non
 
 ## Conclusion
 
-Through this project, we have explored the rich and complex behavior of the forced damped pendulum system. We began by analyzing the **simple pendulum** as a baseline case, demonstrating ideal periodic motion in the absence of damping and external forcing.
-
-By simulating different scenarios — including undamped, damped, driven, and the fully forced damped cases — we gained a deep understanding of how each parameter (damping, driving force, frequency) influences the system's dynamics.
+Through this project, we have explored the rich and complex behavior of the forced damped pendulum system. By simulating different scenarios — including undamped, damped, driven, and the fully forced damped cases — we gained a deep understanding of how each parameter (damping, driving force, frequency) influences the system's dynamics.
 
 Key takeaways include:
 
-- The system exhibits a wide range of behaviors: **periodic**, **quasi-periodic**, and **chaotic**
-- **Phase diagrams** and **Poincaré sections** help visualize the system’s qualitative nature
-- **Bifurcation diagrams** reveal transitions to chaos as system parameters vary
-- The same physical model appears in various real-world systems, from **electrical circuits** to **biomechanics**
-
-This study not only deepens our understanding of nonlinear systems but also highlights the universal nature of mathematical modeling across disciplines.
-
-
+- The system exhibits a wide range of behaviors: periodic, quasi-periodic, and chaotic.
+- Phase diagrams and Poincaré sections help visualize the system’s qualitative nature.
+- Bifurcation diagrams reveal transitions to chaos as system parameters vary.
+- The same physical model appears in various real-world systems, from circuits to biomechanics.
