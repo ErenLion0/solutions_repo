@@ -1,4 +1,4 @@
-# ** 📌Investigating the Dynamics of a Forced Damped Pendulum**
+# 📌Investigating the Dynamics of a Forced Damped Pendulum
 
 ## Motivation
 
@@ -95,12 +95,29 @@ The forced damped pendulum model finds application in a wide range of real-world
   During human walking, the motion of legs and joints often mimics the oscillatory behavior of pendulum-like systems. Modeling the swing phase of the leg as a forced damped pendulum helps in analyzing balance, energy efficiency, and rehabilitation strategies in biomechanics.
   
   ### Example Visualization
-
+  
 ![Series RLC Circuit Diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/RLC_series_circuit_v1.svg/800px-RLC_series_circuit_v1.svg.png)
 
 *Figure: A schematic diagram of a series RLC circuit, which is mathematically analogous to a forced damped pendulum. The resistor (R) represents damping, the inductor (L) is analogous to mass, and the capacitor (C) represents the restoring force. Source: [Wikipedia](https://en.wikipedia.org/wiki/RLC_circuit)*
 
 ## Implementation
+
+
+
+### Time Evolution of the Simple Pendulum
+
+
+The following plot shows the angular displacement $\theta(t)$ and angular velocity $\omega(t)$ of a simple undamped pendulum over time:
+
+- The motion is purely sinusoidal with constant amplitude.
+- Angular velocity $\omega(t)$ is phase-shifted relative to $\theta(t)$.
+- The amplitude remains constant, indicating energy conservation in the system.
+
+This perfectly illustrates the nature of ideal harmonic oscillators.
+
+![Simple Pendulum Time Series](Simple_Pendulum_Motion_(Undamped).png)
+
+*Figure: Time evolution of angular displacement and angular velocity in a simple undamped pendulum.*
 
 ### Pure Pendulum $(A = 0, b = 0)$
 
