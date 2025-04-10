@@ -1,4 +1,4 @@
-# 📌Investigating the Dynamics of a Forced Damped Pendulum
+# ** 📌Investigating the Dynamics of a Forced Damped Pendulum**
 
 ## Motivation
 
@@ -12,9 +12,9 @@ Adding forcing introduces new parameters, such as the amplitude and frequency of
 
 The motion of a **forced damped pendulum** is governed by the following second-order nonlinear differential equation:
 
-$\frac{d^2\\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)$
-
-
+$$
+\frac{d^2\\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+$$
 
 **Variables:**
 
@@ -30,23 +30,27 @@ $\frac{d^2\\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos
 
 In pendulum motion, the restoring torque is proportional to $\sin\theta$. However, when the angle $\theta$ is small — typically less than about 10 degrees or 0.174 radians — we can use the mathematical approximation:
 
-$\sin\theta \approx \theta$
+$$
+\sin\theta \approx \theta
+$$
 
 This is known as the **small-angle approximation**, and it comes from the Taylor series expansion of $\sin\theta$ around $\theta = 0$:
 
-$\sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} -\cdots$
-
-
+$$
+\sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots
+$$
 
 For small values of $\theta$, the higher-order terms become negligible, so:
 
-$\sin\theta \approx \theta$
+$$
+\sin\theta \approx \theta
+$$
 
 Substituting this into the original nonlinear equation simplifies the system:
 
-$\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \theta = A ,\cos(\omega t)$
-
-
+$$
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)
+$$
 
 This resulting equation is **linear**, which means it can be solved analytically using methods for second-order linear ODEs. Although this simplification loses some of the system's richer behavior (like chaos), it's very useful for understanding **resonance**, **energy transfer**, and small oscillation dynamics.
 
@@ -60,7 +64,7 @@ When ($\omega$ $\approx$ $omega_0$ = $\sqrt{\frac{g}{L}}$), the system can reson
 
 ---
 
-## Analysis of Dynamics
+## 2. Analysis of Dynamics
 
 ### Parameter Effects
 
@@ -77,7 +81,7 @@ Transition observed by increasing $(A)$ or tuning $(\omega)$.
 
 ---
 
-## Practical Applications
+## 3. Practical Applications
 
 The forced damped pendulum model finds application in a wide range of real-world systems. A few notable examples include:
 
@@ -95,29 +99,12 @@ The forced damped pendulum model finds application in a wide range of real-world
   During human walking, the motion of legs and joints often mimics the oscillatory behavior of pendulum-like systems. Modeling the swing phase of the leg as a forced damped pendulum helps in analyzing balance, energy efficiency, and rehabilitation strategies in biomechanics.
   
   ### Example Visualization
-  
+
 ![Series RLC Circuit Diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/RLC_series_circuit_v1.svg/800px-RLC_series_circuit_v1.svg.png)
 
 *Figure: A schematic diagram of a series RLC circuit, which is mathematically analogous to a forced damped pendulum. The resistor (R) represents damping, the inductor (L) is analogous to mass, and the capacitor (C) represents the restoring force. Source: [Wikipedia](https://en.wikipedia.org/wiki/RLC_circuit)*
 
 ## Implementation
-
-
-
-### Time Evolution of the Simple Pendulum
-
-
-The following plot shows the angular displacement $\theta(t)$ and angular velocity $\omega(t)$ of a simple undamped pendulum over time:
-
-- The motion is purely sinusoidal with constant amplitude.
-- Angular velocity $\omega(t)$ is phase-shifted relative to $\theta(t)$.
-- The amplitude remains constant, indicating energy conservation in the system.
-
-This perfectly illustrates the nature of ideal harmonic oscillators.
-
-![Simple Pendulum Time Series](Simple_Pendulum_Motion_(Undamped).png)
-
-*Figure: Time evolution of angular displacement and angular velocity in a simple undamped pendulum.*
 
 ### Pure Pendulum $(A = 0, b = 0)$
 
@@ -128,9 +115,9 @@ In this case, we simulate the **ideal pendulum** with no damping and no external
 
 This simplifies the equation of motion to:
 
-$\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = 0$
-
-
+$$
+\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = 0
+$$
 
 There is **no energy loss** (since)
 $b = 0$
@@ -167,7 +154,9 @@ In this case, we simulate a pendulum with **no external force** but with **nonze
 
 The governing equation becomes:
 
-$\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = 0$
+$$
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = 0
+$$
 
 Here, the system loses energy over time due to damping. This causes the oscillations to gradually reduce in amplitude and eventually die out, bringing the pendulum to rest.
 
@@ -185,6 +174,21 @@ This model better reflects real-world systems where friction or air resistance c
 
 *Figure: Spiral-shaped phase space diagram for a damped pendulum with no external force.*
 
+### Time Evolution of the Damped Pendulum
+
+The plot below shows the angular displacement $\theta(t)$ and angular velocity $\omega(t)$ of a pendulum subject to damping but without any external forcing:
+
+- The oscillation amplitude gradually decreases due to energy dissipation.
+- Both $\theta(t)$ and $\omega(t)$ decay toward zero.
+- The motion eventually settles at the stable equilibrium point ($\theta = 0$, $\omega = 0$).
+
+This illustrates how damping affects long-term behavior, turning periodic motion into an overdamped or underdamped decay depending on system parameters.
+
+![Damped Pendulum Time Series](sandbox:/mnt/data/damped_pendulum_timeseries.png)
+
+*Figure: Time evolution of a damped pendulum (no external force). Energy is continuously lost due to damping, leading to eventual rest.*
+
+
 ### Driven Undamped Pendulum $(A > 0, b = 0)$
 
 In this case, the pendulum is subject to a **periodic external force** but **no damping**:
@@ -194,7 +198,9 @@ In this case, the pendulum is subject to a **periodic external force** but **no 
 
 The governing equation is:
 
-$\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = A \cos(\omega t)$
+$$
+\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+$$
 
 Because there is **no energy loss**, the external force continuously pumps energy into the system. Over time, the pendulum's motion grows in complexity and amplitude.
 
@@ -221,7 +227,9 @@ This is the most general and realistic scenario. The pendulum experiences both:
 
 The full nonlinear equation becomes:
 
-$\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)$
+$$
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+$$
 
 This system can display a rich variety of behaviors depending on the parameters:
 
@@ -255,7 +263,9 @@ To better analyze the long-term behavior of the nonlinear pendulum, we generate 
 
 Instead of plotting continuous motion, we "sample" the system once every driving period (i.e., stroboscopically), at times:
 
-$t_n = nT = \frac{2\pi n}{\omega}$
+$$
+t_n = nT = \frac{2\pi n}{\omega}
+$$
 
 By plotting $(\theta(t_n), \dot{\theta}(t_n))$
 
