@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>** 📌Investigating the Dynamics of a Forced Damped Pendulum** - Physics and Mathematics</title>
+<title>📌Investigating the Dynamics of a Forced Damped Pendulum - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "** \ud83d\udcccInvestigating the Dynamics of a Forced Damped Pendulum**";
+        var mkdocs_page_name = "\ud83d\udcccInvestigating the Dynamics of a Forced Damped Pendulum";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem 2/index.md";
         var mkdocs_page_url = null;
       </script>
@@ -54,7 +54,7 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current">Problem 2</a>
 <ul class="current">
-<li class="toctree-l3 current"><a class="reference internal current" href="#">** 📌Investigating the Dynamics of a Forced Damped Pendulum**</a>
+<li class="toctree-l3 current"><a class="reference internal current" href="#">📌Investigating the Dynamics of a Forced Damped Pendulum</a>
 <ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="#motivation">Motivation</a>
 </li>
@@ -186,7 +186,7 @@
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
 <li class="breadcrumb-item">Problem 2</li>
-<li class="breadcrumb-item active">** 📌Investigating the Dynamics of a Forced Damped Pendulum**</li>
+<li class="breadcrumb-item active">📌Investigating the Dynamics of a Forced Damped Pendulum</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -194,7 +194,7 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">** 📌Investigating the Dynamics of a Forced Damped Pendulum**</h1>
+<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">📌Investigating the Dynamics of a Forced Damped Pendulum</h1>
 <h2 id="motivation">Motivation</h2>
 <p>The forced damped pendulum is a captivating example of a physical system with intricate behavior resulting from the interplay of damping, restoring forces, and external driving forces. By introducing both damping and external periodic forcing, the system demonstrates a transition from simple harmonic motion to a rich spectrum of dynamics, including resonance, chaos, and quasiperiodic behavior. These phenomena serve as a foundation for understanding complex real-world systems, such as driven oscillators, climate systems, and mechanical structures under periodic stress.</p>
 <p>Adding forcing introduces new parameters, such as the amplitude and frequency of the external force, which significantly affect the pendulum's behavior. By systematically varying these parameters, a diverse class of solutions can be observed, including synchronized oscillations, chaotic motion, and resonance phenomena. These behaviors not only highlight fundamental physics principles but also provide insights into engineering applications such as energy harvesting, vibration isolation, and mechanical resonance.</p>
@@ -262,6 +262,16 @@ Chaotic motion: Sensitive to initial conditions, non-repeating</p>
 <p><img alt="Series RLC Circuit Diagram" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/RLC_series_circuit_v1.svg/800px-RLC_series_circuit_v1.svg.png"/></p>
 <p><em>Figure: A schematic diagram of a series RLC circuit, which is mathematically analogous to a forced damped pendulum. The resistor (R) represents damping, the inductor (L) is analogous to mass, and the capacitor (C) represents the restoring force. Source: <a href="https://en.wikipedia.org/wiki/RLC_circuit">Wikipedia</a></em></p>
 <h2 id="implementation">Implementation</h2>
+<h3 id="time-evolution-of-the-simple-pendulum">Time Evolution of the Simple Pendulum</h3>
+<p>The following plot shows the angular displacement <span class="arithmatex">\(\theta(t)\)</span> and angular velocity <span class="arithmatex">\(\omega(t)\)</span> of a simple undamped pendulum over time:</p>
+<ul>
+<li>The motion is purely sinusoidal with constant amplitude.</li>
+<li>Angular velocity <span class="arithmatex">\(\omega(t)\)</span> is phase-shifted relative to <span class="arithmatex">\(\theta(t)\)</span>.</li>
+<li>The amplitude remains constant, indicating energy conservation in the system.</li>
+</ul>
+<p>This perfectly illustrates the nature of ideal harmonic oscillators.</p>
+<p><img alt="Simple Pendulum Time Series" src="Simple_Pendulum_Motion_%28Undamped%29.png"/></p>
+<p><em>Figure: Time evolution of angular displacement and angular velocity in a simple undamped pendulum.</em></p>
 <h3 id="pure-pendulum-a-0-b-0">Pure Pendulum <span class="arithmatex">\((A = 0, b = 0)\)</span></h3>
 <p>In this case, we simulate the <strong>ideal pendulum</strong> with no damping and no external force:</p>
 <ul>
