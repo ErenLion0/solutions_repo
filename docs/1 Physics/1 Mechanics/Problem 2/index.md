@@ -1,4 +1,4 @@
-# 📌Investigating the Dynamics of a Forced Damped Pendulum
+# ** 📌Investigating the Dynamics of a Forced Damped Pendulum**
 
 ## Motivation
 
@@ -12,10 +12,9 @@ Adding forcing introduces new parameters, such as the amplitude and frequency of
 
 The motion of a **forced damped pendulum** is governed by the following second-order nonlinear differential equation:
 
-$$
-\frac{d^2\\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+$\frac{d^2\\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)$
 
-$$
+
 
 **Variables:**
 
@@ -31,31 +30,23 @@ $$
 
 In pendulum motion, the restoring torque is proportional to $\sin\theta$. However, when the angle $\theta$ is small — typically less than about 10 degrees or 0.174 radians — we can use the mathematical approximation:
 
-$$
-\sin\theta \approx \theta
-
-$$
+$\sin\theta \approx \theta$
 
 This is known as the **small-angle approximation**, and it comes from the Taylor series expansion of $\sin\theta$ around $\theta = 0$:
 
-$$
-\sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots
+$\sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} -\cdots$
 
-$$
+
 
 For small values of $\theta$, the higher-order terms become negligible, so:
 
-$$
-\sin\theta \approx \theta
-
-$$
+$\sin\theta \approx \theta$
 
 Substituting this into the original nonlinear equation simplifies the system:
 
-$$
-\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)
+$\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \theta = A ,\cos(\omega t)$
 
-$$
+
 
 This resulting equation is **linear**, which means it can be solved analytically using methods for second-order linear ODEs. Although this simplification loses some of the system's richer behavior (like chaos), it's very useful for understanding **resonance**, **energy transfer**, and small oscillation dynamics.
 
@@ -69,7 +60,7 @@ When ($\omega$ $\approx$ $omega_0$ = $\sqrt{\frac{g}{L}}$), the system can reson
 
 ---
 
-## 2. Analysis of Dynamics
+## Analysis of Dynamics
 
 ### Parameter Effects
 
@@ -86,7 +77,7 @@ Transition observed by increasing $(A)$ or tuning $(\omega)$.
 
 ---
 
-## 3. Practical Applications
+## Practical Applications
 
 The forced damped pendulum model finds application in a wide range of real-world systems. A few notable examples include:
 
@@ -102,7 +93,7 @@ The forced damped pendulum model finds application in a wide range of real-world
   In large-scale power systems, the rotors of generators can undergo mechanical oscillations. These are modeled using damped-driven pendulum analogs to design stabilizers and prevent outages.
 - **Biomechanics (Human Gait Analysis)**
   During human walking, the motion of legs and joints often mimics the oscillatory behavior of pendulum-like systems. Modeling the swing phase of the leg as a forced damped pendulum helps in analyzing balance, energy efficiency, and rehabilitation strategies in biomechanics.
-
+  
   ### Example Visualization
 
 ![Series RLC Circuit Diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/RLC_series_circuit_v1.svg/800px-RLC_series_circuit_v1.svg.png)
@@ -120,10 +111,9 @@ In this case, we simulate the **ideal pendulum** with no damping and no external
 
 This simplifies the equation of motion to:
 
-$$
-\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = 0
+$\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = 0$
 
-$$
+
 
 There is **no energy loss** (since)
 $b = 0$
@@ -160,10 +150,7 @@ In this case, we simulate a pendulum with **no external force** but with **nonze
 
 The governing equation becomes:
 
-$$
-\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = 0
-
-$$
+$\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = 0$
 
 Here, the system loses energy over time due to damping. This causes the oscillations to gradually reduce in amplitude and eventually die out, bringing the pendulum to rest.
 
@@ -190,10 +177,7 @@ In this case, the pendulum is subject to a **periodic external force** but **no 
 
 The governing equation is:
 
-$$
-\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = A \cos(\omega t)
-
-$$
+$\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin\theta = A \cos(\omega t)$
 
 Because there is **no energy loss**, the external force continuously pumps energy into the system. Over time, the pendulum's motion grows in complexity and amplitude.
 
@@ -220,10 +204,7 @@ This is the most general and realistic scenario. The pendulum experiences both:
 
 The full nonlinear equation becomes:
 
-$$
-\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
-
-$$
+$\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)$
 
 This system can display a rich variety of behaviors depending on the parameters:
 
@@ -257,10 +238,7 @@ To better analyze the long-term behavior of the nonlinear pendulum, we generate 
 
 Instead of plotting continuous motion, we "sample" the system once every driving period (i.e., stroboscopically), at times:
 
-$$
-t_n = nT = \frac{2\pi n}{\omega}
-
-$$
+$t_n = nT = \frac{2\pi n}{\omega}$
 
 By plotting $(\theta(t_n), \dot{\theta}(t_n))$
 
@@ -299,7 +277,7 @@ are plotted for each frequency.
 
 - At some frequencies, the system exhibits **stable periodic motion**
 - As $\omega$
-
+  
   increases, **period doubling bifurcations** appear
 - In certain regions, the system transitions into **chaotic motion**
 
@@ -321,3 +299,4 @@ Key takeaways include:
 - Phase diagrams and Poincaré sections help visualize the system’s qualitative nature.
 - Bifurcation diagrams reveal transitions to chaos as system parameters vary.
 - The same physical model appears in various real-world systems, from circuits to biomechanics.
+
