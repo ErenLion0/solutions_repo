@@ -54,7 +54,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal">Problem 2</a>
 <ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1%20Mechanics/Problem%202/">** 📌Investigating the Dynamics of a Forced Damped Pendulum**</a>
+<li class="toctree-l3"><a class="reference internal" href="../../1%20Mechanics/Problem%202/">📌Investigating the Dynamics of a Forced Damped Pendulum</a>
 </li>
 </ul>
 </li>
@@ -65,6 +65,20 @@
 <li class="toctree-l2 current"><a class="reference internal current" href="#">** 📌Orbital Period and Orbital Radius**</a>
 <ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#theoretical-background">Theoretical Background</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#keplers-third-law">Kepler’s Third Law</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#newtonian-derivation">Newtonian Derivation</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#simulation-orbital-period-vs-radius">📊 Simulation: Orbital Period vs Radius</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#constants">Constants</a>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -184,10 +198,56 @@
 <h1 id="orbital-period-and-orbital-radius">** 📌Orbital Period and Orbital Radius**</h1>
 <h2 id="motivation">Motivation</h2>
 <p>The relationship between the square of the orbital period and the cube of the orbital radius, known as Kepler's Third Law, is a cornerstone of celestial mechanics. This simple yet profound relationship allows for the determination of planetary motions and has implications for understanding gravitational interactions on both local and cosmic scales. By analyzing this relationship, one can connect fundamental principles of gravity with real-world phenomena such as satellite orbits and planetary systems.</p>
+<h2 id="theoretical-background">Theoretical Background</h2>
+<h3 id="keplers-third-law">Kepler’s Third Law</h3>
+<blockquote>
+<p><em>The square of a planet’s orbital period is proportional to the cube of the semi-major axis of its orbit:</em></p>
+</blockquote>
+<div class="arithmatex">\[
+T^2 \propto r^3
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\( T \)</span>: Orbital period</li>
+<li><span class="arithmatex">\( r \)</span>: Orbital radius (assuming circular orbits)</li>
+</ul>
+<h3 id="newtonian-derivation">Newtonian Derivation</h3>
+<h4 id="equating-forces">Equating Forces</h4>
+<p>Gravitational force equals the centripetal force for a circular orbit:</p>
+<div class="arithmatex">\[
+\frac{G M m}{r^2} = \frac{m v^2}{r}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\( G \)</span>: Gravitational constant ≈ <span class="arithmatex">\( 6.674 \times 10^{-11} \, \text{m}^3/\text{kg} \cdot \text{s}^2 \)</span></li>
+<li><span class="arithmatex">\( M \)</span>: Mass of the central body (e.g., Earth)</li>
+<li><span class="arithmatex">\( m \)</span>: Mass of orbiting object</li>
+<li><span class="arithmatex">\( v \)</span>: Orbital speed</li>
+</ul>
+<h4 id="expressing-orbital-speed-via-period">Expressing Orbital Speed via Period</h4>
+<div class="arithmatex">\[
+v = \frac{2\pi r}{T}
+\]</div>
+<p>Substitute into the force equation:</p>
+<div class="arithmatex">\[
+\frac{G M}{r^2} = \frac{(2 \pi r / T)^2}{r}
+\]</div>
+<p>Simplifying:</p>
+<div class="arithmatex">\[
+T^2 = \frac{4 \pi^2 r^3}{G M}
+\]</div>
+<p>➡️ <strong>Conclusion:</strong> <span class="arithmatex">\( T^2 \propto r^3 \)</span>, confirming Kepler’s Law via Newtonian mechanics.</p>
+<hr/>
+<h2 id="simulation-orbital-period-vs-radius">📊 Simulation: Orbital Period vs Radius</h2>
+<h3 id="constants">Constants</h3>
+<pre><code class="language-python">G = 6.67430e-11  # m^3 kg^-1 s^-2
+M = 5.972e24     # kg (Earth's mass)
+
+</code></pre>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../1%20Mechanics/Problem%202/" title="** 📌Investigating the Dynamics of a Forced Damped Pendulum**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../../1%20Mechanics/Problem%202/" title="📌Investigating the Dynamics of a Forced Damped Pendulum"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../Problem_2/" title="Problem 2">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
