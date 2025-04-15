@@ -122,7 +122,7 @@ $$\frac{T^2}{r^3} = \frac{(3.156 \times 10^7)^2}{(1.496 \times 10^{11})^3} \appr
 
 The near-equality of $\frac{T^2}{r^3}$ confirms Kepler's Third Law in real data.
 
-## 10. Simulated Circular Orbits of Planets
+## Simulated Circular Orbits of Planets
 
 This visualization shows simulated circular orbits of the eight major planets in the Solar System around the Sun. Each orbit is drawn to scale based on its average orbital radius in astronomical units (AU).
 
