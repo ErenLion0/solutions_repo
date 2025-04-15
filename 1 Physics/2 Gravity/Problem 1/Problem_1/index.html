@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../../img/favicon.ico" rel="shortcut icon"/>
-<title>** 📌Orbital Period and Orbital Radius** - Physics and Mathematics</title>
+<title>📌Orbital Period and Orbital Radius - Physics and Mathematics</title>
 <link href="../../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "** \ud83d\udcccOrbital Period and Orbital Radius**";
+        var mkdocs_page_name = "\ud83d\udcccOrbital Period and Orbital Radius";
         var mkdocs_page_input_path = "1 Physics/2 Gravity/Problem 1/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -64,13 +64,33 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current">Problem 1</a>
 <ul class="current">
-<li class="toctree-l3 current"><a class="reference internal current" href="#">** 📌Orbital Period and Orbital Radius**</a>
+<li class="toctree-l3 current"><a class="reference internal current" href="#">📌Orbital Period and Orbital Radius</a>
 <ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="#motivation">Motivation</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#theoretical-background">Theoretical Background</a>
+<li class="toctree-l4"><a class="reference internal" href="#theoretical-foundation">Theoretical Foundation</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#simulation-orbital-period-vs-radius">📊 Simulation: Orbital Period vs Radius</a>
+<li class="toctree-l4"><a class="reference internal" href="#keplers-third-law-for-circular-orbits">Kepler’s Third Law for Circular Orbits</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#implications-in-astronomy">Implications in Astronomy</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#real-world-examples">Real-World Examples</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#10-simulated-circular-orbits-of-planets">10. Simulated Circular Orbits of Planets</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#cosmic-velocities-definitions-and-physical-meaning">Cosmic Velocities – Definitions and Physical Meaning</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#8-mathematical-analysis-of-the-cosmic-velocities">8. Mathematical Analysis of the Cosmic Velocities</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation-of-keplers-third-law">Simulation of Kepler's Third Law</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#simulated-vs-real-planetary-data">Simulated vs Real Planetary Data</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#comparative-cosmic-velocities-of-earth-mars-and-jupiter">Comparative Cosmic Velocities of Earth, Mars, and Jupiter</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#discussion-applications-in-space-exploration">Discussion – Applications in Space Exploration</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a>
 </li>
 </ul>
 </li>
@@ -190,7 +210,7 @@
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">2 Gravity</li>
 <li class="breadcrumb-item">Problem 1</li>
-<li class="breadcrumb-item active">** 📌Orbital Period and Orbital Radius**</li>
+<li class="breadcrumb-item active">📌Orbital Period and Orbital Radius</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -198,55 +218,400 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="orbital-period-and-orbital-radius">** 📌Orbital Period and Orbital Radius**</h1>
+<h1 id="orbital-period-and-orbital-radius">📌Orbital Period and Orbital Radius</h1>
 <h2 id="motivation">Motivation</h2>
 <p>The relationship between the square of the orbital period and the cube of the orbital radius, known as Kepler's Third Law, is a cornerstone of celestial mechanics. This simple yet profound relationship allows for the determination of planetary motions and has implications for understanding gravitational interactions on both local and cosmic scales. By analyzing this relationship, one can connect fundamental principles of gravity with real-world phenomena such as satellite orbits and planetary systems.</p>
-<h2 id="theoretical-background">Theoretical Background</h2>
-<h3 id="keplers-third-law">Kepler’s Third Law</h3>
-<blockquote>
-<p><em>The square of a planet’s orbital period is proportional to the cube of the semi-major axis of its orbit:</em></p>
-</blockquote>
-<div class="arithmatex">\[
-T^2 \propto r^3
-\]</div>
-<p>Where:</p>
-<ul>
-<li><span class="arithmatex">\( T \)</span>: Orbital period</li>
-<li><span class="arithmatex">\( r \)</span>: Orbital radius (assuming circular orbits)</li>
-</ul>
-<h3 id="newtonian-derivation">Newtonian Derivation</h3>
-<h4 id="equating-forces">Equating Forces</h4>
-<p>Gravitational force equals the centripetal force for a circular orbit:</p>
-<div class="arithmatex">\[
-\frac{G M m}{r^2} = \frac{m v^2}{r}
-\]</div>
-<p>Where:</p>
-<ul>
-<li><span class="arithmatex">\( G \)</span>: Gravitational constant ≈ <span class="arithmatex">\( 6.674 \times 10^{-11} \, \text{m}^3/\text{kg} \cdot \text{s}^2 \)</span></li>
-<li><span class="arithmatex">\( M \)</span>: Mass of the central body (e.g., Earth)</li>
-<li><span class="arithmatex">\( m \)</span>: Mass of orbiting object</li>
-<li><span class="arithmatex">\( v \)</span>: Orbital speed</li>
-</ul>
-<h4 id="expressing-orbital-speed-via-period">Expressing Orbital Speed via Period</h4>
-<div class="arithmatex">\[
-v = \frac{2\pi r}{T}
-\]</div>
-<p>Substitute into the force equation:</p>
-<div class="arithmatex">\[
-\frac{G M}{r^2} = \frac{(2 \pi r / T)^2}{r}
-\]</div>
-<p>Simplifying:</p>
-<div class="arithmatex">\[
-T^2 = \frac{4 \pi^2 r^3}{G M}
-\]</div>
-<p>➡️ <strong>Conclusion:</strong> <span class="arithmatex">\( T^2 \propto r^3 \)</span>, confirming Kepler’s Law via Newtonian mechanics.</p>
+<h2 id="theoretical-foundation">Theoretical Foundation</h2>
+<p>To derive the relationship between the orbital period <span class="arithmatex">\(T\)</span> and the orbital radius <span class="arithmatex">\(r\)</span>, we start by analyzing the forces acting on a satellite or planet moving in a circular orbit.</p>
+<h3 id="gravitational-force">Gravitational Force</h3>
+<p>According to Newton's Law of Universal Gravitation:</p>
+<div class="arithmatex">\[F = \frac{GMm}{r^2}\]</div>
+<p>For circular motion, this must equal the centripetal force:</p>
+<div class="arithmatex">\[F = \frac{mv^2}{r}\]</div>
+<p>Setting the two expressions equal:</p>
+<div class="arithmatex">\[\frac{GMm}{r^2} = \frac{mv^2}{r}\]</div>
+<p>Cancel <span class="arithmatex">\(m\)</span> and solve for <span class="arithmatex">\(v^2\)</span>:</p>
+<div class="arithmatex">\[v^2 = \frac{GM}{r}\]</div>
+<h3 id="orbital-period">Orbital Period</h3>
+<p>The orbital period is given by:</p>
+<div class="arithmatex">\[T = \frac{2\pi r}{v} \Rightarrow T^2 = \frac{4\pi^2 r^2}{v^2}\]</div>
+<p>Substitute <span class="arithmatex">\(v^2\)</span>:</p>
+<div class="arithmatex">\[T^2 = \frac{4\\pi^2 r^2}{\frac{GM}{r}} = \frac{4\pi^2 r^3}{GM}\]</div>
+<p>This is the mathematical expression of Kepler's Third Law:</p>
+<div class="arithmatex">\[T^2 = \frac{4\pi^2}{GM}r^3\]</div>
 <hr/>
-<h2 id="simulation-orbital-period-vs-radius">📊 Simulation: Orbital Period vs Radius</h2>
-<h3 id="constants">Constants</h3>
-<pre><code class="language-python">G = 6.67430e-11  # m^3 kg^-1 s^-2
-M = 5.972e24     # kg (Earth's mass)
-
-</code></pre>
+<h2 id="keplers-third-law-for-circular-orbits">Kepler’s Third Law for Circular Orbits</h2>
+<p>Kepler’s Third Law states that the square of the orbital period of a planet is proportional to the cube of the semi-major axis of its orbit. In the special case of circular orbits, the semi-major axis becomes the <strong>radius</strong> of the orbit. The law can then be written mathematically as:</p>
+<div class="arithmatex">\[T^2 = \frac{4\pi^2}{GM}r^3\]</div>
+<h3 id="what-does-this-mean">What does this mean?</h3>
+<p>This formula connects the time it takes for an object (like a planet or satellite) to complete one full orbit (<span class="arithmatex">\(T\)</span>), with how far it is from the body it’s orbiting (<span class="arithmatex">\(r\)</span>).</p>
+<ul>
+<li><span class="arithmatex">\(T\)</span> is the orbital period (in seconds)</li>
+<li><span class="arithmatex">\(r\)</span> is the orbital radius (in meters)</li>
+<li><span class="arithmatex">\(G\)</span> is the gravitational constant (<span class="arithmatex">\(6.674 \times 10^{-11} \, \mathrm{m^3/kg \cdot s^2}\)</span>)</li>
+<li><span class="arithmatex">\(M\)</span> is the mass of the central body (like the Sun or Earth)</li>
+</ul>
+<h3 id="why-does-it-work">Why does it work?</h3>
+<p>An object in orbit is constantly falling toward the massive body (like Earth or the Sun), but also moving forward. The gravitational force provides the <strong>centripetal force</strong> needed to keep it moving in a circle.</p>
+<p>By equating these forces and solving for the orbital period, we derive Kepler's Third Law. It’s not just an observational rule — it comes directly from Newton’s laws of motion and gravity.</p>
+<h3 id="why-is-it-important">Why is it important?</h3>
+<p>This law allows scientists to:</p>
+<ul>
+<li>Calculate how long it takes for something to orbit (if they know the distance)</li>
+<li>Estimate how far an object is (if they know its orbital period)</li>
+<li>Determine the mass of stars or planets by observing their satellites</li>
+</ul>
+<h3 id="does-it-always-apply">Does it always apply?</h3>
+<p>This exact formula applies <strong>only for circular orbits</strong>. For elliptical orbits, the law still holds, but <span class="arithmatex">\(r\)</span> must be replaced by the <strong>semi-major axis <span class="arithmatex">\(a\)</span></strong> of the ellipse.</p>
+<div class="arithmatex">\[T^2 \propto a^3\]</div>
+<p>So while this is a simplified version, it gives an extremely accurate model for most planetary and satellite motion.</p>
+<hr/>
+<h2 id="implications-in-astronomy">Implications in Astronomy</h2>
+<p>Kepler's Third Law has profound applications in astronomy and astrophysics. It enables scientists to:</p>
+<ul>
+<li>Determine the mass of celestial bodies such as stars and planets</li>
+<li>Calculate orbital distances from observed periods</li>
+<li>Compare orbital dynamics across different planetary systems</li>
+</ul>
+<p>The formula</p>
+<div class="arithmatex">\[T^2 = \frac{4\pi^2}{GM}r^3\]</div>
+<p>allows astronomers to compute the mass <span class="arithmatex">\(M\)</span> of a central body if <span class="arithmatex">\(T\)</span> and <span class="arithmatex">\(r\)</span> are known.</p>
+<hr/>
+<h2 id="real-world-examples">Real-World Examples</h2>
+<p>We verify the relationship by computing <span class="arithmatex">\(\frac{T^2}{r^3}\)</span> for real bodies.</p>
+<h3 id="moon-orbiting-earth">Moon orbiting Earth</h3>
+<ul>
+<li><span class="arithmatex">\(r = 3.84 \times 10^8\)</span> m</li>
+<li><span class="arithmatex">\(T = 2.36 \times 10^6\)</span> s</li>
+</ul>
+<div class="arithmatex">\[\frac{T^2}{r^3} = \frac{(2.36 \times 10^6)^2}{(3.84 \times 10^8)^3} \approx 1.01 \times 10^{-13}\]</div>
+<hr/>
+<h3 id="earth-orbiting-the-sun">Earth orbiting the Sun</h3>
+<ul>
+<li><span class="arithmatex">\(r = 1.496 \\times 10^{11}\)</span> m</li>
+<li><span class="arithmatex">\(T = 3.156 \\times 10^7\)</span> s</li>
+</ul>
+<div class="arithmatex">\[\frac{T^2}{r^3} = \frac{(3.156 \times 10^7)^2}{(1.496 \times 10^{11})^3} \approx 1.00 \times 10^{-13}\]</div>
+<hr/>
+<p>The near-equality of <span class="arithmatex">\(\frac{T^2}{r^3}\)</span> confirms Kepler's Third Law in real data.</p>
+<h2 id="10-simulated-circular-orbits-of-planets">10. Simulated Circular Orbits of Planets</h2>
+<p>This visualization shows simulated circular orbits of the eight major planets in the Solar System around the Sun. Each orbit is drawn to scale based on its average orbital radius in astronomical units (AU).</p>
+<p>This figure serves as a <strong>conceptual demonstration</strong> of Kepler’s laws in action, illustrating how:</p>
+<ul>
+<li>Each planet moves in a wider orbit as its distance from the Sun increases</li>
+<li>The time it takes to complete one revolution also increases (per Kepler's Third Law)</li>
+</ul>
+<h3 id="key-observations">Key Observations:</h3>
+<ul>
+<li><strong>Mercury and Venus</strong> are tightly packed near the Sun, indicating shorter orbital periods</li>
+<li><strong>Jupiter, Saturn, Uranus, and Neptune</strong> span large distances, reflecting their long orbital times</li>
+<li><strong>All orbits are modeled as circular</strong>, which simplifies the visualization while retaining the radial scaling</li>
+</ul>
+<p>This graphical representation reinforces the idea that the orbital radius directly influences the dynamics of planetary motion.</p>
+<h3 id="visualization">Visualization:</h3>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1vqUx9ZOezqAIe6b0tYI4XxKC_E4p04KG">Colab Link</a></li>
+</ul>
+<p><img alt="Simulated_Circular_Orbits _of_Planets.png" src="../Simulated_Circular_Orbits_of_Planets.png"/></p>
+<p><em>Figure: Simulated circular orbits of the planets in AU around the Sun.</em></p>
+<h2 id="cosmic-velocities-definitions-and-physical-meaning">Cosmic Velocities – Definitions and Physical Meaning</h2>
+<p>In celestial mechanics, the concept of <strong>cosmic velocities</strong> refers to the minimum speeds required for an object to achieve certain levels of motion in a gravitational field, especially around Earth or other celestial bodies.</p>
+<hr/>
+<h3 id="first-cosmic-velocity-orbital-velocity">First Cosmic Velocity (Orbital Velocity)</h3>
+<p>The <strong>first cosmic velocity</strong> is the minimum speed required for an object to enter a <strong>stable circular orbit</strong> around a planet, without needing additional propulsion. It is the velocity needed to balance the gravitational pull with the required centripetal acceleration.</p>
+<p><strong>Formula:</strong></p>
+<div class="arithmatex">\[
+v_1 = \sqrt{\frac{GM}{r}}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(v_1\)</span> is the orbital speed</li>
+<li><span class="arithmatex">\(G\)</span> is the gravitational constant</li>
+<li><span class="arithmatex">\(M\)</span> is the mass of the central body</li>
+<li><span class="arithmatex">\(r\)</span> is the orbital radius from the center of the body</li>
+</ul>
+<p><strong>Example (Earth):</strong><br/>
+At low Earth orbit (<span class="arithmatex">\(r ≈ 6.37 \times 10^6\)</span> m), the first cosmic velocity is about <strong>7.9 km/s</strong>.</p>
+<hr/>
+<h3 id="second-cosmic-velocity-escape-velocity">Second Cosmic Velocity (Escape Velocity)</h3>
+<p>The <strong>second cosmic velocity</strong> is the minimum speed required for an object to <strong>completely escape</strong> the gravitational field of a planet, ignoring air resistance. The object will not return to the planet once it reaches or exceeds this speed.</p>
+<p><strong>Formula:</strong></p>
+<div class="arithmatex">\[
+v_2 = \sqrt{\frac{2GM}{r}} = \sqrt{2} \cdot v_1
+\]</div>
+<p><strong>Example (Earth):</strong><br/>
+At the surface of the Earth, <span class="arithmatex">\(v_2 ≈ 11.2\)</span> km/s.</p>
+<hr/>
+<h3 id="third-cosmic-velocity">Third Cosmic Velocity</h3>
+<p>The <strong>third cosmic velocity</strong> is the speed required for an object to <strong>leave the Solar System</strong>, starting from Earth's orbit. It must escape both Earth’s gravity <strong>and</strong> the Sun’s gravity.</p>
+<p>There is no simple formula for this, since it depends on the escape energy from the Sun’s potential at Earth's distance:</p>
+<p><strong>Approximate value:</strong></p>
+<div class="arithmatex">\[
+v_3 ≈ 16.7 \, \text{km/s}
+\]</div>
+<p>This is the speed a spacecraft must reach (relative to the Sun) in order to travel beyond the Solar System.</p>
+<hr/>
+<h3 id="summary-table">Summary Table:</h3>
+<table>
+<thead>
+<tr>
+<th>Cosmic Velocity</th>
+<th>Physical Meaning</th>
+<th>Approx. Speed (from Earth)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First (<span class="arithmatex">\(v_1\)</span>)</td>
+<td>Enter stable orbit around Earth</td>
+<td>7.9 km/s</td>
+</tr>
+<tr>
+<td>Second (<span class="arithmatex">\(v_2\)</span>)</td>
+<td>Escape Earth’s gravitational field</td>
+<td>11.2 km/s</td>
+</tr>
+<tr>
+<td>Third (<span class="arithmatex">\(v_3\)</span>)</td>
+<td>Escape the Solar System (from Earth’s orbit)</td>
+<td>16.7 km/s</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p>These thresholds are critical in <strong>orbital mechanics</strong>, <strong>space missions</strong>, and <strong>astrodynamics</strong>. They define the transitions between different gravitational regimes.</p>
+<h4 id="visualizing-the-three-cosmic-velocities">Visualizing the Three Cosmic Velocities</h4>
+<p>The bar chart below compares the three cosmic velocities starting from Earth's surface:</p>
+<ul>
+<li><strong>1st Cosmic Velocity (≈ 7.9 km/s):</strong> Minimum speed to enter a circular orbit.</li>
+<li><strong>2nd Cosmic Velocity (≈ 11.2 km/s):</strong> Minimum speed to escape Earth's gravity.</li>
+<li><strong>3rd Cosmic Velocity (≈ 16.7 km/s):</strong> Minimum speed to escape the Solar System entirely, starting from Earth.</li>
+</ul>
+<p>These speeds are essential for satellite launches, interplanetary missions, and understanding orbital mechanics.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1ZTOhjgGmgvh9vz1HfXaRYeW1UcgesHJR">Colab Link</a></li>
+</ul>
+<p><img alt="Cosmic_Velocities_from_Earth's_Surface.png" src="../Cosmic_Velocities_from_Earth%27s_Surface.png"/></p>
+<p><em>Figure: Comparison of first, second, and third cosmic velocities.</em></p>
+<h2 id="8-mathematical-analysis-of-the-cosmic-velocities">8. Mathematical Analysis of the Cosmic Velocities</h2>
+<p>Each cosmic velocity is based on fundamental laws of classical mechanics and gravitation. Let's analyze their mathematical derivations and examine the influence of different parameters.</p>
+<hr/>
+<h3 id="first-cosmic-velocity-v_1">First Cosmic Velocity – <span class="arithmatex">\(v_1\)</span></h3>
+<p>The first cosmic velocity is derived by equating gravitational and centripetal forces for a circular orbit:</p>
+<div class="arithmatex">\[
+\frac{GMm}{r^2} = \frac{mv^2}{r}
+\Rightarrow v^2 = \frac{GM}{r}
+\Rightarrow v_1 = \sqrt{\frac{GM}{r}}
+\]</div>
+<h4 id="parameters">Parameters:</h4>
+<ul>
+<li><strong><span class="arithmatex">\(G\)</span> (gravitational constant):</strong> Universal constant, does not change.</li>
+<li><strong><span class="arithmatex">\(M\)</span> (mass of the planet/star):</strong> If <span class="arithmatex">\(M\)</span> increases, <span class="arithmatex">\(v_1\)</span> increases.</li>
+<li><strong><span class="arithmatex">\(r\)</span> (orbital radius):</strong> If <span class="arithmatex">\(r\)</span> increases, <span class="arithmatex">\(v_1\)</span> decreases (inverse square root).</li>
+</ul>
+<h4 id="interpretation">Interpretation:</h4>
+<p>A more massive planet requires a higher speed to stay in orbit. Conversely, the farther you are from the center, the lower the orbital speed needed.</p>
+<hr/>
+<h3 id="second-cosmic-velocity-v_2">Second Cosmic Velocity – <span class="arithmatex">\(v_2\)</span></h3>
+<p>Escape velocity is found from energy conservation. Total mechanical energy must be zero to escape:</p>
+<div class="arithmatex">\[
+E = \frac{1}{2}mv^2 - \frac{GMm}{r} = 0
+\Rightarrow v_2 = \sqrt{\frac{2GM}{r}} = \sqrt{2} \cdot v_1
+\]</div>
+<h4 id="parameters_1">Parameters:</h4>
+<ul>
+<li>Same as <span class="arithmatex">\(v_1\)</span>, but with a factor of <span class="arithmatex">\(\sqrt{2}\)</span>.</li>
+<li>Escape velocity is <strong>always greater</strong> than orbital velocity.</li>
+</ul>
+<h4 id="interpretation_1">Interpretation:</h4>
+<p>An object must overcome gravitational potential energy entirely to escape a planet. The square root of 2 factor comes from energy balance.</p>
+<hr/>
+<h3 id="third-cosmic-velocity-v_3">Third Cosmic Velocity – <span class="arithmatex">\(v_3\)</span></h3>
+<p>The third cosmic velocity accounts for escaping the <strong>entire Solar System</strong>. It's not derived from a simple formula like the first two, because it involves both the Earth’s gravity and the Sun’s gravity at Earth’s distance.</p>
+<p>Approximate model:</p>
+<div class="arithmatex">\[
+v_3 \approx \sqrt{v_{\text{escape, Earth}}^2 + v_{\text{escape, Sun from Earth orbit}}^2}
+\]</div>
+<p>In practice, it is about <strong>16.7 km/s</strong>, assuming launch from Earth with correct alignment.</p>
+<h4 id="parameters_2">Parameters:</h4>
+<ul>
+<li>Depends on Earth’s position in the Sun’s gravitational field.</li>
+<li>Affected by:</li>
+<li><span class="arithmatex">\(M_{\text{sun}}\)</span></li>
+<li><span class="arithmatex">\(r_{\text{Earth orbit}}\)</span></li>
+</ul>
+<h4 id="interpretation_2">Interpretation:</h4>
+<p>Reaching interstellar space requires energy to escape <strong>both</strong> local (Earth) and global (Sun) gravitational pulls.</p>
+<hr/>
+<h3 id="summary-of-dependencies">Summary of Dependencies</h3>
+<table>
+<thead>
+<tr>
+<th>Velocity</th>
+<th>Formula</th>
+<th>Key Parameters</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(v_1\)</span></td>
+<td><span class="arithmatex">\(\sqrt{\frac{GM}{r}}\)</span></td>
+<td><span class="arithmatex">\(M\)</span>, <span class="arithmatex">\(r\)</span></td>
+<td><span class="arithmatex">\(\uparrow M \Rightarrow \uparrow v\)</span>, <span class="arithmatex">\(\uparrow r \Rightarrow \downarrow v\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(v_2\)</span></td>
+<td><span class="arithmatex">\(\sqrt{\frac{2GM}{r}}\)</span></td>
+<td><span class="arithmatex">\(M\)</span>, <span class="arithmatex">\(r\)</span></td>
+<td>Same as <span class="arithmatex">\(v_1\)</span>, but scaled by <span class="arithmatex">\(\sqrt{2}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(v_3\)</span></td>
+<td>Complex (Sun + Earth gravity)</td>
+<td><span class="arithmatex">\(M_{sun}\)</span>, <span class="arithmatex">\(r_{orbit}\)</span></td>
+<td>Requires large escape energy</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p>This mathematical analysis shows that all cosmic velocities are tightly linked to Newtonian gravity and depend on the <strong>mass and distance</strong> involved. These formulas are crucial for planning spacecraft launches and orbital maneuvers.</p>
+<h2 id="simulation-of-keplers-third-law">Simulation of Kepler's Third Law</h2>
+<p>To demonstrate Kepler's Third Law visually, we simulate circular orbits for a range of orbital radii and compute their orbital periods using the formula:</p>
+<div class="arithmatex">\[T^2 = \frac{4\pi^2}{GM}r^3\]</div>
+<h3 id="explanation">Explanation:</h3>
+<ul>
+<li>We simulate orbits from 0.3 AU to 30 AU</li>
+<li><span class="arithmatex">\(M\)</span> is taken as the mass of the Sun: <span class="arithmatex">\(M = 1.989 \times 10^{30}\)</span> kg</li>
+<li><span class="arithmatex">\(r\)</span> values are converted to meters, and <span class="arithmatex">\(T\)</span> is computed in years</li>
+<li>The graph plots <span class="arithmatex">\(T\)</span> versus <span class="arithmatex">\(r\)</span> to illustrate the power-law relationship</li>
+</ul>
+<p>As expected, the result shows a smooth curve where:</p>
+<div class="arithmatex">\[T \propto r^{3/2}\]</div>
+<p>This confirms Kepler's Third Law: objects farther from the Sun take longer to complete an orbit.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1gThVIkUJI7QNcDaysRzwQY44_IGtQPOw">Colab Link</a></li>
+</ul>
+<p><img alt="Kepler's_Third_Law.png" src="../Kepler%27s_Third_Law.png"/></p>
+<p><em>Figure: Orbital period vs. radius for simulated circular orbits around the Sun.</em></p>
+<h2 id="simulated-vs-real-planetary-data">Simulated vs Real Planetary Data</h2>
+<p>To validate our simulation, we overlay real orbital data from the Solar System onto the graph generated by Kepler's Third Law. This comparison helps demonstrate how closely the real orbits of planets match the theoretical predictions.</p>
+<h3 id="what-are-we-comparing">What are we comparing?</h3>
+<ul>
+<li>The blue curve represents a simulation based on the formula:</li>
+</ul>
+<div class="arithmatex">\[
+T^2 = \frac{4\pi^2}{GM}r^3
+\]</div>
+<ul>
+<li>The red points show real orbital data of planets in our Solar System.</li>
+<li>All distances are in astronomical units (AU), and periods are in Earth years.</li>
+</ul>
+<h3 id="included-planets">Included Planets:</h3>
+<table>
+<thead>
+<tr>
+<th>Planet</th>
+<th>Orbital Radius (AU)</th>
+<th>Period (years)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mercury</td>
+<td>0.39</td>
+<td>0.24</td>
+</tr>
+<tr>
+<td>Venus</td>
+<td>0.72</td>
+<td>0.62</td>
+</tr>
+<tr>
+<td>Earth</td>
+<td>1.00</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Mars</td>
+<td>1.52</td>
+<td>1.88</td>
+</tr>
+<tr>
+<td>Jupiter</td>
+<td>5.20</td>
+<td>11.86</td>
+</tr>
+<tr>
+<td>Saturn</td>
+<td>9.58</td>
+<td>29.46</td>
+</tr>
+</tbody>
+</table>
+<p>As shown, the real planets fall almost perfectly on the theoretical curve, confirming the validity of Kepler’s Third Law for circular orbits. This alignment between simulation and observation is one of the reasons this law is so central in astrophysics and orbital mechanics.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1delr6LAc-bs31ttr0c1lYPmcpy0avGu-">Colab Link</a></li>
+</ul>
+<p><img alt="Kepler's_Third_Law_Real_Planet" src="../Kepler%27s_Third_Law_Real_Planet.png"/></p>
+<p><em>Figure: Orbital period vs. radius for simulated orbits, with real Solar System planets overlaid.</em></p>
+<h2 id="comparative-cosmic-velocities-of-earth-mars-and-jupiter">Comparative Cosmic Velocities of Earth, Mars, and Jupiter</h2>
+<p>In this section, we calculate and visualize the first and second cosmic velocities for three major celestial bodies in the Solar System: <strong>Earth</strong>, <strong>Mars</strong>, and <strong>Jupiter</strong>.</p>
+<p>These velocities are given by:</p>
+<ul>
+<li>First Cosmic Velocity: <span class="arithmatex">\(v_1 = \sqrt{\frac{GM}{r}}\)</span></li>
+<li>Second Cosmic Velocity: <span class="arithmatex">\(v_2 = \sqrt{\frac{2GM}{r}}\)</span></li>
+</ul>
+<p>Where:
+- <span class="arithmatex">\(G\)</span> is the gravitational constant
+- <span class="arithmatex">\(M\)</span> is the mass of the body
+- <span class="arithmatex">\(r\)</span> is the radius from the center</p>
+<h3 id="graph-analysis">Graph Analysis:</h3>
+<p>As expected:</p>
+<ul>
+<li><strong>Jupiter</strong> has the highest velocities due to its massive size.</li>
+<li><strong>Mars</strong> has the lowest, making it easier to launch spacecraft from.</li>
+<li><strong>Earth</strong> is in the middle, with <span class="arithmatex">\(v_1 ≈ 7.9\)</span> km/s and <span class="arithmatex">\(v_2 ≈ 11.2\)</span> km/s.</li>
+</ul>
+<p>This comparison is crucial for mission planning, satellite launches, and understanding gravitational constraints on each planet.</p>
+<h3 id="comparative-plot">Comparative Plot:</h3>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1delr6LAc-bs31ttr0c1lYPmcpy0avGu-">Colab Link</a></li>
+</ul>
+<p><img alt="alt text" src="../Cosmic_Velocities_Earth_Mars_Jupiter.png"/></p>
+<p><em>Figure: First and second cosmic velocities for Earth, Mars, and Jupiter.</em></p>
+<h2 id="discussion-applications-in-space-exploration">Discussion – Applications in Space Exploration</h2>
+<p>The physical laws discussed in this project—particularly Kepler's Third Law and the concept of cosmic velocities—play a foundational role in modern space exploration.</p>
+<hr/>
+<h3 id="satellite-launches-1st-cosmic-velocity">Satellite Launches (1st Cosmic Velocity)</h3>
+<p>To place a satellite in a stable orbit around Earth, it must reach the <strong>first cosmic velocity</strong>, approximately <strong>7.9 km/s</strong>. This allows the satellite to continuously "fall" around Earth without hitting the surface, maintaining orbital motion.</p>
+<hr/>
+<h3 id="planetary-missions-2nd-cosmic-velocity">Planetary Missions (2nd Cosmic Velocity)</h3>
+<p>To send spacecraft to the Moon, Mars, or beyond, they must first escape Earth's gravitational field. This requires achieving the <strong>second cosmic velocity</strong> (≈ 11.2 km/s). Every mission to another celestial body—Apollo, Artemis, Perseverance—relies on this principle.</p>
+<hr/>
+<h3 id="interstellar-travel-3rd-cosmic-velocity">Interstellar Travel (3rd Cosmic Velocity)</h3>
+<p>Leaving the Solar System entirely requires surpassing the <strong>third cosmic velocity</strong> (≈ 16.7 km/s). Only a few spacecraft, such as <strong>Voyager 1</strong> and <strong>Voyager 2</strong>, have achieved this. These missions rely on gravitational assists and precise trajectory design based on orbital mechanics.</p>
+<hr/>
+<h3 id="summary">Summary:</h3>
+<ul>
+<li>Kepler’s Law is used to <strong>predict orbital periods</strong> and design transfer orbits.</li>
+<li>Cosmic velocities define the <strong>minimum energy thresholds</strong> for mission success.</li>
+<li>All modern space exploration is <strong>deeply rooted in these classical laws</strong>.</li>
+</ul>
+<p>From low Earth orbit to deep space probes, these equations continue to guide humanity's journey into space.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This project presented a detailed investigation into <strong>orbital motion</strong>, <strong>Kepler’s Third Law</strong>, and <strong>cosmic velocities</strong> through both theoretical and computational approaches.</p>
+<p>We began by deriving the mathematical relationship between the <strong>orbital period</strong> and the <strong>radius</strong>, then validated it through simulations and real planetary data. Visualizations confirmed that planetary periods increase predictably with distance from the Sun.</p>
+<p>We also explored the <strong>cosmic velocity thresholds</strong>—the critical speeds required to:
+- Orbit a planet (<span class="arithmatex">\(v_1\)</span>)
+- Escape its gravity (<span class="arithmatex">\(v_2\)</span>)
+- Leave the Solar System (<span class="arithmatex">\(v_3\)</span>)</p>
+<p>These velocities were computed for different celestial bodies and shown to vary depending on planetary mass and radius.</p>
+<p>Finally, we demonstrated the real-world importance of these concepts in <strong>satellite deployment</strong>, <strong>planetary exploration</strong>, and <strong>interstellar missions</strong>.</p>
+<h3 id="key-takeaway">Key Takeaway:</h3>
+<blockquote>
+<p><em>Understanding orbital mechanics is not only essential for physics, but also for humanity's future in space.</em></p>
+</blockquote>
+<p>Through equations, code, and simulations, this project connects the <strong>laws of motion</strong> with the <strong>frontiers of exploration</strong>.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
