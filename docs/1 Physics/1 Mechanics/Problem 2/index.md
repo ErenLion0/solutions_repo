@@ -1,4 +1,4 @@
-# ** 📌Investigating the Dynamics of a Forced Damped Pendulum**
+#  📌Investigating the Dynamics of a Forced Damped Pendulum
 
 ## Motivation
 
@@ -106,7 +106,20 @@ The forced damped pendulum model finds application in a wide range of real-world
 
 ## Implementation
 
-![1
+### Time Evolution of the Damped Pendulum
+
+The plot below shows the angular displacement $\theta(t)$ and angular velocity $\omega(t)$ of a pendulum subject to damping but without any external forcing:
+
+- The oscillation amplitude gradually decreases due to energy dissipation.
+- Both $\theta(t)$ and $\omega(t)$ decay toward zero.
+- The motion eventually settles at the stable equilibrium point ($\theta = 0$, $\omega = 0$).
+
+This illustrates how damping affects long-term behavior, turning periodic motion into an overdamped or underdamped decay depending on system parameters.
+
+![Damped Pendulum Time Series](Simple_Pendulum_Motion_(Undamped).png)
+
+*Figure: Time evolution of a damped pendulum (no external force). Energy is continuously lost due to damping, leading to eventual rest.*
+
 
 ### Pure Pendulum $(A = 0, b = 0)$
 
@@ -176,6 +189,15 @@ This model better reflects real-world systems where friction or air resistance c
 
 *Figure: Spiral-shaped phase space diagram for a damped pendulum with no external force.*
 
+### Time Evolution – Damped Pendulum (A = 0, b > 0)
+
+The pendulum’s amplitude gradually decreases over time due to damping. The system eventually comes to rest at the equilibrium position.
+
+- [Colab Link](https://colab.research.google.com/drive/1TAX-RwGtfBqGDEcbkr_Yda7gkWCj37JR#scrollTo=68q_BNrd2XTK)
+
+![Time_Damped_Pendulum.png](Time_Damped_Pendulum.png)
+
+
 ### Driven Undamped Pendulum $(A > 0, b = 0)$
 
 In this case, the pendulum is subject to a **periodic external force** but **no damping**:
@@ -204,6 +226,15 @@ This represents a theoretical but useful case for exploring how **external perio
 ![Driven Undamped Pendulum](Driven_Undamped_Pendulum.png)
 
 *Figure: Phase diagram for a pendulum with external forcing and no damping. Motion amplitude increases as energy is added to the system continuously.*
+
+### Time Evolution – Driven Undamped Pendulum (A > 0, b = 0)
+
+Without damping, the external force keeps adding energy to the system. The motion increases in amplitude and can become unbounded over time.
+
+- [Colab Link](https://colab.research.google.com/drive/1TAX-RwGtfBqGDEcbkr_Yda7gkWCj37JR#scrollTo=68q_BNrd2XTK)
+
+![Driven Undamped](Time_Driven_Undamped_Pendulum.png)
+
 
 ### Forced Damped Pendulum $(A > 0, b > 0)$
 
@@ -234,6 +265,15 @@ This model is frequently used to study **nonlinear and chaotic dynamics** in dri
 - [Colab Link](https://colab.research.google.com/drive/1oaGxO3yZRqKaseOTKVRGlC06MX00iko6)
 
 ![Forced Damped Pendulum](Forced_Damped_Pendulum.png)
+
+### Time Evolution – Forced Damped Pendulum (A > 0, b > 0)
+
+The system reaches a steady-state oscillation as energy input from the driving force balances energy loss from damping.
+
+- [Colab Link](https://colab.research.google.com/drive/1TAX-RwGtfBqGDEcbkr_Yda7gkWCj37JR#scrollTo=68q_BNrd2XTK)
+
+![Time Forced Damped Pendulum.png](Time_Forced_Damped_Pendulum.png)
+
 
 ### Poincaré Section – Forced Damped Pendulum
 
@@ -285,7 +325,7 @@ For each value of $\omega$
 
 the system is simulated over a long time. After discarding transients, the last 100 values of $\theta(t)$
 
-are plotted for each frequency.
+ are plotted for each frequency.
 
 ### 🔍 What It Reveals
 
@@ -313,4 +353,6 @@ Key takeaways include:
 - Phase diagrams and Poincaré sections help visualize the system’s qualitative nature.
 - Bifurcation diagrams reveal transitions to chaos as system parameters vary.
 - The same physical model appears in various real-world systems, from circuits to biomechanics.
+
+
 
