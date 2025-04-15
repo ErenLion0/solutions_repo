@@ -106,6 +106,8 @@ The forced damped pendulum model finds application in a wide range of real-world
 
 ## Implementation
 
+![1
+
 ### Pure Pendulum $(A = 0, b = 0)$
 
 In this case, we simulate the **ideal pendulum** with no damping and no external force:
@@ -173,21 +175,6 @@ This model better reflects real-world systems where friction or air resistance c
 ![Damped Pendulum](Damped_Pendulum.png)
 
 *Figure: Spiral-shaped phase space diagram for a damped pendulum with no external force.*
-
-### Time Evolution of the Damped Pendulum
-
-The plot below shows the angular displacement $\theta(t)$ and angular velocity $\omega(t)$ of a pendulum subject to damping but without any external forcing:
-
-- The oscillation amplitude gradually decreases due to energy dissipation.
-- Both $\theta(t)$ and $\omega(t)$ decay toward zero.
-- The motion eventually settles at the stable equilibrium point ($\theta = 0$, $\omega = 0$).
-
-This illustrates how damping affects long-term behavior, turning periodic motion into an overdamped or underdamped decay depending on system parameters.
-
-![Damped Pendulum Time Series](sandbox:/mnt/data/damped_pendulum_timeseries.png)
-
-*Figure: Time evolution of a damped pendulum (no external force). Energy is continuously lost due to damping, leading to eventual rest.*
-
 
 ### Driven Undamped Pendulum $(A > 0, b = 0)$
 
