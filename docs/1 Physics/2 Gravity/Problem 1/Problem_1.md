@@ -113,8 +113,8 @@ $$\frac{T^2}{r^3} = \frac{(2.36 \times 10^6)^2}{(3.84 \times 10^8)^3} \approx 1.
 
 ### Earth orbiting the Sun
 
-- $r = 1.496 \\times 10^{11}$ m
-- $T = 3.156 \\times 10^7$ s
+- $r = 1.496 \times 10^{11}$ m
+- $T = 3.156 \times 10^7$ s
 
 $$\frac{T^2}{r^3} = \frac{(3.156 \times 10^7)^2}{(1.496 \times 10^{11})^3} \approx 1.00 \times 10^{-13}$$
 
