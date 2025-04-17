@@ -13,7 +13,7 @@ Adding forcing introduces new parameters, such as the amplitude and frequency of
 The motion of a **forced damped pendulum** is governed by the following second-order nonlinear differential equation:
 
 $$
-\frac{d^2\\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
 $$
 
 **Variables:**
@@ -64,7 +64,7 @@ When ($\omega$ $\approx$ $omega_0$ = $\sqrt{\frac{g}{L}}$), the system can reson
 
 ---
 
-## 2. Analysis of Dynamics
+## Analysis of Dynamics
 
 ### Parameter Effects
 
@@ -81,7 +81,7 @@ Transition observed by increasing $(A)$ or tuning $(\omega)$.
 
 ---
 
-## 3. Practical Applications
+## Practical Applications
 
 The forced damped pendulum model finds application in a wide range of real-world systems. A few notable examples include:
 

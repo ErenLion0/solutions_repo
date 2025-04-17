@@ -233,7 +233,7 @@ These speeds are essential for satellite launches, interplanetary missions, and 
 
 *Figure: Comparison of first, second, and third cosmic velocities.*
 
-## 8. Mathematical Analysis of the Cosmic Velocities
+## Mathematical Analysis of the Cosmic Velocities
 
 Each cosmic velocity is based on fundamental laws of classical mechanics and gravitation. Let's analyze their mathematical derivations and examine the influence of different parameters.
 
