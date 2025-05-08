@@ -120,7 +120,91 @@ $$\frac{T^2}{r^3} = \frac{(3.156 \times 10^7)^2}{(1.496 \times 10^{11})^3} \appr
 
 ---
 
+
+
 The near-equality of $\frac{T^2}{r^3}$ confirms Kepler's Third Law in real data.
+
+
+### Visualizing Kepler’s Third Law – $T^2$ vs $r^3$
+
+To experimentally verify Kepler’s Third Law, we plotted the square of the orbital period ($T^2$) against the cube of the orbital radius ($r^3$) for selected planets in our Solar System.
+
+The graph shows a clear linear relationship between $T^2$ and $r^3$, supporting the law’s mathematical prediction that $T^2 \propto r^3$.
+
+This relationship is essential in understanding how orbital mechanics scale with distance and is consistent with Newton’s formulation of gravitation.
+
+#### Included Planets:
+
+| Planet   | Orbital Radius (AU) | Period (years) |
+|----------|----------------------|----------------|
+| Mercury  | 0.39                 | 0.24           |
+| Venus    | 0.72                 | 0.62           |
+| Earth    | 1.00                 | 1.00           |
+| Mars     | 1.52                 | 1.88           |
+| Jupiter  | 5.20                 | 11.86          |
+| Saturn   | 9.58                 | 29.46          |
+
+![Kepler's_Third_Law_Real_Planet](Kepler's_Third_Law_Real_Planet.png)
+
+---
+
+## Estimating Mass of the Sun and Earth Using Kepler’s Law
+
+Kepler’s Third Law can be rearranged into a form that allows us to estimate the mass of the central body in a two-body system:
+
+$$
+M = \frac{4\pi^2 r^3}{G T^2}
+$$
+
+---
+
+#### Estimating the Mass of the Sun (from Earth’s orbit)
+
+We use Earth's orbit around the Sun:
+
+- Orbital radius:  
+  ($ r = 1.496 \times 10^{11} \ \text{m} $)
+- Orbital period:  
+  ($ T = 365.25 \times 24 \times 3600 \ \text{s} = 3.15576 \times 10^7 \ \text{s} $)
+- Gravitational constant:  
+  ($ G = 6.67430 \times 10^{-11} \ \mathrm{m^3/kg/s^2} $)
+
+Plugging into the formula:
+
+$$[
+M = \frac{4\pi^2 (1.496 \times 10^{11})^3}{6.67430 \times 10^{-11} \cdot (3.15576 \times 10^7)^2}
+\approx 1.989 \times 10^{30} \ \text{kg}
+]$$
+
+This value matches the accepted mass of the Sun.
+
+---
+
+#### Estimating the Mass of the Earth (from Moon’s orbit)
+
+We now use the Moon’s orbit around the Earth:
+
+- Orbital radius:  
+  ($ r = 3.84 \times 10^8 \ \text{m} $)
+- Orbital period:  
+  ($ T = 27.3 \times 24 \times 3600 \ \text{s} = 2.36 \times 10^6 \ \text{s} $)
+
+Using the same formula:
+
+$$[
+M = \frac{4\pi^2 (3.84 \times 10^8)^3}{6.67430 \times 10^{-11} \cdot (2.36 \times 10^6)^2}
+\approx 5.97 \times 10^{24} \ \text{kg}
+]$$
+
+This aligns with the accepted mass of the Earth.
+
+---
+
+These examples show how Kepler’s Third Law can be used not only to understand orbital dynamics but also to extract fundamental physical quantities such as mass from observable orbital data.
+
+
+
+
 
 ## Simulated Circular Orbits of Planets
 
@@ -146,3 +230,24 @@ This graphical representation reinforces the idea that the orbital radius direct
 ![Simulated_Circular_Orbits _of_Planets.png](Simulated_Circular_Orbits_of_Planets.png)
 
 *Figure: Simulated circular orbits of the planets in AU around the Sun.*
+
+## Conclusion
+
+In this project, we investigated the fundamental principles of orbital mechanics through the lens of Kepler’s Third Law. Beginning with a theoretical derivation using Newton's laws of motion and gravitation, we established the relationship between orbital period and radius:
+
+$$[
+T^2 = \frac{4\pi^2}{GM} r^3
+]$$
+
+This expression was then tested using real planetary data from the Solar System. Our $T^2$ vs $r^3$ plot demonstrated a strong linear correlation, empirically verifying Kepler’s prediction.
+
+Beyond verification, we extended the application of this law by:
+
+- Estimating the mass of the Sun using Earth’s orbital parameters
+- Calculating the Earth’s mass using the Moon’s orbit
+- Simulating planetary orbits and visualizing their scale and dynamics
+- Discussing the broader implications of Kepler’s Law in astronomy and space exploration
+
+Through both theoretical and computational methods, the project not only confirmed Kepler’s Law but also highlighted how classical mechanics enables us to infer properties of celestial bodies from observational data.
+
+This work provides a robust foundation for understanding orbital dynamics and supports the development of more advanced astrophysical models and mission planning in space science.
