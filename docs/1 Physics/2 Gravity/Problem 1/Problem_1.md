@@ -147,7 +147,7 @@ This relationship is essential in understanding how orbital mechanics scale with
 
 - [Colab Link](https://colab.research.google.com/drive/1delr6LAc-bs31ttr0c1lYPmcpy0avGu-)
 
-![Kepler's_Third_Law_Real_Planet](Kepler's_Third_Law_Real_Planet.png)
+![alt text](image-1.png)
 
 ---
 
