@@ -144,6 +144,9 @@ This relationship is essential in understanding how orbital mechanics scale with
 | Jupiter  | 5.20                 | 11.86          |
 | Saturn   | 9.58                 | 29.46          |
 
+
+- [Colab Link](https://colab.research.google.com/drive/1delr6LAc-bs31ttr0c1lYPmcpy0avGu-)
+
 ![Kepler's_Third_Law_Real_Planet](Kepler's_Third_Law_Real_Planet.png)
 
 ---
@@ -157,6 +160,7 @@ M = \frac{4\pi^2 r^3}{G T^2}
 $$
 
 ---
+
 
 #### Estimating the Mass of the Sun (from Earth’s orbit)
 
