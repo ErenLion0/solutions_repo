@@ -163,11 +163,11 @@ $$
 We use Earth's orbit around the Sun:
 
 - Orbital radius:  
-  ($ r = 1.496 \times 10^{11} \ \text{m} $)
+  ($r = 1.496 \times 10^{11} \ \text{m}$)
 - Orbital period:  
-  ($ T = 365.25 \times 24 \times 3600 \ \text{s} = 3.15576 \times 10^7 \ \text{s} $)
+  ($T = 365.25 \times 24 \times 3600 \ \text{s} = 3.15576 \times 10^7 \ \text{s}$)
 - Gravitational constant:  
-  ($ G = 6.67430 \times 10^{-11} \ \mathrm{m^3/kg/s^2} $)
+  ($G = 6.67430 \times 10^{-11} \ \mathrm{m^3/kg/s^2}$)
 
 Plugging into the formula:
 
@@ -185,9 +185,9 @@ This value matches the accepted mass of the Sun.
 We now use the Moon’s orbit around the Earth:
 
 - Orbital radius:  
-  ($ r = 3.84 \times 10^8 \ \text{m} $)
+  ($r = 3.84 \times 10^8 \ \text{m}$)
 - Orbital period:  
-  ($ T = 27.3 \times 24 \times 3600 \ \text{s} = 2.36 \times 10^6 \ \text{s} $)
+  ($T = 27.3 \times 24 \times 3600 \ \text{s} = 2.36 \times 10^6 \ \text{s}$)
 
 Using the same formula:
 
