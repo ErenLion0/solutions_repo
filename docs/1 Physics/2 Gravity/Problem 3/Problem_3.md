@@ -76,11 +76,26 @@ This simulation illustrates how different initial tangential velocities determin
 Each trajectory was simulated numerically under Newtonian gravity. The Earth is modeled as a circle, and initial conditions are consistent across all runs except tangential speed.
 
 # 📌 Real-World Application Relevance
-Orbital Insertion: Speeds around 7.8 km/s are used to achieve low Earth orbit.
+- **Orbital Insertion:**
+ Speeds around 7.8 km/s are used to achieve low Earth orbit.
 
-Reentry Dynamics: Suborbital speeds simulate missile-like descent or capsule return.
+- **Reentry Dynamics:**
+ Suborbital speeds simulate missile-like descent or capsule return.
 
-Escape Scenarios: Speeds beyond 11.2 km/s represent interplanetary missions.
+- **Escape Scenarios:**
+ Speeds beyond 11.2 km/s represent interplanetary missions.
+
+ - **Space Mission Planning:**  
+  Accurate trajectory analysis ensures mission success by optimizing launch parameters, transfer orbits, and fuel efficiency.
+
+ - **Satellite Deployment:**  
+  Depending on the satellite’s target orbit (LEO, MEO, GEO), the required insertion velocity and trajectory vary significantly.
+
+ - **Planetary Exploration:**  
+  Missions to the Moon, Mars, or beyond require understanding escape conditions and interplanetary transfer paths.  
+  Simulating these trajectories helps design gravity assists and deep space navigation.
+
+This foundational analysis supports practical space operations and exploration strategies.
 
 ---
 
