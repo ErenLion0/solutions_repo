@@ -60,7 +60,7 @@ These values will be used in our numerical simulation to classify the resulting 
 
 - [Colab Link](https://colab.research.google.com/drive/1d4qakItrgnRNwwB_QKfUjb9UJ27hIiml#scrollTo=CF7ICmaoA3O4)
 
-![Payload Trajectories in Earth's Gravitational Field](<Payload_Trajectories_in Earths_Gravitational_Field.png>)
+![alt text](image.png)
 
 ## 🛰️ Payload Trajectories from 800 km Altitude
 
