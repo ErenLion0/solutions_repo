@@ -77,13 +77,16 @@ Each trajectory was simulated numerically under Newtonian gravity. The Earth is 
 
 # 📌 Real-World Application Relevance
 - **Orbital Insertion:**
- Speeds around 7.8 km/s are used to achieve low Earth orbit.
+ 
+  Speeds around 7.8 km/s are used to achieve low Earth orbit.
 
 - **Reentry Dynamics:**
- Suborbital speeds simulate missile-like descent or capsule return.
+
+  Suborbital speeds simulate missile-like descent or capsule return.
 
 - **Escape Scenarios:**
- Speeds beyond 11.2 km/s represent interplanetary missions.
+ 
+  Speeds beyond 11.2 km/s represent interplanetary missions.
 
  - **Space Mission Planning:**  
   Accurate trajectory analysis ensures mission success by optimizing launch parameters, transfer orbits, and fuel efficiency.
