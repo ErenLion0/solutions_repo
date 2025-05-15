@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 3 - Physics and Mathematics</title>
+<title>Trajectories of a Freely Released Payload Near Earth - Physics and Mathematics</title>
 <link href="../../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 3";
+        var mkdocs_page_name = "Trajectories of a Freely Released Payload Near Earth";
         var mkdocs_page_input_path = "1 Physics/2 Gravity/Problem 3/Problem_3.md";
         var mkdocs_page_url = null;
       </script>
@@ -76,8 +76,22 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current">Problem 3</a>
 <ul class="current">
-<li class="toctree-l3 current"><a class="reference internal current" href="#">Problem 3</a>
+<li class="toctree-l3 current"><a class="reference internal current" href="#">Trajectories of a Freely Released Payload Near Earth</a>
 <ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="#motivation">Motivation:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#theoretical-foundation">📚 Theoretical Foundation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#why-runge-kutta-method">💻 Why Runge-Kutta Method?</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#total-mechanical-energy-of-the-system">🧮 Total Mechanical Energy of the System</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#orbit-classification-summary">🔁 Orbit Classification Summary</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#initial-conditions-for-the-simulation">🌍 Initial Conditions for the Simulation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#payload-trajectories-from-800-km-altitude">🛰️ Payload Trajectories from 800 km Altitude</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -184,7 +198,7 @@
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">2 Gravity</li>
 <li class="breadcrumb-item">Problem 3</li>
-<li class="breadcrumb-item active">Problem 3</li>
+<li class="breadcrumb-item active">Trajectories of a Freely Released Payload Near Earth</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -192,7 +206,109 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-3">Problem 3</h1>
+<h1 id="trajectories-of-a-freely-released-payload-near-earth">Trajectories of a Freely Released Payload Near Earth</h1>
+<h2 id="motivation">Motivation:</h2>
+<p>When an object is released from a moving rocket near Earth, its trajectory depends on initial conditions and gravitational forces. This scenario presents a rich problem, blending principles of orbital mechanics and numerical methods. Understanding the potential trajectories is vital for space missions, such as deploying payloads or returning objects to Earth.</p>
+<h2 id="theoretical-foundation">📚 Theoretical Foundation</h2>
+<p>The motion of a payload released near Earth is governed by Newton’s Law of Universal Gravitation and classical mechanics. The gravitational force acting on the payload is:</p>
+<div class="arithmatex">\[
+\vec{F}_g = -\frac{GM_{\text{Earth}}m}{r^2} \hat{r}
+\]</div>
+<p>This results in an acceleration toward the Earth’s center, influencing the trajectory based on initial speed and direction.</p>
+<hr/>
+<h2 id="why-runge-kutta-method">💻 Why Runge-Kutta Method?</h2>
+<p>The motion of the payload is governed by a system of differential equations derived from Newton’s second law. Since an analytical solution is generally not possible for these nonlinear, multidimensional systems, we use a numerical solver.</p>
+<p>The Runge-Kutta (4th order) method provides a robust and accurate way to simulate the trajectory over time. It balances stability and computational efficiency, making it ideal for solving orbital dynamics problems.</p>
+<hr/>
+<h2 id="total-mechanical-energy-of-the-system">🧮 Total Mechanical Energy of the System</h2>
+<p>The total energy <span class="arithmatex">\(( E )\)</span> of a payload of mass <span class="arithmatex">\(( m )\)</span>, located at distance <span class="arithmatex">\(( r )\)</span> from the Earth's center and moving at speed <span class="arithmatex">\(( v )\)</span>, is:</p>
+<div class="arithmatex">\[
+E = \frac{1}{2}mv^2 - \frac{GM_{\text{Earth}}m}{r}
+\]</div>
+<p>The type of orbit depends on the <strong>sign of the total mechanical energy</strong>:</p>
+<ul>
+<li><strong>Elliptical Orbit</strong>: <span class="arithmatex">\(( E &lt; 0 )\)</span> → Bound orbit (sub-orbital or closed elliptical)</li>
+<li><strong>Parabolic Trajectory</strong>: <span class="arithmatex">\(( E = 0 )\)</span> → Exactly at escape velocity</li>
+<li><strong>Hyperbolic Trajectory</strong>: <span class="arithmatex">\(( E &gt; 0 )\)</span> → Exceeds escape velocity, escapes Earth</li>
+</ul>
+<hr/>
+<h2 id="orbit-classification-summary">🔁 Orbit Classification Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Energy $( E ) $</th>
+<th>Speed Range</th>
+<th>Trajectory Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(( E &lt; 0 )\)</span></td>
+<td><span class="arithmatex">\(( v &lt; v_{\text{escape}} )\)</span></td>
+<td>Elliptical</td>
+<td>Closed orbit, object remains around Earth</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(( E = 0 )\)</span></td>
+<td><span class="arithmatex">\(( v = v_{\text{escape}} )\)</span></td>
+<td>Parabolic</td>
+<td>Escape trajectory, marginal case</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(( E &gt; 0 )\)</span></td>
+<td>$( v &gt; v_{\text{escape}} ) $</td>
+<td>Hyperbolic</td>
+<td>Object escapes Earth permanently</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="initial-conditions-for-the-simulation">🌍 Initial Conditions for the Simulation</h2>
+<p>For this study, the payload is released from a position:</p>
+<ul>
+<li><strong>800 km above Earth's surface</strong> → <span class="arithmatex">\(( r_0 = R_{\text{Earth}} + 800 \times 10^3 \ \mathrm{m} )\)</span></li>
+<li><strong>Initial velocity is tangential</strong>, and varied from <strong>5 km/s to 13 km/s</strong></li>
+</ul>
+<p>These values will be used in our numerical simulation to classify the resulting paths and visualize the orbital behavior.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1d4qakItrgnRNwwB_QKfUjb9UJ27hIiml#scrollTo=CF7ICmaoA3O4">Colab Link</a></li>
+</ul>
+<p><img alt="Payload Trajectories in Earth's Gravitational Field" src="../Payload_Trajectories_in%20Earths_Gravitational_Field.png"/></p>
+<h2 id="payload-trajectories-from-800-km-altitude">🛰️ Payload Trajectories from 800 km Altitude</h2>
+<p>This simulation illustrates how different initial tangential velocities determine the path of a freely released payload in Earth's gravity field. Starting 800 km above Earth's surface, the payload is given initial speeds ranging from <strong>5.0 km/s to 13.0 km/s</strong>.</p>
+<p><strong>Key Observations:</strong></p>
+<ul>
+<li><strong>Below 7.5 km/s</strong>: Suborbital motion — payload eventually crashes back to Earth.</li>
+<li><strong>7.5–10.0 km/s</strong>: Stable elliptical orbits — possible satellite deployment speeds.</li>
+<li><strong>~11.2 km/s</strong>: Parabolic escape — threshold velocity for leaving Earth’s gravity.</li>
+<li><strong>Above 11.2 km/s</strong>: Hyperbolic escape — spacecraft escapes Earth with excess velocity.</li>
+</ul>
+<p>Each trajectory was simulated numerically under Newtonian gravity. The Earth is modeled as a circle, and initial conditions are consistent across all runs except tangential speed.</p>
+<h1 id="real-world-application-relevance">📌 Real-World Application Relevance</h1>
+<p>Orbital Insertion: Speeds around 7.8 km/s are used to achieve low Earth orbit.</p>
+<p>Reentry Dynamics: Suborbital speeds simulate missile-like descent or capsule return.</p>
+<p>Escape Scenarios: Speeds beyond 11.2 km/s represent interplanetary missions.</p>
+<hr/>
+<h2 id="discussion-relevance-to-spaceflight-and-mission-design">🔍 Discussion: Relevance to Spaceflight and Mission Design</h2>
+<p>The simulation clearly demonstrates how a payload’s initial tangential speed determines its orbital behavior when released near Earth:</p>
+<ul>
+<li><strong>Suborbital trajectories</strong> <span class="arithmatex">\((v &lt; 7.5 km/s)\)</span> correspond to failed orbital insertions or intentional reentry profiles — similar to early test flights and ballistic missiles.</li>
+<li><strong>Elliptical orbits</strong> <span class="arithmatex">\((v ≈ 7.5–10.0 km/s)\)</span> are used in many satellite deployments, space station logistics, and planetary capture phases.</li>
+<li><strong>Parabolic escape</strong> <span class="arithmatex">\((v ≈ 11.2 km/s)\)</span> represents the threshold velocity for leaving Earth's gravitational influence — critical for planning interplanetary transfer windows.</li>
+<li><strong>Hyperbolic escape</strong> <span class="arithmatex">\((v &gt; 11.2 km/s)\)</span> models high-speed deep-space missions, such as Voyager and New Horizons, and concepts for interstellar probes.</li>
+</ul>
+<p>By simulating these trajectories, engineers can determine optimal launch speeds, fuel budgets, and mission viability based on gravitational constraints. This analysis is also key to understanding spacecraft reentry windows, orbit maintenance, and planetary arrival timing.</p>
+<hr/>
+<h2 id="conclusion">✅ Conclusion</h2>
+<p>In this project, we analyzed how a payload released from 800 km altitude behaves under different tangential speeds using Newtonian mechanics and gravitational dynamics.</p>
+<ul>
+<li>We derived the governing forces and energy relationships.</li>
+<li>We classified trajectories based on mechanical energy: elliptical, parabolic, and hyperbolic.</li>
+<li>Using Python simulations, we visualized the resulting motion paths from 5.0 km/s to 13.0 km/s.</li>
+<li>We compared these outcomes to real-world mission categories such as orbital insertion and escape.</li>
+</ul>
+<p>This project not only reinforces gravitational theory but also highlights its direct application to modern space exploration and mission planning. Through simulation and analysis, we better understand how initial conditions shape a spacecraft’s entire journey.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
