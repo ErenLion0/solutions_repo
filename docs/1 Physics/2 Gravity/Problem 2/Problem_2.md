@@ -53,9 +53,10 @@ Derived from conservation of energy, this velocity ensures that the object's kin
 This is the speed needed to escape the gravitational influence of the star (e.g., the Sun) from orbit around a planet.  
 It depends on the relative position and gravity of both the planet and the star. A simplified form (at planetary surface):
 
-$
+
+$$
 v_3 \approx \sqrt{2 \cdot \frac{GM}{R}}
-$
+$$
 
 #### Physical Meaning:
 This is the speed an object must reach to escape the gravity of the entire solar system starting from Earth’s orbit. It goes beyond just escaping Earth—it ensures the spacecraft also overcomes the gravitational influence of the Sun.
