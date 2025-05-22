@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>📌 Interference Patterns On A Water Surface - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "\ud83d\udccc Interference Patterns On A Water Surface";
         var mkdocs_page_input_path = "1 Physics/3 Waves/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -84,8 +84,40 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">3 Waves</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">📌 Interference Patterns On A Water Surface</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wave-interference-from-multiple-point-sources">🌊 Wave Interference from Multiple Point Sources</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#theoretical-background">🔬 Theoretical Background</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wave-pattern-from-a-single-point-source">🌊 Wave Pattern from a Single Point Source</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wave-interference-from-two-point-sources">🌊 Wave Interference from Two Point Sources</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#key-characteristics">Key Characteristics:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wave-interference-from-three-point-sources-triangle-configuration">🌊 Wave Interference from Three Point Sources (Triangle Configuration)</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#characteristics">Characteristics:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3d-wave-interference-with-multiple-point-sources">🌐 3D Wave Interference with Multiple Point Sources</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#configurations">Configurations:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#real-world-applications">Real-World Applications</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">📌 Conclusion</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -183,7 +215,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">3 Waves</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">📌 Interference Patterns On A Water Surface</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -191,7 +223,160 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="interference-patterns-on-a-water-surface">📌 Interference Patterns On A Water Surface</h1>
+<h2 id="motivation">Motivation</h2>
+<p>Interference occurs when waves from different sources overlap, creating new patterns. On a water surface, this can be easily observed when ripples from different points meet, forming distinctive interference patterns. These patterns can show us how waves combine in different ways, either reinforcing each other or canceling out.</p>
+<p>Studying these patterns helps us understand wave behavior in a simple, visual way. It also allows us to explore important concepts, like the relationship between wave phase and the effects of multiple sources. This task offers a hands-on approach to learning about wave interactions and their real-world applications, making it an interesting and engaging way to dive into wave physics.</p>
+<h2 id="wave-interference-from-multiple-point-sources">🌊 Wave Interference from Multiple Point Sources</h2>
+<h3 id="theoretical-background">🔬 Theoretical Background</h3>
+<p>Wave interference occurs when two or more waves superpose in space, creating regions of constructive and destructive interference. When the sources are coherent and emit waves with the same amplitude, frequency, and wavelength, the superposition can lead to beautiful and physically meaningful interference patterns.</p>
+<p>The displacement of a water surface by a circular wave originating from a point source <span class="arithmatex">\((x_0, y_0)\)</span> is given by:</p>
+<div class="arithmatex">\[
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(kr - \omega t + \phi)
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(A\)</span>: Amplitude of the wave  </li>
+<li><span class="arithmatex">\(r = \sqrt{(x - x_0)^2 + (y - y_0)^2}\)</span>: Distance from the source  </li>
+<li><span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span>: Wave number  </li>
+<li><span class="arithmatex">\(\omega = 2\pi f\)</span>: Angular frequency  </li>
+<li><span class="arithmatex">\(\phi\)</span>: Phase shift  </li>
+</ul>
+<p>If there are <span class="arithmatex">\(N\)</span> point sources, the total displacement is:</p>
+<div class="arithmatex">\[
+\eta_{\text{sum}}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t)
+\]</div>
+<hr/>
+<h2 id="wave-pattern-from-a-single-point-source">🌊 Wave Pattern from a Single Point Source</h2>
+<p>In this first example, we simulate a wave generated by a single point source at the center of the domain. The wave propagation follows the equation:</p>
+<div class="arithmatex">\[
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(kr - \omega t + \phi)
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\((A)\)</span> is the amplitude,  </li>
+<li><span class="arithmatex">\(( r = \sqrt{(x - x_0)^2 + (y - y_0)^2} )\)</span> is the distance from the source to the point <span class="arithmatex">\(((x, y))\)</span>,  </li>
+<li><span class="arithmatex">\(( k = \frac{2\pi}{\lambda} )\)</span> is the wave number,  </li>
+<li><span class="arithmatex">\(( \omega = 2\pi f )\)</span> is the angular frequency,  </li>
+<li><span class="arithmatex">\(( \phi )\)</span> is the initial phase,  </li>
+<li><span class="arithmatex">\(( \eta(x, y, t) )\)</span> is the water surface displacement.</li>
+</ul>
+<p>This scenario demonstrates the radial symmetry of the wavefronts from a single source. Amplitude decreases with distance due to the <span class="arithmatex">\(( \frac{1}{\sqrt{r}} )\)</span> decay, while the phase advances as the wave propagates outward.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/11yf8w1PnX--a09eR8RNv-VjODbHOtyzK#scrollTo=7JdtqSFQEzhh">Colab Link</a></li>
+</ul>
+<p><img alt="Wave Pattern from One Point Source" src="../single_wave.gif"/></p>
+<hr/>
+<h2 id="wave-interference-from-two-point-sources">🌊 Wave Interference from Two Point Sources</h2>
+<p>When two coherent point sources emit waves of the same frequency and amplitude, the resulting pattern on the surface is a combination of constructive and destructive interference.</p>
+<p>The total displacement at any point is given by the sum of the contributions from both sources:</p>
+<div class="arithmatex">\[
+\eta_{\text{total}}(x, y, t) = \eta_1(x, y, t) + \eta_2(x, y, t)
+\]</div>
+<p>Each wave contribution is defined as:</p>
+<div class="arithmatex">\[
+\eta_i(x, y, t) = \frac{A}{\sqrt{r_i}} \cdot \cos(k r_i - \omega t + \phi)
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(( r_i )\)</span> is the distance from the <span class="arithmatex">\(i\)</span>-th source to the point <span class="arithmatex">\(((x, y))\)</span>,</li>
+<li><span class="arithmatex">\(( A )\)</span> is the amplitude,</li>
+<li><span class="arithmatex">\(( k = \frac{2\pi}{\lambda} )\)</span> is the wave number,</li>
+<li><span class="arithmatex">\(( \omega = 2\pi f )\)</span> is the angular frequency.</li>
+</ul>
+<h3 id="key-characteristics">Key Characteristics:</h3>
+<ul>
+<li><strong>Constructive Interference</strong> occurs where the path difference is an integer multiple of the wavelength:
+  $$
+  r_1 - r_2 = n \lambda
+  $$</li>
+<li><strong>Destructive Interference</strong> occurs where the path difference is a half-integer multiple of the wavelength:
+  $$
+  r_1 - r_2 = \left(n + \frac{1}{2}\right) \lambda
+  $$</li>
+</ul>
+<p>These regions form interference fringes that radiate from between the two sources. This is the same principle used in classic <strong>double-slit experiments</strong> in optics and wave physics.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1FXoLXgAWlr1jJTq1sMn03OLoS-yV1fjG">Colab Link</a></li>
+</ul>
+<p><img alt="alt text" src="../Two_source_wave.gif"/></p>
+<hr/>
+<h2 id="wave-interference-from-three-point-sources-triangle-configuration">🌊 Wave Interference from Three Point Sources (Triangle Configuration)</h2>
+<p>When three coherent wave sources are arranged in an equilateral triangle, they emit circular waves that interfere to create a highly symmetric and intricate pattern.</p>
+<p>Each point source contributes a wave defined by:</p>
+<div class="arithmatex">\[
+\eta_i(x, y, t) = \frac{A}{\sqrt{r_i}} \cdot \cos(k r_i - \omega t + \phi)
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(( r_i = \sqrt{(x - x_i)^2 + (y - y_i)^2} )\)</span> is the distance from the <span class="arithmatex">\(i\)</span>-th source,  </li>
+<li><span class="arithmatex">\(( A )\)</span> is amplitude,  </li>
+<li><span class="arithmatex">\(( k = \frac{2\pi}{\lambda} )\)</span> is the wave number,  </li>
+<li><span class="arithmatex">\(( \omega = 2\pi f )\)</span> is the angular frequency.</li>
+</ul>
+<p>The total displacement is the sum of all three sources:</p>
+<div class="arithmatex">\[
+\eta_{\text{total}}(x, y, t) = \eta_1 + \eta_2 + \eta_3
+\]</div>
+<h3 id="characteristics">Characteristics:</h3>
+<ul>
+<li>Interference fringes become more <strong>radially symmetric and dense</strong> compared to the two-source case.</li>
+<li>The <strong>center of the triangle</strong> becomes a point of high constructive interference (if phases are equal).</li>
+<li>As symmetry increases, <strong>interference complexity</strong> rises dramatically.</li>
+</ul>
+<p>Such patterns are often used in <strong>acoustic array calibration</strong>, <strong>antenna beam shaping</strong>, and <strong>waveform holography</strong>, where symmetric arrangements are crucial for predictable interference fields.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1MVsP7twcX11IsQunkEbQ2OafVqnsAzEr#scrollTo=egviEWHdUkTj">Colab Link</a></li>
+</ul>
+<p><img alt="alt text" src="../Three_Source_Wave.gif"/></p>
+<hr/>
+<h2 id="3d-wave-interference-with-multiple-point-sources">🌐 3D Wave Interference with Multiple Point Sources</h2>
+<p>In this extended model, we analyze <strong>three-dimensional wave interference</strong> from multiple coherent point sources located in space. Each source emits <strong>spherical waves</strong>, and the resulting wave field is formed by the superposition of all individual wave contributions.</p>
+<p>The displacement at a point <span class="arithmatex">\((x, y, z)\)</span> from a point source located at <span class="arithmatex">\((x_i, y_i, z_i)\)</span> is given by:</p>
+<div class="arithmatex">\[
+\eta_i(x, y, z, t) = \frac{A}{r_i} \cdot \cos(k r_i - \omega t + \phi)
+\]</div>
+<p>with:</p>
+<div class="arithmatex">\[
+r_i = \sqrt{(x - x_i)^2 + (y - y_i)^2 + (z - z_i)^2}
+\]</div>
+<p>The <strong>total wave field</strong> from <span class="arithmatex">\( N \)</span> sources becomes:</p>
+<div class="arithmatex">\[
+\eta_{\text{total}}(x, y, z, t) = \sum_{i=1}^{N} \eta_i(x, y, z, t)
+\]</div>
+<hr/>
+<h3 id="configurations">Configurations:</h3>
+<ul>
+<li>
+<p><strong>Two Sources (Dual Center):</strong><br/>
+  When two sources are placed along a line (e.g., x-axis), the interference pattern forms symmetric lobes along the axis perpendicular to the source separation — similar to classical double-slit interference, but in 3D.</p>
+</li>
+<li>
+<p><strong>Three Sources (Triangular Configuration):</strong><br/>
+  Arranging three sources at the vertices of a triangle in 3D space leads to a more complex volumetric interference pattern. Depending on phase alignment and spacing, these patterns can form central constructive cores or multiple layered lobes.</p>
+</li>
+</ul>
+<hr/>
+<ul>
+<li><a href="https://colab.research.google.com/drive/12P84wvZ4UQv-pWdhEJGlMDVIAc2rii2_#scrollTo=xiJ_IaBSW4Cc">Colab Link</a></li>
+</ul>
+<p><img alt="3D_Wave_Interference_Two_Sources" src="3D_Wave_Interference_Two_Sources.gif"/></p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1yOgFmiPkIF0XB7ZWxDdjLELvxbLURTVP">Colab Link</a></li>
+</ul>
+<p><img alt="3D_Wave_Interference_Three_Sources" src="../3D_Wave_Interference_Three_Sources.gif"/></p>
+<h2 id="real-world-applications">Real-World Applications</h2>
+<p>Wave interference and similar principles are used in:</p>
+<ul>
+<li><strong>Radar systems</strong> – signal interference analysis  </li>
+<li><strong>Optics</strong> – double-slit experiments and holography  </li>
+<li><strong>Antenna design</strong> – beam forming and array configuration  </li>
+<li><strong>Acoustics</strong> – concert hall sound patterning  </li>
+<li><strong>Seismology</strong> – studying overlapping shockwave data</li>
+</ul>
+<hr/>
+<h2 id="conclusion">📌 Conclusion</h2>
+<p>This project provides a hands-on exploration of wave interference using fundamental principles of physics and computational modeling. Visualizing superposition from symmetric polygon configurations reveals the profound beauty and complexity hidden within simple equations—demonstrating not only theoretical concepts but also their wide applications from acoustics to radar.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
