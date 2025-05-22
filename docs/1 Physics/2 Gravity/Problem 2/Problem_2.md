@@ -1,4 +1,4 @@
-# Cosmic Velocities: Derivation, Values and Visual Comparison
+# 📌 Cosmic Velocities: Derivation, Values and Visual Comparison
 
 ## Motivation
 
@@ -78,7 +78,7 @@ We get:
 
 - $( v_1 \approx 7.91 \ \mathrm{km/s} )$  
 - $( v_2 \approx 11.18 \ \mathrm{km/s} )$ 
-- $( v_3 \approx 11.18 \ \mathrm{km/s} ) (approximate)$
+- $( v_3 \approx 16.68 \ \mathrm{km/s} ) (approximate)$
 
 ---
 
@@ -92,7 +92,7 @@ Using:
 We get:
 - $( v_1 \approx 1.68 \ \mathrm{km/s} )$
 - $( v_2 \approx 2.38 \ \mathrm{km/s} )$
-- $( v_3 \approx 2.38 \ \mathrm{km/s} )$ *(approximate)*
+- $( v_3 \approx 29.62 \ \mathrm{km/s} ) (approximate)$ 
 
 ---
 
@@ -105,7 +105,7 @@ Using:
 We get:
 - $( v_1 \approx 3.55 \ \mathrm{km/s} )$
 - $( v_2 \approx 5.02 \ \mathrm{km/s} )$
-- $( v_3 \approx 5.02 \ \mathrm{km/s} ) (approximate)$
+- $( v_3 \approx 34.13 \ \mathrm{km/s} ) (approximate)$
 
 ---
 
@@ -118,7 +118,7 @@ Using:
 We get:
 - $( v_1 \approx 42.1 \ \mathrm{km/s} )$
 - $( v_2 \approx 59.5 \ \mathrm{km/s} )$
-- $( v_3 \approx 59.5 \ \mathrm{km/s} ) (approximate)$
+- $( v_3 \approx 62.98 \ \mathrm{km/s} ) (approximate)$
 
 
 ---
