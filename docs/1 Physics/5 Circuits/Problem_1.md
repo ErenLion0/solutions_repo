@@ -89,9 +89,11 @@ A set of three resistors is connected in a straight line between four distinct n
 
 $R_{\text{eq}} = 1 + 4 + 6 = 11\,\Omega$
 
+- [Falstad Link](https://tinyurl.com/24obtg4n)
+
 ![alt text](test1.png)
 
-[link](https://tinyurl.com/2yl4rddw)
+
 
 > "Since all elements are in series, their resistances simply add up. The current remains the same through each resistor."
 
