@@ -120,6 +120,8 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#test-2-simple-parallel">✅ Test 2: Simple Parallel</a>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="#test-3-nested-combination">✅ Test 3: Nested Combination</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -272,7 +274,8 @@ A set of three resistors is connected in a straight line between four distinct n
 </ul>
 <p><strong>Expected Result:</strong></p>
 <p><span class="arithmatex">\(R_{\text{eq}} = 1 + 4 + 6 = 11\,\Omega\)</span></p>
-<p><img alt="alt text" src="image.png"/></p>
+<p><img alt="alt text" src="../test1.png"/></p>
+<p><a href="https://tinyurl.com/2yl4rddw">link</a></p>
 <blockquote>
 <p>"Since all elements are in series, their resistances simply add up. The current remains the same through each resistor."</p>
 </blockquote>
@@ -289,9 +292,32 @@ Two resistors are connected in parallel between the same two nodes. This creates
 <div class="arithmatex">\[
 \frac{1}{R_{\text{eq}}} = \frac{1}{6} + \frac{1}{3} = \frac{1}{2} \Rightarrow R_{\text{eq}} = 2\,\Omega
 \]</div>
-<p><img alt="alt text" src="image-1.png"/></p>
+<p><img alt="alt text" src="../test2.png"/></p>
 <blockquote>
 <p>"Parallel resistors divide the current across multiple paths. The combined resistance is always lower than the smallest individual resistor."</p>
+</blockquote>
+<h3 id="test-3-nested-combination">✅ Test 3: Nested Combination</h3>
+<p><strong>Description:</strong><br/>
+This test involves a more complex configuration where series and parallel resistors are nested inside one another. The goal is to simplify the internal group first, then reduce the outer series.</p>
+<p><strong>Connections:</strong></p>
+<ul>
+<li>A–B: 2Ω  </li>
+<li>B–C: 2Ω  </li>
+<li>C–D: 4Ω  </li>
+<li>B–D: 4Ω  </li>
+<li>D–E: 1Ω</li>
+</ul>
+<p><strong>Expected Reduction Steps:</strong></p>
+<ol>
+<li>B–C–D is in series: <span class="arithmatex">\(R = 2 + 4 = 6\,\Omega\)</span></li>
+<li>This path is in parallel with direct B–D:<br/>
+<span class="arithmatex">\(\frac{1}{R} = \frac{1}{6} + \frac{1}{4} \Rightarrow R = 2.4\,\Omega\)</span></li>
+<li>A–B and D–E are in series:<br/>
+<span class="arithmatex">\(R_{\text{eq}} = 2 + 2.4 + 1 = 5.4\,\Omega\)</span></li>
+</ol>
+<p><img alt="alt text" src="../test3.png"/></p>
+<blockquote>
+<p>"First reduce the inner path, then treat the whole circuit as a single line."</p>
 </blockquote>
 </div>
 </div><footer>
