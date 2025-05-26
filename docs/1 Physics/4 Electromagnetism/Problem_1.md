@@ -361,4 +361,3 @@ Understanding the motion of charged particles in fields is foundational for mode
 
 ---
 
-> This project highlights how numerical methods and physics principles combine to simulate meaningful, real-world behavior — and why mastering the Lorentz force is essential in any applied physics or engineering context.
