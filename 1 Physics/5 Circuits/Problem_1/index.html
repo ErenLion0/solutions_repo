@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Equivalent Resistance Using Graph Theory - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Equivalent Resistance Using Graph Theory";
         var mkdocs_page_input_path = "1 Physics/5 Circuits/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -96,8 +96,32 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">5 Circuits</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Equivalent Resistance Using Graph Theory</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-theoretical-background">📚 2. Theoretical Background</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#graph-based-circuit-representation">Graph-Based Circuit Representation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#equivalent-resistance-rules">Equivalent Resistance Rules</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#reduction-strategy-in-graphs">Reduction Strategy in Graphs</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-algorithm-implementation">⚙️ 3. Algorithm Implementation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#libraries-used">🛠️ Libraries Used</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#basic-graph-setup">🧱 Basic Graph Setup</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#test-1-simple-series">✅ Test 1: Simple Series</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#test-2-simple-parallel">✅ Test 2: Simple Parallel</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -183,7 +207,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">5 Circuits</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Equivalent Resistance Using Graph Theory</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -191,7 +215,84 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="equivalent-resistance-using-graph-theory">Equivalent Resistance Using Graph Theory</h1>
+<h2 id="motivation">Motivation</h2>
+<p>Calculating equivalent resistance is a fundamental problem in electrical circuits, essential for understanding and designing efficient systems. While traditional methods involve iteratively applying series and parallel resistor rules, these approaches can become cumbersome for complex circuits with many components. Graph theory offers a powerful alternative, providing a structured and algorithmic way to analyze circuits.</p>
+<p>By representing a circuit as a graph—where nodes correspond to junctions and edges represent resistors with weights equal to their resistance values—we can systematically simplify even the most intricate networks. This method not only streamlines calculations but also opens the door to automated analysis, making it particularly useful in modern applications like circuit simulation software, optimization problems, and network design.</p>
+<p>Studying equivalent resistance through graph theory is valuable not only for its practical applications but also for the deeper insights it provides into the interplay between electrical and mathematical concepts. This approach highlights the versatility of graph theory, demonstrating its relevance across physics, engineering, and computer science.</p>
+<h2 id="2-theoretical-background">📚 2. Theoretical Background</h2>
+<h3 id="graph-based-circuit-representation">Graph-Based Circuit Representation</h3>
+<p>In this project, we use an undirected, weighted graph to represent an electrical resistor network:</p>
+<ul>
+<li><strong>Node (vertex):</strong> A connection point or junction in the circuit.</li>
+<li><strong>Edge:</strong> A resistor, which connects two nodes and has a numerical weight corresponding to its resistance (in ohms, Ω).</li>
+</ul>
+<p>This representation allows us to treat the resistor network as a data structure that can be analyzed and simplified using graph theory techniques.</p>
+<hr/>
+<h3 id="equivalent-resistance-rules">Equivalent Resistance Rules</h3>
+<h4 id="series-connection">🔸 Series Connection</h4>
+<p>Two or more resistors are said to be in series if they are connected end-to-end and share a single common node, with no branching in between.</p>
+<p>The total (equivalent) resistance is the sum of all resistors:</p>
+<p><span class="arithmatex">\(R_{\text{eq}} = R_1 + R_2 + \cdots + R_n\)</span></p>
+<h4 id="parallel-connection">🔸 Parallel Connection</h4>
+<p>Two or more resistors are in parallel if both ends of each resistor are connected to the same two nodes.</p>
+<p>The total equivalent resistance is given by:</p>
+<p><span class="arithmatex">\(\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \cdots + \frac{1}{R_n}\)</span></p>
+<hr/>
+<h3 id="reduction-strategy-in-graphs">Reduction Strategy in Graphs</h3>
+<p>To simplify a resistor network graphically:</p>
+<ol>
+<li><strong>Detect series connections:</strong> A node with exactly two neighbors can indicate a series connection.</li>
+<li><strong>Detect parallel connections:</strong> Multiple edges between the same pair of nodes imply parallel resistors.</li>
+<li><strong>Iteratively reduce:</strong> At each step, merge equivalent resistors and update the graph, until only two terminal nodes remain.</li>
+</ol>
+<p>These operations are repeated automatically by the algorithm until the entire network is reduced to a single equivalent resistance value.</p>
+<h2 id="3-algorithm-implementation">⚙️ 3. Algorithm Implementation</h2>
+<p>To compute the equivalent resistance of a complex circuit, we implement a graph-based algorithm using Python and the NetworkX library.</p>
+<p>Each resistor is modeled as an edge in an undirected graph. The resistance value is stored as a weight (or attribute) on the edge.</p>
+<hr/>
+<h3 id="libraries-used">🛠️ Libraries Used</h3>
+<ul>
+<li><code>networkx</code>: for graph creation and manipulation</li>
+<li><code>matplotlib</code>: for optional visualization (not required for calculations)</li>
+</ul>
+<hr/>
+<h3 id="basic-graph-setup">🧱 Basic Graph Setup</h3>
+<p>Below is a sample Python code block to create a simple resistor network using NetworkX:</p>
+<p><img alt="SampleResistorGraph" src="../SampleResistorGraph.png"/></p>
+<hr/>
+<h3 id="test-1-simple-series">✅ Test 1: Simple Series</h3>
+<p><strong>Description:</strong><br/>
+A set of three resistors is connected in a straight line between four distinct nodes.</p>
+<p><strong>Connections:</strong></p>
+<ul>
+<li>X–Y: 1Ω  </li>
+<li>Y–Z: 4Ω  </li>
+<li>Z–W: 6Ω</li>
+</ul>
+<p><strong>Expected Result:</strong></p>
+<p><span class="arithmatex">\(R_{\text{eq}} = 1 + 4 + 6 = 11\,\Omega\)</span></p>
+<p><img alt="alt text" src="image.png"/></p>
+<blockquote>
+<p>"Since all elements are in series, their resistances simply add up. The current remains the same through each resistor."</p>
+</blockquote>
+<h3 id="test-2-simple-parallel">✅ Test 2: Simple Parallel</h3>
+<p><strong>Description:</strong><br/>
+Two resistors are connected in parallel between the same two nodes. This creates two paths for the current between nodes M and N.</p>
+<p><strong>Connections:</strong></p>
+<ul>
+<li>M–N: 6Ω  </li>
+<li>M–N: 3Ω (second path)</li>
+</ul>
+<p><strong>Expected Result:</strong></p>
+<p>Using the parallel resistance formula:</p>
+<div class="arithmatex">\[
+\frac{1}{R_{\text{eq}}} = \frac{1}{6} + \frac{1}{3} = \frac{1}{2} \Rightarrow R_{\text{eq}} = 2\,\Omega
+\]</div>
+<p><img alt="alt text" src="image-1.png"/></p>
+<blockquote>
+<p>"Parallel resistors divide the current across multiple paths. The combined resistance is always lower than the smallest individual resistor."</p>
+</blockquote>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
