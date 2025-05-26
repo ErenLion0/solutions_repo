@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Simulating the effects of the Lorentz Force - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Simulating the effects of the Lorentz Force";
         var mkdocs_page_input_path = "1 Physics/4 Electromagnetism/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -90,8 +90,26 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">4 Electromagnetism</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Simulating the effects of the Lorentz Force</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#theoretical-background">🔬 Theoretical Background</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#magnetic-field-only">🧲 Magnetic Field Only</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#electric-and-magnetic-fields-crossed-fields">⚡ Electric and Magnetic Fields (Crossed Fields)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#equation-of-motion">🧮 Equation of Motion</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#why-runge-kutta-method">💻 Why Runge-Kutta Method?</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#simulation-particle-in-uniform-magnetic-field">🔄 Simulation: Particle in Uniform Magnetic Field</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#crossed-electric-and-magnetic-fields">⚡Crossed Electric and Magnetic Fields</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -183,7 +201,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">4 Electromagnetism</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Simulating the effects of the Lorentz Force</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -191,7 +209,147 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="simulating-the-effects-of-the-lorentz-force">Simulating the effects of the Lorentz Force</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The Lorentz force, expressed as <span class="arithmatex">\(\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}\)</span>, governs the motion of charged particles in electric and magnetic fields. It is foundational in fields like plasma physics, particle accelerators, and astrophysics. By focusing on simulations, we can explore the practical applications and visualize the complex trajectories that arise due to this force.</p>
+<h2 id="theoretical-background">🔬 Theoretical Background</h2>
+<p>The motion of a charged particle in electric and magnetic fields is governed by the <strong>Lorentz force</strong>:</p>
+<div class="arithmatex">\[
+\vec{F} = q\vec{E} + q\vec{v} \times \vec{B}
+\]</div>
+<p>Where:<br/>
+- <span class="arithmatex">\(q\)</span> is the electric charge of the particle,<br/>
+- <span class="arithmatex">\(\vec{E}\)</span> is the electric field vector,<br/>
+- <span class="arithmatex">\(\vec{B}\)</span> is the magnetic field vector,<br/>
+- <span class="arithmatex">\(\vec{v}\)</span> is the velocity of the particle.  </p>
+<p>This expression combines two key phenomena:
+1. <strong>Electric force</strong>: <span class="arithmatex">\(q\vec{E}\)</span> — accelerates the particle linearly in the direction of the field.
+2. <strong>Magnetic force</strong>: <span class="arithmatex">\(q\vec{v} \times \vec{B}\)</span> — acts perpendicular to both the velocity and the magnetic field, causing circular or helical motion.</p>
+<hr/>
+<h3 id="magnetic-field-only">🧲 Magnetic Field Only</h3>
+<p>When <span class="arithmatex">\(\vec{E} = 0\)</span> and a uniform magnetic field <span class="arithmatex">\(\vec{B}\)</span> is present, the equation becomes:</p>
+<div class="arithmatex">\[
+\vec{F} = q\vec{v} \times \vec{B}
+\]</div>
+<p>This results in <strong>circular motion</strong> of the charged particle in the plane perpendicular to <span class="arithmatex">\(\vec{B}\)</span>. The radius of the circular path (Larmor radius) is:</p>
+<div class="arithmatex">\[
+r = \frac{mv_\perp}{|q|B}
+\]</div>
+<p>And the angular frequency (cyclotron frequency) is:</p>
+<div class="arithmatex">\[
+\omega = \frac{|q|B}{m}
+\]</div>
+<p>Where:<br/>
+- <span class="arithmatex">\(v_\perp\)</span> is the component of velocity perpendicular to <span class="arithmatex">\(\vec{B}\)</span>,<br/>
+- <span class="arithmatex">\(m\)</span> is the mass of the particle.</p>
+<p>If there’s a velocity component parallel to <span class="arithmatex">\(\vec{B}\)</span>, the motion becomes <strong>helical</strong>.</p>
+<hr/>
+<h3 id="electric-and-magnetic-fields-crossed-fields">⚡ Electric and Magnetic Fields (Crossed Fields)</h3>
+<p>When both <span class="arithmatex">\(\vec{E}\)</span> and <span class="arithmatex">\(\vec{B}\)</span> are nonzero and perpendicular to each other, the particle undergoes a <strong>drift motion</strong>. The drift velocity is given by:</p>
+<div class="arithmatex">\[
+\vec{v}_d = \frac{\vec{E} \times \vec{B}}{B^2}
+\]</div>
+<p>This is known as the <strong><span class="arithmatex">\(\vec{E} \times \vec{B}\)</span> drift</strong> and occurs regardless of the particle's charge or mass.</p>
+<hr/>
+<h3 id="equation-of-motion">🧮 Equation of Motion</h3>
+<p>We simulate the system by numerically solving Newton's second law:</p>
+<div class="arithmatex">\[
+m \frac{d\vec{v}}{dt} = q\vec{E} + q\vec{v} \times \vec{B}
+\]</div>
+<p>This results in a system of coupled differential equations that cannot be solved analytically in the general case, especially when <span class="arithmatex">\(\vec{E}\)</span> and <span class="arithmatex">\(\vec{B}\)</span> are functions of time or position. Therefore, we will use numerical integration methods to explore particle trajectories under various field configurations.</p>
+<h2 id="why-runge-kutta-method">💻 Why Runge-Kutta Method?</h2>
+<p>The motion of a charged particle in electric and magnetic fields is governed by a system of coupled, nonlinear differential equations:</p>
+<div class="arithmatex">\[
+m\frac{d\vec{v}}{dt} = q\vec{E} + q\vec{v} \times \vec{B}
+\]</div>
+<p>These equations are typically <strong>not solvable analytically</strong>, especially in the general case where <span class="arithmatex">\(\vec{E}\)</span> and <span class="arithmatex">\(\vec{B}\)</span> vary in space or time. Therefore, we must use <strong>numerical integration techniques</strong> to approximate the particle’s trajectory.</p>
+<p>Among the available methods, the <strong>Runge-Kutta 4th order (RK4)</strong> algorithm offers a good balance between <strong>accuracy</strong> and <strong>computational efficiency</strong>. It reduces the local truncation error significantly compared to simpler methods like Euler's method.</p>
+<p>The RK4 update steps for velocity <span class="arithmatex">\(\vec{v}\)</span> and position <span class="arithmatex">\(\vec{r}\)</span> are defined as:</p>
+<ul>
+<li><strong>Velocity update:</strong></li>
+</ul>
+<div class="arithmatex">\[
+\vec{v}_{n+1} = \vec{v}_n + \frac{1}{6}(k_1^v + 2k_2^v + 2k_3^v + k_4^v)
+\]</div>
+<ul>
+<li><strong>Position update:</strong></li>
+</ul>
+<div class="arithmatex">\[
+\vec{r}_{n+1} = \vec{r}_n + \frac{1}{6}(k_1^r + 2k_2^r + 2k_3^r + k_4^r)
+\]</div>
+<p>Where:</p>
+<div class="arithmatex">\[
+\begin{align*}
+k_1^v &amp;= a(\vec{v}_n)\Delta t \\
+k_2^v &amp;= a\left(\vec{v}_n + \frac{1}{2}k_1^v\right)\Delta t \\
+k_3^v &amp;= a\left(\vec{v}_n + \frac{1}{2}k_2^v\right)\Delta t \\
+k_4^v &amp;= a\left(\vec{v}_n + k_3^v\right)\Delta t \\
+\\
+k_i^r &amp;= \text{corresponding velocity step} \times \Delta t
+\end{align*}
+\]</div>
+<p>Here, <span class="arithmatex">\(a(\vec{v})\)</span> is the acceleration given by the Lorentz force:</p>
+<div class="arithmatex">\[
+a(\vec{v}) = \frac{q}{m}(\vec{E} + \vec{v} \times \vec{B})
+\]</div>
+<p>This method allows us to simulate the particle’s motion with high temporal resolution, which is critical when studying fast-changing trajectories under Lorentz dynamics.</p>
+<hr/>
+<h2 id="simulation-particle-in-uniform-magnetic-field">🔄 Simulation: Particle in Uniform Magnetic Field</h2>
+<p>We consider a charged particle with an initial velocity perpendicular to a uniform magnetic field <span class="arithmatex">\(\vec{B} = B\hat{z}\)</span>. The electric field is zero: <span class="arithmatex">\(\vec{E} = 0\)</span>.</p>
+<p>The Lorentz force becomes:</p>
+<div class="arithmatex">\[
+\vec{F} = q\vec{v} \times \vec{B}
+\]</div>
+<p>This results in circular motion in the <span class="arithmatex">\(xy\)</span>-plane with constant speed.</p>
+<ul>
+<li>
+<p><strong>Radius (Larmor Radius):</strong>
+  $$
+  r = \frac{mv_\perp}{|q|B}
+  $$</p>
+</li>
+<li>
+<p><strong>Cyclotron Frequency:</strong>
+  $$
+  \omega = \frac{|q|B}{m}
+  $$</p>
+</li>
+<li>
+<p><strong>Motion type:</strong> Uniform circular motion.</p>
+</li>
+</ul>
+<hr/>
+<p><img alt="Charged Particle Motion in Uniform Magnetic Field" src="../Charged_Particle_Motion_in_Uniform_Magnetic_Field.png"/></p>
+<hr/>
+<blockquote>
+<p>The particle moves in a perfect circle when its initial velocity is perpendicular to <span class="arithmatex">\(\vec{B}\)</span>. No energy is gained or lost, and the speed remains constant.</p>
+</blockquote>
+<hr/>
+<h2 id="crossed-electric-and-magnetic-fields">⚡Crossed Electric and Magnetic Fields</h2>
+<p>We now consider a case where the electric and magnetic fields are perpendicular:</p>
+<ul>
+<li><span class="arithmatex">\(\vec{E} = [1, 0, 0]\)</span></li>
+<li><span class="arithmatex">\(\vec{B} = [0, 0, 1]\)</span></li>
+</ul>
+<p>Initial velocity is set to <span class="arithmatex">\(\vec{v}_0 = [0, 1, 0]\)</span>.</p>
+<p>The Lorentz force becomes:</p>
+<div class="arithmatex">\[
+\vec{F} = q(\vec{E} + \vec{v} \times \vec{B})
+\]</div>
+<p>This setup leads to a combination of <strong>circular motion</strong> due to the magnetic field and <strong>linear drift</strong> due to the cross product of the fields. The net drift velocity is given by:</p>
+<div class="arithmatex">\[
+\vec{v}_d = \frac{\vec{E} \times \vec{B}}{B^2}
+\]</div>
+<p>For our configuration:</p>
+<div class="arithmatex">\[
+\vec{v}_d = \frac{[1, 0, 0] \times [0, 0, 1]}{1^2} = [0, 1, 0]
+\]</div>
+<hr/>
+<p><img alt="Charged Particle Motion in Crossed Fields" src="../Charged_Particle_Motion_in_Crossed_Fields.png"/></p>
+<hr/>
+<blockquote>
+<p>The charged particle exhibits a spiral trajectory in the <span class="arithmatex">\(xy\)</span>-plane, superimposed with a constant drift in the <span class="arithmatex">\(y\)</span>-direction. This is characteristic of <span class="arithmatex">\(\vec{E} \times \vec{B}\)</span> drift.</p>
+</blockquote>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
