@@ -123,7 +123,7 @@ This method allows us to simulate the particle’s motion with high temporal res
 
 ---
 
-## 🔄 Simulation: Particle in Uniform Magnetic Field
+## 🔄 Particle in Uniform Magnetic Field
 
 We consider a charged particle with an initial velocity perpendicular to a uniform magnetic field $\vec{B} = B\hat{z}$. The electric field is zero: $\vec{E} = 0$.
 
@@ -191,3 +191,174 @@ $$
 ---
 
 > The charged particle exhibits a spiral trajectory in the $xy$-plane, superimposed with a constant drift in the $y$-direction. This is characteristic of $\vec{E} \times \vec{B}$ drift.
+
+## 🧪 Parameter Exploration
+
+In this section, we explore how different physical parameters affect the trajectory of a charged particle under the Lorentz force.
+
+---
+
+### 1. Field Strengths: $\vec{E}$ and $\vec{B}$
+
+- Increasing the **magnetic field strength** ($B$) results in a **tighter spiral** (smaller Larmor radius):
+
+  $$
+  r = \frac{mv_\perp}{|q|B}
+  $$
+
+  A stronger $B$ also increases the **cyclotron frequency**:
+
+  $$
+  \omega = \frac{|q|B}{m}
+  $$
+
+- Increasing the **electric field strength** ($E$) enhances the **$\vec{E} \times \vec{B}$ drift**:
+
+  $$
+  \vec{v}_d = \frac{\vec{E} \times \vec{B}}{B^2}
+  $$
+
+---
+
+### 2. Initial Velocity: $\vec{v}_0$
+
+- The **perpendicular component** $v_\perp$ determines the radius of rotation in the $xy$-plane.
+- The **parallel component** $v_\parallel$ causes **helical stretching** along the direction of $\vec{B}$.
+
+By varying the initial velocity vector, the particle’s motion can transition from circular → helical → linear.
+
+---
+
+### 3. Charge and Mass: $q$ and $m$
+
+- The sign of $q$ affects the **direction of rotation**.
+- The **$q/m$ ratio** controls how tightly and how fast the particle rotates:
+
+  $$
+  \omega = \frac{|q|B}{m}
+  $$
+
+  A particle with a high $q/m$ (like an electron) rotates more tightly and faster than a heavier particle (like a proton) in the same field.
+
+---
+
+> By adjusting each parameter, we can simulate a wide variety of real-world scenarios — from slow-moving ions in traps to high-speed electrons in accelerators.
+
+## 🔁 Helical Motion in Uniform Magnetic Field
+
+We now consider a charged particle moving in a uniform magnetic field with a velocity that has both perpendicular and parallel components:
+
+- $\vec{B} = [0, 0, 1]$
+- $\vec{E} = [0, 0, 0]$
+- $\vec{v}_0 = [1, 0, 2]$
+
+The magnetic field causes circular motion in the $xy$-plane, while the $z$-component of velocity remains unaffected, leading to a **helical trajectory**:
+
+$$
+\vec{F} = q\vec{v} \times \vec{B}
+$$
+
+![Helical_Motion.png](Helical_Motion.png)
+
+> "The particle rotates in the $xy$-plane while moving linearly along the $z$-axis. This results in a constant-pitch helical path around the magnetic field direction."
+
+
+## ⚡ Combined Uniform $\vec{E} \parallel \vec{B}$ Fields
+
+We now consider a scenario where both the electric and magnetic fields are uniform and aligned in the same direction, typically along the $z$-axis:
+
+- $\vec{E} = [0, 0, E]$
+- $\vec{B} = [0, 0, B]$
+- $\vec{v}_0 = [v_x, 0, 0]$
+
+The Lorentz force becomes:
+
+$$
+\vec{F} = q(\vec{E} + \vec{v} \times \vec{B})
+$$
+
+- The **magnetic field** causes circular motion in the $xy$-plane.
+- The **electric field** causes continuous acceleration in the $z$-direction.
+
+This combination produces a **spiral trajectory that stretches along the field lines**, with increasing pitch as the particle accelerates.
+
+---
+
+![Combined_Fields_Spiral.png](Combined_Fields_Spiral.png)
+
+> "The electric field causes the particle to accelerate along $\vec{B}$, stretching the helix. The motion combines uniform circular rotation and linear acceleration."
+
+## 🔍 Discussion: Relevance to Real-World Applications
+
+The simulated trajectories presented in this project are not just mathematical curiosities — they closely model real-world behavior of charged particles in various technological and natural environments.
+
+---
+
+### 🌀 Cyclotron and Synchrotron Devices
+
+- Circular and helical motion in uniform magnetic fields is fundamental to **cyclotrons** and **synchrotrons**, which accelerate charged particles in controlled magnetic environments.
+- The radius and frequency of motion are key to tuning these machines:
+
+$$
+r = \frac{mv_\perp}{|q|B}, \quad \omega = \frac{|q|B}{m}
+$$
+
+---
+
+### ☢️ Magnetic Confinement in Plasma Physics
+
+- Devices like **tokamaks** and **stellarators** rely on $\vec{E} \times \vec{B}$ drift and magnetic curvature to confine plasma and maintain stability.
+- Understanding drift motion is essential for reducing energy losses and predicting particle escape.
+
+---
+
+### 🛰️ Satellite and Spacecraft Dynamics
+
+- In Earth's magnetosphere, charged particles (such as solar wind ions) undergo **helical motion**, mirroring the behavior we simulated.
+- Accurate models are required to protect satellites from radiation and optimize spacecraft trajectories.
+
+---
+
+### 🔬 Mass Spectrometry and Particle Detectors
+
+- Mass spectrometers exploit differences in particle curvature under magnetic fields to identify atomic species.
+- By knowing the $q/m$ ratio, we can determine the identity of an unknown ion from its circular trajectory radius.
+
+---
+
+> These examples demonstrate how the Lorentz force governs critical behaviors in physics and engineering, and why simulations like these are crucial for both education and real-world design.
+
+## ✅ Conclusion
+
+In this project, we studied the motion of a charged particle under the influence of electric and magnetic fields by simulating various physical scenarios using the Lorentz force:
+
+$$
+\vec{F} = q\vec{E} + q\vec{v} \times \vec{B}
+$$
+
+---
+
+### 🔍 What We Did
+
+- We implemented the **Runge-Kutta 4th order** method to numerically solve the coupled differential equations governing particle motion.
+- We simulated and visualized the following cases:
+  - Uniform magnetic field → circular and helical motion
+  - Crossed electric and magnetic fields → $\vec{E} \times \vec{B}$ drift
+  - Combined uniform $\vec{E} \parallel \vec{B}$ → expanding spiral motion
+- We explored how key parameters like $B$, $E$, $v_0$, $q/m$ influence the resulting trajectories.
+
+---
+
+### 🌍 Why It Matters
+
+These simulations reflect real-world behaviors in:
+- Particle accelerators (cyclotrons, synchrotrons)
+- Plasma confinement systems (tokamaks, fusion devices)
+- Mass spectrometry and ion traps
+- Space physics and satellite environments
+
+Understanding the motion of charged particles in fields is foundational for modern physics and engineering applications. Simulations allow us to visualize these complex trajectories and gain deeper intuition beyond analytical solutions.
+
+---
+
+> This project highlights how numerical methods and physics principles combine to simulate meaningful, real-world behavior — and why mastering the Lorentz force is essential in any applied physics or engineering context.
