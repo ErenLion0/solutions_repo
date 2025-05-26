@@ -106,9 +106,43 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#why-runge-kutta-method">💻 Why Runge-Kutta Method?</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#simulation-particle-in-uniform-magnetic-field">🔄 Simulation: Particle in Uniform Magnetic Field</a>
+<li class="toctree-l3"><a class="reference internal" href="#particle-in-uniform-magnetic-field">🔄 Particle in Uniform Magnetic Field</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#crossed-electric-and-magnetic-fields">⚡Crossed Electric and Magnetic Fields</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#parameter-exploration">🧪 Parameter Exploration</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-field-strengths-vece-and-vecb">1. Field Strengths: \(\vec{E}\) and \(\vec{B}\)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-initial-velocity-vecv_0">2. Initial Velocity: \(\vec{v}_0\)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-charge-and-mass-q-and-m">3. Charge and Mass: \(q\) and \(m\)</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#helical-motion-in-uniform-magnetic-field">🔁 Helical Motion in Uniform Magnetic Field</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#combined-uniform-vece-parallel-vecb-fields">⚡ Combined Uniform \(\vec{E} \parallel \vec{B}\) Fields</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#discussion-relevance-to-real-world-applications">🔍 Discussion: Relevance to Real-World Applications</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#cyclotron-and-synchrotron-devices">🌀 Cyclotron and Synchrotron Devices</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#magnetic-confinement-in-plasma-physics">☢️ Magnetic Confinement in Plasma Physics</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#satellite-and-spacecraft-dynamics">🛰️ Satellite and Spacecraft Dynamics</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#mass-spectrometry-and-particle-detectors">🔬 Mass Spectrometry and Particle Detectors</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">✅ Conclusion</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-we-did">🔍 What We Did</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#why-it-matters">🌍 Why It Matters</a>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -294,7 +328,7 @@ a(\vec{v}) = \frac{q}{m}(\vec{E} + \vec{v} \times \vec{B})
 \]</div>
 <p>This method allows us to simulate the particle’s motion with high temporal resolution, which is critical when studying fast-changing trajectories under Lorentz dynamics.</p>
 <hr/>
-<h2 id="simulation-particle-in-uniform-magnetic-field">🔄 Simulation: Particle in Uniform Magnetic Field</h2>
+<h2 id="particle-in-uniform-magnetic-field">🔄 Particle in Uniform Magnetic Field</h2>
 <p>We consider a charged particle with an initial velocity perpendicular to a uniform magnetic field <span class="arithmatex">\(\vec{B} = B\hat{z}\)</span>. The electric field is zero: <span class="arithmatex">\(\vec{E} = 0\)</span>.</p>
 <p>The Lorentz force becomes:</p>
 <div class="arithmatex">\[
@@ -349,6 +383,143 @@ a(\vec{v}) = \frac{q}{m}(\vec{E} + \vec{v} \times \vec{B})
 <hr/>
 <blockquote>
 <p>The charged particle exhibits a spiral trajectory in the <span class="arithmatex">\(xy\)</span>-plane, superimposed with a constant drift in the <span class="arithmatex">\(y\)</span>-direction. This is characteristic of <span class="arithmatex">\(\vec{E} \times \vec{B}\)</span> drift.</p>
+</blockquote>
+<h2 id="parameter-exploration">🧪 Parameter Exploration</h2>
+<p>In this section, we explore how different physical parameters affect the trajectory of a charged particle under the Lorentz force.</p>
+<hr/>
+<h3 id="1-field-strengths-vece-and-vecb">1. Field Strengths: <span class="arithmatex">\(\vec{E}\)</span> and <span class="arithmatex">\(\vec{B}\)</span></h3>
+<ul>
+<li>Increasing the <strong>magnetic field strength</strong> (<span class="arithmatex">\(B\)</span>) results in a <strong>tighter spiral</strong> (smaller Larmor radius):</li>
+</ul>
+<p>$$
+  r = \frac{mv_\perp}{|q|B}
+  $$</p>
+<p>A stronger <span class="arithmatex">\(B\)</span> also increases the <strong>cyclotron frequency</strong>:</p>
+<p>$$
+  \omega = \frac{|q|B}{m}
+  $$</p>
+<ul>
+<li>Increasing the <strong>electric field strength</strong> (<span class="arithmatex">\(E\)</span>) enhances the <strong><span class="arithmatex">\(\vec{E} \times \vec{B}\)</span> drift</strong>:</li>
+</ul>
+<p>$$
+  \vec{v}_d = \frac{\vec{E} \times \vec{B}}{B^2}
+  $$</p>
+<hr/>
+<h3 id="2-initial-velocity-vecv_0">2. Initial Velocity: <span class="arithmatex">\(\vec{v}_0\)</span></h3>
+<ul>
+<li>The <strong>perpendicular component</strong> <span class="arithmatex">\(v_\perp\)</span> determines the radius of rotation in the <span class="arithmatex">\(xy\)</span>-plane.</li>
+<li>The <strong>parallel component</strong> <span class="arithmatex">\(v_\parallel\)</span> causes <strong>helical stretching</strong> along the direction of <span class="arithmatex">\(\vec{B}\)</span>.</li>
+</ul>
+<p>By varying the initial velocity vector, the particle’s motion can transition from circular → helical → linear.</p>
+<hr/>
+<h3 id="3-charge-and-mass-q-and-m">3. Charge and Mass: <span class="arithmatex">\(q\)</span> and <span class="arithmatex">\(m\)</span></h3>
+<ul>
+<li>The sign of <span class="arithmatex">\(q\)</span> affects the <strong>direction of rotation</strong>.</li>
+<li>The <strong><span class="arithmatex">\(q/m\)</span> ratio</strong> controls how tightly and how fast the particle rotates:</li>
+</ul>
+<p>$$
+  \omega = \frac{|q|B}{m}
+  $$</p>
+<p>A particle with a high <span class="arithmatex">\(q/m\)</span> (like an electron) rotates more tightly and faster than a heavier particle (like a proton) in the same field.</p>
+<hr/>
+<blockquote>
+<p>By adjusting each parameter, we can simulate a wide variety of real-world scenarios — from slow-moving ions in traps to high-speed electrons in accelerators.</p>
+</blockquote>
+<h2 id="helical-motion-in-uniform-magnetic-field">🔁 Helical Motion in Uniform Magnetic Field</h2>
+<p>We now consider a charged particle moving in a uniform magnetic field with a velocity that has both perpendicular and parallel components:</p>
+<ul>
+<li><span class="arithmatex">\(\vec{B} = [0, 0, 1]\)</span></li>
+<li><span class="arithmatex">\(\vec{E} = [0, 0, 0]\)</span></li>
+<li><span class="arithmatex">\(\vec{v}_0 = [1, 0, 2]\)</span></li>
+</ul>
+<p>The magnetic field causes circular motion in the <span class="arithmatex">\(xy\)</span>-plane, while the <span class="arithmatex">\(z\)</span>-component of velocity remains unaffected, leading to a <strong>helical trajectory</strong>:</p>
+<div class="arithmatex">\[
+\vec{F} = q\vec{v} \times \vec{B}
+\]</div>
+<p><img alt="Helical_Motion.png" src="../Helical_Motion.png"/></p>
+<blockquote>
+<p>"The particle rotates in the <span class="arithmatex">\(xy\)</span>-plane while moving linearly along the <span class="arithmatex">\(z\)</span>-axis. This results in a constant-pitch helical path around the magnetic field direction."</p>
+</blockquote>
+<h2 id="combined-uniform-vece-parallel-vecb-fields">⚡ Combined Uniform <span class="arithmatex">\(\vec{E} \parallel \vec{B}\)</span> Fields</h2>
+<p>We now consider a scenario where both the electric and magnetic fields are uniform and aligned in the same direction, typically along the <span class="arithmatex">\(z\)</span>-axis:</p>
+<ul>
+<li><span class="arithmatex">\(\vec{E} = [0, 0, E]\)</span></li>
+<li><span class="arithmatex">\(\vec{B} = [0, 0, B]\)</span></li>
+<li><span class="arithmatex">\(\vec{v}_0 = [v_x, 0, 0]\)</span></li>
+</ul>
+<p>The Lorentz force becomes:</p>
+<div class="arithmatex">\[
+\vec{F} = q(\vec{E} + \vec{v} \times \vec{B})
+\]</div>
+<ul>
+<li>The <strong>magnetic field</strong> causes circular motion in the <span class="arithmatex">\(xy\)</span>-plane.</li>
+<li>The <strong>electric field</strong> causes continuous acceleration in the <span class="arithmatex">\(z\)</span>-direction.</li>
+</ul>
+<p>This combination produces a <strong>spiral trajectory that stretches along the field lines</strong>, with increasing pitch as the particle accelerates.</p>
+<hr/>
+<p><img alt="Combined_Fields_Spiral.png" src="../Combined_Fields_Spiral.png"/></p>
+<blockquote>
+<p>"The electric field causes the particle to accelerate along <span class="arithmatex">\(\vec{B}\)</span>, stretching the helix. The motion combines uniform circular rotation and linear acceleration."</p>
+</blockquote>
+<h2 id="discussion-relevance-to-real-world-applications">🔍 Discussion: Relevance to Real-World Applications</h2>
+<p>The simulated trajectories presented in this project are not just mathematical curiosities — they closely model real-world behavior of charged particles in various technological and natural environments.</p>
+<hr/>
+<h3 id="cyclotron-and-synchrotron-devices">🌀 Cyclotron and Synchrotron Devices</h3>
+<ul>
+<li>Circular and helical motion in uniform magnetic fields is fundamental to <strong>cyclotrons</strong> and <strong>synchrotrons</strong>, which accelerate charged particles in controlled magnetic environments.</li>
+<li>The radius and frequency of motion are key to tuning these machines:</li>
+</ul>
+<div class="arithmatex">\[
+r = \frac{mv_\perp}{|q|B}, \quad \omega = \frac{|q|B}{m}
+\]</div>
+<hr/>
+<h3 id="magnetic-confinement-in-plasma-physics">☢️ Magnetic Confinement in Plasma Physics</h3>
+<ul>
+<li>Devices like <strong>tokamaks</strong> and <strong>stellarators</strong> rely on <span class="arithmatex">\(\vec{E} \times \vec{B}\)</span> drift and magnetic curvature to confine plasma and maintain stability.</li>
+<li>Understanding drift motion is essential for reducing energy losses and predicting particle escape.</li>
+</ul>
+<hr/>
+<h3 id="satellite-and-spacecraft-dynamics">🛰️ Satellite and Spacecraft Dynamics</h3>
+<ul>
+<li>In Earth's magnetosphere, charged particles (such as solar wind ions) undergo <strong>helical motion</strong>, mirroring the behavior we simulated.</li>
+<li>Accurate models are required to protect satellites from radiation and optimize spacecraft trajectories.</li>
+</ul>
+<hr/>
+<h3 id="mass-spectrometry-and-particle-detectors">🔬 Mass Spectrometry and Particle Detectors</h3>
+<ul>
+<li>Mass spectrometers exploit differences in particle curvature under magnetic fields to identify atomic species.</li>
+<li>By knowing the <span class="arithmatex">\(q/m\)</span> ratio, we can determine the identity of an unknown ion from its circular trajectory radius.</li>
+</ul>
+<hr/>
+<blockquote>
+<p>These examples demonstrate how the Lorentz force governs critical behaviors in physics and engineering, and why simulations like these are crucial for both education and real-world design.</p>
+</blockquote>
+<h2 id="conclusion">✅ Conclusion</h2>
+<p>In this project, we studied the motion of a charged particle under the influence of electric and magnetic fields by simulating various physical scenarios using the Lorentz force:</p>
+<div class="arithmatex">\[
+\vec{F} = q\vec{E} + q\vec{v} \times \vec{B}
+\]</div>
+<hr/>
+<h3 id="what-we-did">🔍 What We Did</h3>
+<ul>
+<li>We implemented the <strong>Runge-Kutta 4th order</strong> method to numerically solve the coupled differential equations governing particle motion.</li>
+<li>We simulated and visualized the following cases:</li>
+<li>Uniform magnetic field → circular and helical motion</li>
+<li>Crossed electric and magnetic fields → <span class="arithmatex">\(\vec{E} \times \vec{B}\)</span> drift</li>
+<li>Combined uniform <span class="arithmatex">\(\vec{E} \parallel \vec{B}\)</span> → expanding spiral motion</li>
+<li>We explored how key parameters like <span class="arithmatex">\(B\)</span>, <span class="arithmatex">\(E\)</span>, <span class="arithmatex">\(v_0\)</span>, <span class="arithmatex">\(q/m\)</span> influence the resulting trajectories.</li>
+</ul>
+<hr/>
+<h3 id="why-it-matters">🌍 Why It Matters</h3>
+<p>These simulations reflect real-world behaviors in:
+- Particle accelerators (cyclotrons, synchrotrons)
+- Plasma confinement systems (tokamaks, fusion devices)
+- Mass spectrometry and ion traps
+- Space physics and satellite environments</p>
+<p>Understanding the motion of charged particles in fields is foundational for modern physics and engineering applications. Simulations allow us to visualize these complex trajectories and gain deeper intuition beyond analytical solutions.</p>
+<hr/>
+<blockquote>
+<p>This project highlights how numerical methods and physics principles combine to simulate meaningful, real-world behavior — and why mastering the Lorentz force is essential in any applied physics or engineering context.</p>
 </blockquote>
 </div>
 </div><footer>
