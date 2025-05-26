@@ -149,6 +149,7 @@ This results in circular motion in the $xy$-plane with constant speed.
 
 ---
 
+- [Colab Link](https://colab.research.google.com/drive/1cYMk0DihAwJu1_vulPX0knDjh-iaXyVs)
 
 ![Charged Particle Motion in Uniform Magnetic Field](Charged_Particle_Motion_in_Uniform_Magnetic_Field.png)
 
@@ -185,6 +186,8 @@ $$
 $$
 
 ---
+
+- [Colab Link](https://colab.research.google.com/drive/1cUzZwjM_nmXfNO2FLzIOTrHTVrdsM8jL)
 
 ![Charged Particle Motion in Crossed Fields](Charged_Particle_Motion_in_Crossed_Fields.png)
 
@@ -258,6 +261,8 @@ $$
 \vec{F} = q\vec{v} \times \vec{B}
 $$
 
+- [Colab Link](https://colab.research.google.com/drive/16ca9i5JQvuQM1-RuDp2obsS3rAK3u77h)
+
 ![Helical_Motion.png](Helical_Motion.png)
 
 > "The particle rotates in the $xy$-plane while moving linearly along the $z$-axis. This results in a constant-pitch helical path around the magnetic field direction."
@@ -283,6 +288,8 @@ $$
 This combination produces a **spiral trajectory that stretches along the field lines**, with increasing pitch as the particle accelerates.
 
 ---
+
+- [Colab Link](https://colab.research.google.com/drive/1YLZIo54Wj3sZYHPOs4uMMR3bSXle29ub)
 
 ![Combined_Fields_Spiral.png](Combined_Fields_Spiral.png)
 
