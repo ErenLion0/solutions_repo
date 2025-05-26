@@ -89,7 +89,9 @@ A set of three resistors is connected in a straight line between four distinct n
 
 $R_{\text{eq}} = 1 + 4 + 6 = 11\,\Omega$
 
-![alt text](image.png)
+![alt text](test1.png)
+
+[link](https://tinyurl.com/2yl4rddw)
 
 > "Since all elements are in series, their resistances simply add up. The current remains the same through each resistor."
 
@@ -111,10 +113,34 @@ $$
 \frac{1}{R_{\text{eq}}} = \frac{1}{6} + \frac{1}{3} = \frac{1}{2} \Rightarrow R_{\text{eq}} = 2\,\Omega
 $$
 
-![alt text](image-1.png)
+![alt text](test2.png)
 
 
 > "Parallel resistors divide the current across multiple paths. The combined resistance is always lower than the smallest individual resistor."
 
 
+### ✅ Test 3: Nested Combination
+
+**Description:**  
+This test involves a more complex configuration where series and parallel resistors are nested inside one another. The goal is to simplify the internal group first, then reduce the outer series.
+
+**Connections:**
+
+- A–B: 2Ω  
+- B–C: 2Ω  
+- C–D: 4Ω  
+- B–D: 4Ω  
+- D–E: 1Ω
+
+**Expected Reduction Steps:**
+
+1. B–C–D is in series: $R = 2 + 4 = 6\,\Omega$
+2. This path is in parallel with direct B–D:  
+   $\frac{1}{R} = \frac{1}{6} + \frac{1}{4} \Rightarrow R = 2.4\,\Omega$
+3. A–B and D–E are in series:  
+   $R_{\text{eq}} = 2 + 2.4 + 1 = 5.4\,\Omega$
+
+![alt text](test3.png)
+
+> "First reduce the inner path, then treat the whole circuit as a single line."
 
