@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Measuring Earth's Gravitational Acceleration with a Pendulum - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Measuring Earth\u0027s Gravitational Acceleration with a Pendulum";
         var mkdocs_page_input_path = "1 Physics/7 Measurements/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -104,14 +104,26 @@
 <ul>
 <li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_1/">Exploring the Central Limit Theorem through simulations</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_2/">Problem 2</a>
+<li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_2/">Estimating Pi using Monte Carlo Methods</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">7 Measurements</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Measuring Earth's Gravitational Acceleration with a Pendulum</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#materials">Materials</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#data">📊 Data</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#final-result">✅ Final Result:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#analysis-and-discussion">🔍 Analysis and Discussion</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -183,7 +195,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">7 Measurements</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Measuring Earth's Gravitational Acceleration with a Pendulum</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -191,11 +203,152 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="measuring-earths-gravitational-acceleration-with-a-pendulum">Measuring Earth's Gravitational Acceleration with a Pendulum</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The acceleration 
+ due to gravity is a fundamental constant that influences a wide range of physical phenomena. Measuring <span class="arithmatex">\(g\)</span> accurately is crucial for understanding gravitational interactions, designing structures, and conducting experiments in various fields. One classic method for determining <span class="arithmatex">\(g\)</span> is through the oscillations of a simple pendulum, where the period of oscillation depends on the local gravitational field.</p>
+<h3 id="materials">Materials</h3>
+<ul>
+<li>String ( ~1 meter)</li>
+<li>Key chain</li>
+<li>Measure(precision ±0.001 m)</li>
+<li>Stopwatch (Smartphone) (precision ±0.01 s)</li>
+</ul>
+<h3 id="data">📊 Data</h3>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th><span class="arithmatex">\(T_{10}\)</span> (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>17.55</td>
+</tr>
+<tr>
+<td>2</td>
+<td>18.97</td>
+</tr>
+<tr>
+<td>3</td>
+<td>19.15</td>
+</tr>
+<tr>
+<td>4</td>
+<td>19.38</td>
+</tr>
+<tr>
+<td>5</td>
+<td>18.97</td>
+</tr>
+<tr>
+<td>6</td>
+<td>18.98</td>
+</tr>
+<tr>
+<td>7</td>
+<td>19.08</td>
+</tr>
+<tr>
+<td>8</td>
+<td>18.85</td>
+</tr>
+<tr>
+<td>9</td>
+<td>19.17</td>
+</tr>
+<tr>
+<td>10</td>
+<td>19.13</td>
+</tr>
+</tbody>
+</table>
+<p>### 🧮 Calculations</p>
+<h4 id="1-mean-time">1. Mean Time:</h4>
+<div class="arithmatex">\[
+\bar{T}_{10} = \frac{1}{10} \sum t_i = \frac{189.23}{10} = 18.923\ \text{s}
+\]</div>
+<hr/>
+<h4 id="2-standard-deviation">2. Standard Deviation:</h4>
+<div class="arithmatex">\[
+\sigma_T = \sqrt{\frac{1}{n - 1} \sum (t_i - \bar{T}_{10})^2} \approx 0.504\ \text{s}
+\]</div>
+<hr/>
+<h4 id="3-uncertainty-in-the-mean">3. Uncertainty in the Mean:</h4>
+<div class="arithmatex">\[
+\Delta T_{10} = \frac{\sigma_T}{\sqrt{n}} = \frac{0.504}{\sqrt{10}} \approx 0.159\ \text{s}
+\]</div>
+<hr/>
+<h4 id="4-period-of-the-pendulum">4. Period of the Pendulum:</h4>
+<div class="arithmatex">\[
+T = \frac{\bar{T}_{10}}{10} = \frac{18.923}{10} = 1.892\ \text{s}
+\]</div>
+<div class="arithmatex">\[
+\Delta T = \frac{\Delta T_{10}}{10} = \frac{0.159}{10} = 0.016\ \text{s}
+\]</div>
+<hr/>
+<h4 id="5-gravitational-acceleration">5. Gravitational Acceleration:</h4>
+<div class="arithmatex">\[
+g = \frac{4 \pi^2 L}{T^2} = \frac{4 \pi^2 \cdot 1.00}{(1.892)^2} \approx 11.03\ \text{m/s}^2
+\]</div>
+<hr/>
+<h4 id="6-uncertainty-in-g">6. Uncertainty in <span class="arithmatex">\(g\)</span>:</h4>
+<div class="arithmatex">\[
+\frac{\Delta g}{g} = \sqrt{\left(\frac{\Delta L}{L}\right)^2 + \left(2 \cdot \frac{\Delta T}{T}\right)^2}
+= \sqrt{\left(\frac{0.0005}{1.00}\right)^2 + \left(2 \cdot \frac{0.016}{1.892}\right)^2}
+\approx 0.0176
+\]</div>
+<div class="arithmatex">\[
+\Delta g = 0.0176 \cdot 11.03 \approx 0.19\ \text{m/s}^2
+\]</div>
+<hr/>
+<h3 id="final-result">✅ Final Result:</h3>
+<div class="arithmatex">\[
+g = 11.03 \pm 0.19\ \text{m/s}^2
+\]</div>
+<h3 id="analysis-and-discussion">🔍 Analysis and Discussion</h3>
+<h4 id="1-comparison-with-standard-value">1. Comparison with Standard Value:</h4>
+<p>The experimentally measured value of gravitational acceleration is:</p>
+<div class="arithmatex">\[
+g = 11.03 \pm 0.19\ \text{m/s}^2
+\]</div>
+<p>The accepted standard value is:</p>
+<div class="arithmatex">\[
+g_{\text{standard}} = 9.81\ \text{m/s}^2
+\]</div>
+<p>The measured value is higher than the standard, and the discrepancy exceeds the calculated uncertainty. This suggests the presence of systematic errors or assumptions that may not hold.</p>
+<hr/>
+<h4 id="2-discussion-of-uncertainty-sources">2. Discussion of Uncertainty Sources:</h4>
+<ul>
+<li>
+<p><strong>Length Measurement (<span class="arithmatex">\(\Delta L\)</span>):</strong><br/>
+  The uncertainty in length was small due to the use of a tape measure with 1 mm resolution. However, measuring from the suspension point to the center of mass may introduce a slight error if not done precisely.</p>
+</li>
+<li>
+<p><strong>Timing Uncertainty (<span class="arithmatex">\(\Delta T\)</span>):</strong><br/>
+  Human reaction time is a major source of uncertainty in using a stopwatch. This can cause random errors and affects the repeatability of the measurement. Using longer timing intervals (e.g., 10 oscillations) helps reduce this impact.</p>
+</li>
+<li>
+<p><strong>Air Resistance and Amplitude:</strong><br/>
+  Although the initial angle was kept below <span class="arithmatex">\(15^\circ\)</span>, damping and small deviations from ideal behavior can influence the period. Air resistance slightly lengthens the period and leads to underestimation of <span class="arithmatex">\(g\)</span>.</p>
+</li>
+</ul>
+<hr/>
+<h4 id="3-experimental-limitations">3. Experimental Limitations:</h4>
+<ul>
+<li>Manual timing introduces significant human error.</li>
+<li>Assumption of no damping and ideal pendulum behavior may not hold.</li>
+<li>Slight misalignment or variation in amplitude could affect consistency.</li>
+</ul>
+<blockquote>
+<p>Overall, the experiment provides a reasonable estimate for <span class="arithmatex">\(g\)</span>, but improvements in timing accuracy and minimizing systematic errors would enhance reliability.</p>
+</blockquote>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../6%20Statistics/Problem_2/" title="Problem 2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../../6%20Statistics/Problem_2/" title="Estimating Pi using Monte Carlo Methods"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../../../2%20Mathematics/1%20Linear_algebra/" title="Linear Algebra">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>

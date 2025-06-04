@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 2 - Physics and Mathematics</title>
+<title>Estimating Pi using Monte Carlo Methods - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 2";
+        var mkdocs_page_name = "Estimating Pi using Monte Carlo Methods";
         var mkdocs_page_input_path = "1 Physics/6 Statistics/Problem_2.md";
         var mkdocs_page_url = null;
       </script>
@@ -104,15 +104,25 @@
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Problem_1/">Exploring the Central Limit Theorem through simulations</a>
 </li>
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Estimating Pi using Monte Carlo Methods</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#estimating-pi-using-a-circle-monte-carlo-simulation">Estimating \(\pi\) Using a Circle — Monte Carlo Simulation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#convergence-behavior-of-pi-estimation">Convergence Behavior of Pi Estimation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#estimating-pi-using-buffons-needle">Estimating \(\pi\) Using Buffon’s Needle</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">7 Measurements</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../7%20Measurements/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../7%20Measurements/Problem_1/">Measuring Earth's Gravitational Acceleration with a Pendulum</a>
 </li>
 </ul>
 </li>
@@ -183,7 +193,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">6 Statistics</li>
-<li class="breadcrumb-item active">Problem 2</li>
+<li class="breadcrumb-item active">Estimating Pi using Monte Carlo Methods</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -191,12 +201,94 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-2">Problem 2</h1>
+<h1 id="estimating-pi-using-monte-carlo-methods">Estimating Pi using Monte Carlo Methods</h1>
+<h2 id="motivation">Motivation</h2>
+<p>Monte Carlo simulations are a powerful class of computational techniques that use randomness to solve problems or estimate values. One of the most elegant applications of Monte Carlo methods is estimating the value of <span class="arithmatex">\(\pi\)</span> through geometric probability. By randomly generating points and analyzing their positions relative to a geometric shape, we can approximate <span class="arithmatex">\(\pi\)</span> in an intuitive and visually engaging way.</p>
+<p>This problem connects fundamental concepts of probability, geometry, and numerical computation. It also provides a gateway to understanding how randomness can be harnessed to solve complex problems in physics, finance, and computer science. The Monte Carlo approach to 
+ estimation highlights the versatility and simplicity of this method while offering practical insights into convergence rates and computational efficiency.</p>
+<hr/>
+<h3 id="estimating-pi-using-a-circle-monte-carlo-simulation">Estimating <span class="arithmatex">\(\pi\)</span> Using a Circle — Monte Carlo Simulation</h3>
+<p>Monte Carlo methods allow us to estimate the value of <span class="arithmatex">\(\pi\)</span> through a geometric probability approach. The basic idea involves generating random points in a square that bounds a unit circle. The ratio of points that fall inside the circle compared to the total number of points approximates <span class="arithmatex">\(\pi\)</span> using the relation:</p>
+<div class="arithmatex">\[
+\pi \approx 4 \cdot \frac{\text{points inside the circle}}{\text{total number of points}}
+\]</div>
+<p>By increasing the number of points, the accuracy of the estimation improves due to the Law of Large Numbers. This method is not only simple to implement, but also demonstrates how randomness and geometry can work together to solve classical problems.</p>
+<p><img alt="Monte Carlo Estimation" src="../Monte_Carlo_Estimation.png"/></p>
+<hr/>
+<h3 id="convergence-behavior-of-pi-estimation">Convergence Behavior of Pi Estimation</h3>
+<p>One important aspect of Monte Carlo methods is understanding how the accuracy of the estimate improves as the number of samples increases. In this section, we analyze the convergence behavior of the <span class="arithmatex">\(\pi\)</span> estimate by progressively increasing the number of randomly generated points.</p>
+<p>We begin with a small number of points (e.g., 100) and gradually increase it up to 100,000. At each step, we compute the estimate of <span class="arithmatex">\(\pi\)</span> and compare it to the true value (<span class="arithmatex">\(\pi \approx 3.14159\)</span>). The absolute error is also tracked as a function of sample size.</p>
+<p>This analysis highlights how the estimate becomes more accurate and stable with larger sample sizes, illustrating the law of large numbers in practice.</p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<hr/>
+<h3 id="estimating-pi-using-buffons-needle">Estimating <span class="arithmatex">\(\pi\)</span> Using Buffon’s Needle</h3>
+<p>Buffon’s Needle is a classic probabilistic method to estimate the value of <span class="arithmatex">\(\pi\)</span>. The idea is to drop a needle of length <span class="arithmatex">\(\ell\)</span> onto a plane with parallel lines spaced distance <span class="arithmatex">\(d\)</span> apart. The probability that the needle crosses a line is related to <span class="arithmatex">\(\pi\)</span> by the formula:</p>
+<div class="arithmatex">\[
+P = \frac{2\ell}{d\pi} \quad \Rightarrow \quad \pi \approx \frac{2\ell N}{dC}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(\ell\)</span> is the length of the needle
+- <span class="arithmatex">\(d\)</span> is the distance between the parallel lines (<span class="arithmatex">\(\ell \leq d\)</span>)
+- <span class="arithmatex">\(N\)</span> is the total number of drops
+- <span class="arithmatex">\(C\)</span> is the number of times the needle crosses a line</p>
+<p>This method uses randomness and geometric probability to approximate <span class="arithmatex">\(\pi\)</span>. While the convergence is slower than the Monte Carlo circle method, it offers a historically significant and visually intuitive approach.</p>
+<p>In the following simulation, we randomly drop needles on a plane and track how often they intersect with the parallel lines to estimate <span class="arithmatex">\(\pi\)</span>.</p>
+<p><img alt="alt text" src="../image.png"/></p>
+<hr/>
+<h4 id="comparison-and-final-discussion">Comparison and Final Discussion</h4>
+<p>In this project, we explored three different Monte Carlo-based methods for estimating the value of <span class="arithmatex">\(\pi\)</span>:</p>
+<ol>
+<li>
+<p><strong>Monte Carlo Circle Method:</strong><br/>
+   This is a geometric probability method where random points are generated in a square and counted based on whether they fall inside a unit circle. It is simple, fast, and converges reasonably well. The estimate improves as the number of points increases, following the law of large numbers.</p>
+</li>
+<li>
+<p><strong>Convergence Behavior Analysis:</strong><br/>
+   By progressively increasing the number of points, we observed that the error decreases logarithmically. The estimate stabilizes around the true value of <span class="arithmatex">\(\pi\)</span>, reinforcing the robustness of this method for numerical estimation.</p>
+</li>
+<li>
+<p><strong>Buffon’s Needle:</strong><br/>
+   A historical and fascinating approach that uses the probability of a randomly dropped needle crossing parallel lines. Although it converges more slowly and has higher variance, it connects probability with geometry in a unique way.</p>
+</li>
+</ol>
+<h4 id="summary">🔍 Summary:</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Estimate</th>
+<th>Trials</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Circle Method</td>
+<td>≈ 3.1228</td>
+<td>10,000</td>
+<td>Fast convergence, very visual</td>
+</tr>
+<tr>
+<td>Convergence Plot</td>
+<td>→ 3.14159</td>
+<td>100–100,000</td>
+<td>Log-scale analysis shows accuracy</td>
+</tr>
+<tr>
+<td>Buffon’s Needle</td>
+<td>≈ 3.1328</td>
+<td>10,000</td>
+<td>Slower, elegant, historical</td>
+</tr>
+</tbody>
+</table>
+<p>Each method provides valuable insights into how randomness can be harnessed to solve complex problems. While the Circle Method is the most efficient for practical estimation, Buffon’s Needle remains an elegant demonstration of probabilistic geometry.</p>
+<p>This project highlighted the power of simulation in mathematical problem solving and deepened our understanding of statistical convergence.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../Problem_1/" title="Exploring the Central Limit Theorem through simulations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../../7%20Measurements/Problem_1/" title="Problem 1">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="../../7%20Measurements/Problem_1/" title="Measuring Earth's Gravitational Acceleration with a Pendulum">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">

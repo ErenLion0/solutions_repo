@@ -105,16 +105,28 @@
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Exploring the Central Limit Theorem through simulations</a>
 <ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#sampling-distribution-of-the-mean-uniform-distribution">Sampling Distribution of the Mean — Uniform Distribution</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#sampling-distribution-of-the-mean-exponential-distribution">Sampling Distribution of the Mean — Exponential Distribution</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#sampling-distribution-of-the-mean-binomial-distribution">Sampling Distribution of the Mean — Binomial Distribution</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#analysis-and-discussion">🧠 Analysis and Discussion</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#conclusion">✅ Conclusion</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Estimating Pi using Monte Carlo Methods</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">7 Measurements</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../7%20Measurements/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../7%20Measurements/Problem_1/">Measuring Earth's Gravitational Acceleration with a Pendulum</a>
 </li>
 </ul>
 </li>
@@ -196,11 +208,54 @@
 <h1 id="exploring-the-central-limit-theorem-through-simulations">Exploring the Central Limit Theorem through simulations</h1>
 <h2 id="motivation">Motivation</h2>
 <p>The Central Limit Theorem (CLT) is a cornerstone of probability and statistics, stating that the sampling distribution of the sample mean approaches a normal distribution as the sample size increases, regardless of the population’s original distribution. Simulations provide an intuitive and hands-on way to observe this phenomenon in action.</p>
+<h3 id="sampling-distribution-of-the-mean-uniform-distribution">Sampling Distribution of the Mean — Uniform Distribution</h3>
+<p>In this section, we demonstrate the Central Limit Theorem (CLT) by applying it to a population generated from a uniform distribution. A uniform distribution is flat, meaning every value in a given range has an equal probability of occurring. Despite this non-normal shape, the CLT predicts that the sampling distribution of the mean will approach a normal distribution as the sample size increases.</p>
+<p>We generate a large population of 10,000 data points from a uniform distribution ranging from 0 to 1. Then, we draw random samples of size <span class="arithmatex">\(n = 5,\ 10,\ 30,\ 50\)</span>. For each sample size, we repeat the sampling process 1000 times and record the mean of each sample. Histograms of these sample means reveal how the distribution becomes increasingly bell-shaped with larger <span class="arithmatex">\(n\)</span>.</p>
+<p>This simulation visually confirms that the CLT holds true even when the original population is far from normal.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1_w6bO_gBLdjKg_YeK06n3VG7NG5F6ls8#scrollTo=qVNFp31L-Gm1">Colab Link</a></li>
+</ul>
+<p><img alt=" Sampling Distribution of theMean " src="../Uniform_Distribution.png"/></p>
+<h3 id="sampling-distribution-of-the-mean-exponential-distribution">Sampling Distribution of the Mean — Exponential Distribution</h3>
+<p>In this section, we test the Central Limit Theorem using a population drawn from an exponential distribution. Unlike the uniform distribution, the exponential distribution is highly skewed to the right and represents many real-world processes such as waiting times or radioactive decay.</p>
+<p>We generate a population of 10,000 values from an exponential distribution with a rate parameter <span class="arithmatex">\(\lambda = 1\)</span>, which corresponds to a mean of <span class="arithmatex">\(1\)</span>. We then draw 1000 random samples for each sample size <span class="arithmatex">\(n = 5,\ 10,\ 30,\ 50\)</span> and calculate the sample means.</p>
+<p>Despite the heavy skew of the original population, the sampling distributions of the mean become more symmetric and bell-shaped as <span class="arithmatex">\(n\)</span> increases, providing further confirmation of the Central Limit Theorem.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1h9eKUFSmU_tRGinqr7Zg0WHKs5surqvn">Colab Link</a></li>
+</ul>
+<p><img alt="Exponential Distribution" src="../Exponential_Distribution.png"/></p>
+<h3 id="sampling-distribution-of-the-mean-binomial-distribution">Sampling Distribution of the Mean — Binomial Distribution</h3>
+<p>In this final simulation, we apply the Central Limit Theorem to a population generated from a binomial distribution. The binomial distribution represents discrete outcomes such as coin flips, and it is often used to model probabilities in binary events (success/failure).</p>
+<p>We create a population of 10,000 values using a binomial distribution with parameters <span class="arithmatex">\(n = 10\)</span> (number of trials) and <span class="arithmatex">\(p = 0.5\)</span> (success probability), which yields a mean of <span class="arithmatex">\(5\)</span>.</p>
+<p>As in previous simulations, we draw 1000 random samples for each sample size <span class="arithmatex">\(n = 5,\ 10,\ 30,\ 50\)</span> and compute the mean of each sample. We then plot the distribution of the sample means to observe how they behave.</p>
+<p>The binomial distribution is discrete and non-continuous, but as the sample size increases, the sampling distribution of the mean becomes smoother and approaches a normal shape, again confirming the CLT.</p>
+<p><img alt="Binomial Distribution" src="../Binomial_Distribution.png"/></p>
+<h3 id="analysis-and-discussion">🧠 Analysis and Discussion</h3>
+<p>In this project, we explored the Central Limit Theorem (CLT) using three different probability distributions: <strong>Uniform</strong>, <strong>Exponential</strong>, and <strong>Binomial</strong>. For each distribution, we simulated a large population, repeatedly took samples of various sizes, and visualized the distribution of sample means.</p>
+<h4 id="uniform-distribution">🔸 Uniform Distribution:</h4>
+<p>The uniform distribution is symmetric but non-normal in shape. Despite its flat probability density, the distribution of sample means rapidly approached a bell curve as the sample size increased. Even at <span class="arithmatex">\(n = 10\)</span>, the distribution began to resemble a normal distribution, confirming that CLT applies effectively to symmetric distributions.</p>
+<h4 id="exponential-distribution">🔸 Exponential Distribution:</h4>
+<p>The exponential distribution is heavily skewed, making it an interesting test case for the CLT. As expected, small sample sizes retained much of the skew, but with larger samples (<span class="arithmatex">\(n = 30\)</span> and <span class="arithmatex">\(n = 50\)</span>), the distribution of sample means smoothed out and became significantly more symmetric. This highlights the power of CLT to overcome strong skewness with sufficient sample size.</p>
+<h4 id="binomial-distribution">🔸 Binomial Distribution:</h4>
+<p>With parameters <span class="arithmatex">\(n = 10\)</span> and <span class="arithmatex">\(p = 0.5\)</span>, the binomial distribution is discrete but symmetric. The sampling distribution of the mean quickly approached normality, particularly from <span class="arithmatex">\(n = 10\)</span> and beyond. This case also confirms that the CLT is not limited to continuous distributions.</p>
+<h4 id="overall-observation">✅ Overall Observation:</h4>
+<p>In all three cases, regardless of the population's original shape (flat, skewed, or discrete), the distribution of the sample means converged toward a normal distribution as the sample size increased. The convergence was faster for symmetric distributions (uniform and binomial), and slower for skewed distributions (exponential).</p>
+<p>These results visually and numerically support the Central Limit Theorem, demonstrating its robustness and wide applicability in statistical inference.</p>
+<h3 id="conclusion">✅ Conclusion</h3>
+<p>This project successfully demonstrated the Central Limit Theorem (CLT) through simulation-based analysis of three fundamentally different distributions: uniform, exponential, and binomial.</p>
+<p>By generating large synthetic populations and analyzing the sampling distribution of their means for various sample sizes, we confirmed the following key insights:</p>
+<ul>
+<li>The distribution of the sample mean <strong>approaches normality</strong> as the sample size increases, regardless of the shape of the original population distribution.</li>
+<li><strong>Symmetric distributions</strong> (like the uniform and binomial cases) converge more quickly to a normal distribution compared to <strong>skewed distributions</strong> (like the exponential).</li>
+<li>Even when the original distribution is <strong>discrete or heavily skewed</strong>, the sampling distribution of the mean still becomes approximately normal with a large enough sample size.</li>
+</ul>
+<p>These findings reinforce the importance of the CLT in statistics and data science. It provides the theoretical foundation for making probabilistic inferences about population parameters, especially when the population distribution is unknown or non-normal.</p>
+<p>The use of simulations allowed for a hands-on, visual confirmation of this fundamental concept, enhancing both understanding and intuition.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../../5%20Circuits/Problem_1/" title="Equivalent Resistance Using Graph Theory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../Problem_2/" title="Problem 2">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="../Problem_2/" title="Estimating Pi using Monte Carlo Methods">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
