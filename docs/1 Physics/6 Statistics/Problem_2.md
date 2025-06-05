@@ -21,6 +21,7 @@ By increasing the number of points, the accuracy of the estimation improves due 
 
 -  [Colab Link](https://colab.research.google.com/drive/15_h1nChGmwyp2ZyvTGJJQOXNzTqoNoU3)
 
+
 ![Monte Carlo Estimation](Monte_Carlo_Estimation.png)
 
 ---
@@ -57,10 +58,9 @@ This method uses randomness and geometric probability to approximate $\pi$. Whil
 
 In the following simulation, we randomly drop needles on a plane and track how often they intersect with the parallel lines to estimate $\pi$.
 
--  [Colab Link](https://colab.research.google.com/drive/1X5U1aEFiynJtKKQCX4AyYJ3VvBoiqMPo)
+-  [Colab Link](https://colab.research.google.com/drive/1fesZKTV-ofUYa5V5llxU6PKcbEqBMiAo)
 
-![alt text](image.png)
-
+![Buffon's Needle Simulation](Buffon's_Needle_Simulation.png)
 
 ---
 
