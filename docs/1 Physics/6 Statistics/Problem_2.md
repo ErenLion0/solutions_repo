@@ -19,6 +19,8 @@ $$
 
 By increasing the number of points, the accuracy of the estimation improves due to the Law of Large Numbers. This method is not only simple to implement, but also demonstrates how randomness and geometry can work together to solve classical problems.
 
+-  [Colab Link](https://colab.research.google.com/drive/15_h1nChGmwyp2ZyvTGJJQOXNzTqoNoU3)
+
 ![Monte Carlo Estimation](Monte_Carlo_Estimation.png)
 
 ---
@@ -30,6 +32,8 @@ One important aspect of Monte Carlo methods is understanding how the accuracy of
 We begin with a small number of points (e.g., 100) and gradually increase it up to 100,000. At each step, we compute the estimate of $\pi$ and compare it to the true value ($\pi \approx 3.14159$). The absolute error is also tracked as a function of sample size.
 
 This analysis highlights how the estimate becomes more accurate and stable with larger sample sizes, illustrating the law of large numbers in practice.
+
+-  [Colab Link](https://colab.research.google.com/drive/1k9pcaGrA6IcVcoXdVgJS_j0ctkKMP3cj)
 
 ![alt text](image-1.png)
 
@@ -53,7 +57,10 @@ This method uses randomness and geometric probability to approximate $\pi$. Whil
 
 In the following simulation, we randomly drop needles on a plane and track how often they intersect with the parallel lines to estimate $\pi$.
 
+-  [Colab Link](https://colab.research.google.com/drive/1X5U1aEFiynJtKKQCX4AyYJ3VvBoiqMPo)
+
 ![alt text](image.png)
+
 
 ---
 
