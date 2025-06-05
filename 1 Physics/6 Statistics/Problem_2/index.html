@@ -213,12 +213,18 @@
 \pi \approx 4 \cdot \frac{\text{points inside the circle}}{\text{total number of points}}
 \]</div>
 <p>By increasing the number of points, the accuracy of the estimation improves due to the Law of Large Numbers. This method is not only simple to implement, but also demonstrates how randomness and geometry can work together to solve classical problems.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/15_h1nChGmwyp2ZyvTGJJQOXNzTqoNoU3">Colab Link</a></li>
+</ul>
 <p><img alt="Monte Carlo Estimation" src="../Monte_Carlo_Estimation.png"/></p>
 <hr/>
 <h3 id="convergence-behavior-of-pi-estimation">Convergence Behavior of Pi Estimation</h3>
 <p>One important aspect of Monte Carlo methods is understanding how the accuracy of the estimate improves as the number of samples increases. In this section, we analyze the convergence behavior of the <span class="arithmatex">\(\pi\)</span> estimate by progressively increasing the number of randomly generated points.</p>
 <p>We begin with a small number of points (e.g., 100) and gradually increase it up to 100,000. At each step, we compute the estimate of <span class="arithmatex">\(\pi\)</span> and compare it to the true value (<span class="arithmatex">\(\pi \approx 3.14159\)</span>). The absolute error is also tracked as a function of sample size.</p>
 <p>This analysis highlights how the estimate becomes more accurate and stable with larger sample sizes, illustrating the law of large numbers in practice.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1k9pcaGrA6IcVcoXdVgJS_j0ctkKMP3cj">Colab Link</a></li>
+</ul>
 <p><img alt="alt text" src="../image-1.png"/></p>
 <hr/>
 <h3 id="estimating-pi-using-buffons-needle">Estimating <span class="arithmatex">\(\pi\)</span> Using Buffon’s Needle</h3>
@@ -233,6 +239,9 @@ P = \frac{2\ell}{d\pi} \quad \Rightarrow \quad \pi \approx \frac{2\ell N}{dC}
 - <span class="arithmatex">\(C\)</span> is the number of times the needle crosses a line</p>
 <p>This method uses randomness and geometric probability to approximate <span class="arithmatex">\(\pi\)</span>. While the convergence is slower than the Monte Carlo circle method, it offers a historically significant and visually intuitive approach.</p>
 <p>In the following simulation, we randomly drop needles on a plane and track how often they intersect with the parallel lines to estimate <span class="arithmatex">\(\pi\)</span>.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1X5U1aEFiynJtKKQCX4AyYJ3VvBoiqMPo">Colab Link</a></li>
+</ul>
 <p><img alt="alt text" src="../image.png"/></p>
 <hr/>
 <h4 id="comparison-and-final-discussion">Comparison and Final Discussion</h4>
