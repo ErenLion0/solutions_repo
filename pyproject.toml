@@ -2,7 +2,7 @@
 name = "solutions-repo"
 version = "0.1.0"
 description = ""
-authors = ["dchorazkiewicz <damian.ch.datascience@gmail.com>"]
+authors = ["ErenLion"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
